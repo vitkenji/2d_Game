@@ -22,6 +22,12 @@
     <Filter Include="Arquivos de Cabeçalho\Math">
       <UniqueIdentifier>{7c3ed8bb-ee82-4d9c-90b3-b499ac279292}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arquivos de Cabeçalho\GraphicalElements">
+      <UniqueIdentifier>{e931071a-8ab5-48ed-a3e8-78ba2b435ae2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\GraphicalElements">
+      <UniqueIdentifier>{893a4e93-07fc-4d5c-8cfc-54419a9e96b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Heroes.cpp">
@@ -30,6 +36,18 @@
     <ClCompile Include="GraphicManager.cpp">
       <Filter>Arquivos de Origem\Managers</Filter>
     </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Arquivos de Origem\GraphicalElements</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleAnimation.cpp">
+      <Filter>Arquivos de Origem\GraphicalElements</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleFrameAnimation.cpp">
+      <Filter>Arquivos de Origem\GraphicalElements</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiFrameAnimation.cpp">
+      <Filter>Arquivos de Origem\GraphicalElements</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicManager.hpp">
@@ -37,6 +55,18 @@
     </ClInclude>
     <ClInclude Include="Coordinate.hpp">
       <Filter>Arquivos de Cabeçalho\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.hpp">
+      <Filter>Arquivos de Cabeçalho\GraphicalElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleAnimation.hpp">
+      <Filter>Arquivos de Cabeçalho\GraphicalElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleFrameAnimation.hpp">
+      <Filter>Arquivos de Cabeçalho\GraphicalElements</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiFrameAnimation.hpp">
+      <Filter>Arquivos de Cabeçalho\GraphicalElements</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

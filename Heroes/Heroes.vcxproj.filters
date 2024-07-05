@@ -28,6 +28,12 @@
     <Filter Include="Arquivos de Origem\GraphicalElements">
       <UniqueIdentifier>{893a4e93-07fc-4d5c-8cfc-54419a9e96b9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arquivos de Cabeçalho\States">
+      <UniqueIdentifier>{4fcb673d-7644-45a6-a259-9404ed17e990}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\States">
+      <UniqueIdentifier>{a2e4ecf6-0f1f-4449-ae9c-1479eee70e33}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Heroes.cpp">
@@ -48,6 +54,9 @@
     <ClCompile Include="MultiFrameAnimation.cpp">
       <Filter>Arquivos de Origem\GraphicalElements</Filter>
     </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Arquivos de Origem\States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicManager.hpp">
@@ -67,6 +76,15 @@
     </ClInclude>
     <ClInclude Include="MultiFrameAnimation.hpp">
       <Filter>Arquivos de Cabeçalho\GraphicalElements</Filter>
+    </ClInclude>
+    <ClInclude Include="constants.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="paths.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.hpp">
+      <Filter>Arquivos de Cabeçalho\States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

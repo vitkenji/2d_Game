@@ -134,6 +134,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="GraphicManager.cpp" />
     <ClCompile Include="Heroes.cpp" />
     <ClCompile Include="MultiFrameAnimation.cpp" />
@@ -143,8 +144,11 @@
   <ItemGroup>
     <ClInclude Include="Animation.hpp" />
     <ClInclude Include="Coordinate.hpp" />
+    <ClInclude Include="Game.hpp" />
     <ClInclude Include="GraphicManager.hpp" />
+    <ClInclude Include="constants.h" />
     <ClInclude Include="MultiFrameAnimation.hpp" />
+    <ClInclude Include="paths.h" />
     <ClInclude Include="SingleAnimation.hpp" />
     <ClInclude Include="SingleFrameAnimation.hpp" />
   </ItemGroup>

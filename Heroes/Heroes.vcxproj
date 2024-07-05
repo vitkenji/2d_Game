@@ -130,7 +130,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GraphicManager.cpp" />
     <ClCompile Include="Heroes.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Coordinate.hpp" />
+    <ClInclude Include="GraphicManager.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

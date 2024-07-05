@@ -1,23 +1,21 @@
 #include <SFML/Graphics.hpp>
+#include "GraphicManager.hpp"
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 800), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    Managers::GraphicManager* pGraphic = Managers::GraphicManager::getInstance();
 
-    while (window.isOpen())
+    while (pGraphic->isWindowOpen())
     {
         sf::Event event;
-        while (window.pollEvent(event))
+        while (pGraphic->getWindow()->pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
-                window.close();
+                pGraphic->closeWindow();
         }
 
-        window.clear();
-        window.draw(shape);
-        window.display();
+        pGraphic->display();
+        pGraphic->clear();
     }
 
     return 0;

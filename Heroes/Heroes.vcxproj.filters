@@ -13,10 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Arquivos de Origem\Managers">
+      <UniqueIdentifier>{ca744d1f-3534-4a20-8858-340a293b204a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Managers">
+      <UniqueIdentifier>{6c42ea5d-9141-49dd-a2cc-b8667c795a94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Math">
+      <UniqueIdentifier>{7c3ed8bb-ee82-4d9c-90b3-b499ac279292}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Heroes.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="GraphicManager.cpp">
+      <Filter>Arquivos de Origem\Managers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GraphicManager.hpp">
+      <Filter>Arquivos de Cabeçalho\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Coordinate.hpp">
+      <Filter>Arquivos de Cabeçalho\Math</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

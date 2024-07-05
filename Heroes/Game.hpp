@@ -3,7 +3,7 @@
 #include "SFML/Graphics.hpp"
 #include "paths.h"
 #include "constants.h"
-#include "MultiFrameAnimation.hpp"
+#include "MovingEntity.hpp"
 #include "GraphicManager.hpp"
 
 namespace States
@@ -14,7 +14,7 @@ namespace States
 		sf::Clock clock;
 		float dt;
 		Managers::GraphicManager* pGraphic;
-
+		
 	public:
 		Game();
 		~Game();

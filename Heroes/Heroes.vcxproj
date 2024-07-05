@@ -134,9 +134,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Ent.cpp" />
+    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GraphicManager.cpp" />
     <ClCompile Include="Heroes.cpp" />
+    <ClCompile Include="MovingEntity.cpp" />
     <ClCompile Include="MultiFrameAnimation.cpp" />
     <ClCompile Include="SingleAnimation.cpp" />
     <ClCompile Include="SingleFrameAnimation.cpp" />
@@ -144,9 +147,12 @@
   <ItemGroup>
     <ClInclude Include="Animation.hpp" />
     <ClInclude Include="Coordinate.hpp" />
+    <ClInclude Include="Ent.hpp" />
+    <ClInclude Include="Entity.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="GraphicManager.hpp" />
     <ClInclude Include="constants.h" />
+    <ClInclude Include="MovingEntity.hpp" />
     <ClInclude Include="MultiFrameAnimation.hpp" />
     <ClInclude Include="paths.h" />
     <ClInclude Include="SingleAnimation.hpp" />

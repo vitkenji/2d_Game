@@ -49,6 +49,12 @@
     <Filter Include="Arquivos de Origem\Entities\Characters">
       <UniqueIdentifier>{0c20dc79-b1bf-4e21-9ccc-5e96c9d68902}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Control">
+      <UniqueIdentifier>{8ed0bef4-b997-439b-9844-452e0654fdd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Control">
+      <UniqueIdentifier>{e0a7e80f-da83-407b-9d22-a2e963366e10}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Heroes.cpp">
@@ -86,6 +92,15 @@
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Arquivos de Origem\Entities\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Arquivos de Origem\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Observer.cpp">
+      <Filter>Arquivos de Origem\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerControl.cpp">
+      <Filter>Arquivos de Origem\Control</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +145,15 @@
     </ClInclude>
     <ClInclude Include="Player.hpp">
       <Filter>Arquivos de Cabeçalho\Entities\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.hpp">
+      <Filter>Arquivos de Cabeçalho\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.hpp">
+      <Filter>Arquivos de Cabeçalho\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerControl.hpp">
+      <Filter>Arquivos de Cabeçalho\Control</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

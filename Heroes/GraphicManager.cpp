@@ -1,6 +1,4 @@
 #include "GraphicManager.hpp"
-#define HEIGHT 600
-#define WIDTH 800
 
 namespace Managers
 {

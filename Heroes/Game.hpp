@@ -5,6 +5,8 @@
 #include "constants.h"
 #include "Player.hpp"
 #include "GraphicManager.hpp"
+#include "PlayerControl.hpp"
+#include "SingleFrameAnimation.hpp"
 
 namespace States
 {
@@ -14,6 +16,9 @@ namespace States
 		sf::Clock clock;
 		float dt;
 		Managers::GraphicManager* pGraphic;
+		Entities::Characters::Player player;
+		Control::PlayerControl* pPlayerControl;
+		GraphicalElements::SingleFrameAnimation background;
 		
 	public:
 		Game();

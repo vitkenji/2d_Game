@@ -2,6 +2,7 @@
 #include <iostream>
 #include "SFML/Graphics.hpp"
 #include "Coordinate.hpp"
+#include "constants.h"
 
 namespace Managers
 {

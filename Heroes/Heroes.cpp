@@ -3,6 +3,6 @@
 
 int main()
 {
-    States::Game game = States::Game();
+    States::Game game;
     return 0;
 }

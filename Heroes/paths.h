@@ -18,3 +18,5 @@
 #define SKELETON_ATTACK_PATH "assets/enemies/skeleton/Attack.png"
 #define SKELETON_DEATH_PATH "assets/enemies/skeleton/Death.png"
 #define SKELETON_TAKEHIT_PATH "assets/enemies/skeleton/Take_Hit.png"
+
+#define BACKGROUND_PATH "assets/background_cave.png"

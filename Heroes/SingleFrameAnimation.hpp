@@ -3,7 +3,7 @@
 
 namespace GraphicalElements
 {
-	class SingleFrameAnimation : Animation
+	class SingleFrameAnimation : public Animation
 	{
 	private:
 		sf::Texture* texture;

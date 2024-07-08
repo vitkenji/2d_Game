@@ -28,7 +28,7 @@ namespace GraphicalElements
 		MultiFrameAnimation();
 		~MultiFrameAnimation();
 		void addNewAnimation(Animation_ID ID, const char* path, const unsigned int imageCount, float switchTime);
-		void update(Animation_ID ID, bool facingLeft, Math::CoordinateF position, const float dt);
+		void update(Animation_ID ID, bool facingRight, Math::CoordinateF position, const float dt);
 
 	};
 }

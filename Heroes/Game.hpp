@@ -3,7 +3,7 @@
 #include "SFML/Graphics.hpp"
 #include "paths.h"
 #include "constants.h"
-#include "MovingEntity.hpp"
+#include "Player.hpp"
 #include "GraphicManager.hpp"
 
 namespace States

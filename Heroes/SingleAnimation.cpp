@@ -21,7 +21,7 @@ namespace GraphicalElements
 
 	}
 
-	void SingleAnimation::update(float dt, bool facingLeft)
+	void SingleAnimation::update(float dt, bool facingRight)
 	{
 		totalTime += dt;
 		if (totalTime >= switchTime)
@@ -34,7 +34,7 @@ namespace GraphicalElements
 			}
 		}
 
-		if (!facingLeft)
+		if (!facingRight)
 		{
 			rectangleSize.left = (currentImage + 1) * abs(rectangleSize.width);
 			rectangleSize.width = -abs(rectangleSize.width);

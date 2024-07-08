@@ -40,6 +40,15 @@
     <Filter Include="Arquivos de Origem\Entities">
       <UniqueIdentifier>{f87ba157-bd25-4b81-860e-59f79f0a3aa5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Entities\Characters">
+      <UniqueIdentifier>{649738c5-9966-453a-866d-d02b96e20db1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Entities\Characters\Enemies">
+      <UniqueIdentifier>{390fbacf-66be-44e2-b7a5-a9d6dda9c83a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Entities\Characters">
+      <UniqueIdentifier>{0c20dc79-b1bf-4e21-9ccc-5e96c9d68902}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Heroes.cpp">
@@ -71,6 +80,12 @@
     </ClCompile>
     <ClCompile Include="MovingEntity.cpp">
       <Filter>Arquivos de Origem\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Arquivos de Origem\Entities\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Arquivos de Origem\Entities\Characters</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +124,12 @@
     </ClInclude>
     <ClInclude Include="MovingEntity.hpp">
       <Filter>Arquivos de Cabeçalho\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.hpp">
+      <Filter>Arquivos de Cabeçalho\Entities\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.hpp">
+      <Filter>Arquivos de Cabeçalho\Entities\Characters</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

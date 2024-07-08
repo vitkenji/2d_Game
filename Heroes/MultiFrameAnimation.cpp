@@ -34,14 +34,14 @@ namespace GraphicalElements
 
 	}
 
-	void MultiFrameAnimation::update(Animation_ID ID, bool facingLeft, Math::CoordinateF position, const float dt)
+	void MultiFrameAnimation::update(Animation_ID ID, bool facingRight, Math::CoordinateF position, const float dt)
 	{
 		if (currentID != ID)
 		{
 			currentID = ID;
 			animationMap[currentID]->reset();
 		}
-		animationMap[currentID]->update(dt, facingLeft);
+		animationMap[currentID]->update(dt, facingRight);
 		body.setPosition(sf::Vector2f(position.x, position.y));
 		body.setTextureRect(animationMap[currentID]->getRectangleSize());
 		body.setTexture(animationMap[currentID]->getTexture());

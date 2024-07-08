@@ -15,7 +15,7 @@ namespace States
 
 	void Game::execute()
 	{
-        Entities::MovingEntity player = Entities::MovingEntity(Math::CoordinateF(50, 50), Math::CoordinateF(100, 100), Entities::player);
+        Entities::Characters::Player player;
 
         while (pGraphic->isWindowOpen())
         {
@@ -33,7 +33,7 @@ namespace States
             else {
                 dt -= TICK_RATE;
             }
-            player.sprite.update(GraphicalElements::idle, false, Math::CoordinateF(50, 50), dt);
+            player.sprite.update(GraphicalElements::fall, true, Math::CoordinateF(50, 50), dt);
             player.sprite.render();
             pGraphic->display();
             pGraphic->clear();

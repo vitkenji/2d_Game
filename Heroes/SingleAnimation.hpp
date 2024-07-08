@@ -16,7 +16,7 @@ namespace GraphicalElements
 	public:
 		SingleAnimation(const char* path, const unsigned int imageCount, const float switchTime);
 		~SingleAnimation();
-		void update(float dt, bool facingLeft);
+		void update(float dt, bool facingRight);
 		void reset();
 		sf::IntRect getRectangleSize() const;
 		sf::Texture* getTexture() const;

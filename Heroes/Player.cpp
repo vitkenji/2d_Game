@@ -32,12 +32,15 @@ namespace Entities
 
 		void Player::walk(bool right)
 		{
+			if (right) { velocity.x = PLAYER_VELOCITY_X; }
+			else { velocity.x = -PLAYER_VELOCITY_X; }
 			setFacingRight(right);
 			isWalking = true;
 		}
 
 		void Player::sprint()
 		{
+			velocity.x *= 1.5;
 			isSprinting = true;
 		}
 
@@ -49,22 +52,22 @@ namespace Entities
 
 		void Player::stopWalking()
 		{
-			isWalking = false;
+			this->isWalking = false;
 		}
 
 		void Player::stopJumping()
 		{
-			isJumping = false;
+			this->isJumping = false;
 		}
 
 		void Player::stopAttacking()
 		{
-			isAttacking = false;
+			this->isAttacking = false;
 		}
 
 		void Player::stopSprinting()
 		{
-			isSprinting = false;
+			this->isSprinting = false;
 		}
 
 
@@ -72,25 +75,45 @@ namespace Entities
 		{
 			if(isAttacking)
 			{
-				sprite.update(GraphicalElements::attack, isFacingRight(), Math::CoordinateF(50, 50), dt);
+				sprite.update(GraphicalElements::attack, isFacingRight(), position, dt);
 			}
 			else if (isJumping)
 			{
-				sprite.update(GraphicalElements::jump, isFacingRight(), Math::CoordinateF(50, 50), dt);
+				sprite.update(GraphicalElements::jump, isFacingRight(), position, dt);
 			}
 			else if (isWalking)
 			{
-				sprite.update(GraphicalElements::run, isFacingRight(), Math::CoordinateF(50, 50), dt);
+				sprite.update(GraphicalElements::run, isFacingRight(), position, dt);
 			}
 			else
 			{
-				sprite.update(GraphicalElements::idle, isFacingRight(), Math::CoordinateF(50, 50), dt);
+				sprite.update(GraphicalElements::idle, isFacingRight(), position, dt);
 			}
 		}
 
 		void Player::update(const float dt)
 		{
+			if (isWalking)
+			{
+				position.x += velocity.x * dt;
+			}
+			limitSprint();
+			
 			updateSprite(dt);
+		}
+
+		void Player::limitSprint()
+		{
+			if (velocity.x >= 100)
+			{
+				velocity.x = 100;
+				//stopWalking();
+			}
+			else if (velocity.x <= -100)
+			{
+				velocity.x = -100;
+				//stopWalking();
+			}
 		}
 
 	}

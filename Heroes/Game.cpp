@@ -2,9 +2,9 @@
 
 namespace States
 {
-	Game::Game() : clock(), dt(0), pGraphic(Managers::GraphicManager::getInstance())
+	Game::Game() : clock(), dt(0), pGraphic(Managers::GraphicManager::getInstance()), pEvent(Managers::EventManager::getInstance())
 	{
-        background.initialize(BACKGROUND_PATH, Math::CoordinateF(850, 500), Math::CoordinateF(WIDTH + 30, HEIGHT + 20));
+        background.initialize(BACKGROUND_PATH, Math::CoordinateF(600, 400), Math::CoordinateF(WIDTH + 30, HEIGHT + 20));
         pPlayerControl = new Control::PlayerControl(&player);
 		clock.restart();
 		execute();
@@ -24,22 +24,20 @@ namespace States
             pGraphic->clear();
             background.render();
 
-            sf::Event event;
-            while (pGraphic->getWindow()->pollEvent(event))
-            {
-                if (event.type == sf::Event::Closed)
-                    pGraphic->closeWindow();
-            }
+            pEvent->pollEvents();
 
-            if (dt < TICK_RATE) {
+            if (dt < TICK_RATE)
+            {
                 dt += clock.getElapsedTime().asSeconds();
                 clock.restart();
             }
-            else {
+            else
+            {
                 dt -= TICK_RATE;
             }
+
             player.sprite.update(GraphicalElements::idle, true, Math::CoordinateF(50, 50), dt);
-            player.sprite.render();
+            player.render();
             pGraphic->display();
             
         }

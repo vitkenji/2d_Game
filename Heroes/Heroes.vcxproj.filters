@@ -102,6 +102,9 @@
     <ClCompile Include="PlayerControl.cpp">
       <Filter>Arquivos de Origem\Control</Filter>
     </ClCompile>
+    <ClCompile Include="EventManager.cpp">
+      <Filter>Arquivos de Origem\Managers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicManager.hpp">
@@ -154,6 +157,9 @@
     </ClInclude>
     <ClInclude Include="PlayerControl.hpp">
       <Filter>Arquivos de Cabeçalho\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="EventManager.hpp">
+      <Filter>Arquivos de Cabeçalho\Managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

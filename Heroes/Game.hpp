@@ -7,6 +7,7 @@
 #include "GraphicManager.hpp"
 #include "PlayerControl.hpp"
 #include "SingleFrameAnimation.hpp"
+#include "EventManager.hpp"
 
 namespace States
 {
@@ -16,6 +17,7 @@ namespace States
 		sf::Clock clock;
 		float dt;
 		Managers::GraphicManager* pGraphic;
+		Managers::EventManager* pEvent;
 		Entities::Characters::Player player;
 		Control::PlayerControl* pPlayerControl;
 		GraphicalElements::SingleFrameAnimation background;

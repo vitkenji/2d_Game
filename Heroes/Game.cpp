@@ -36,7 +36,7 @@ namespace States
                 dt -= TICK_RATE;
             }
 
-            player.sprite.update(GraphicalElements::idle, true, Math::CoordinateF(50, 50), dt);
+            player.update(dt);
             player.render();
             pGraphic->display();
             

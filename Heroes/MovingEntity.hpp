@@ -9,7 +9,9 @@ namespace Entities
 	{
 	public:
 		GraphicalElements::MultiFrameAnimation sprite;
-	
+		Math::CoordinateF velocity;
+		Math::CoordinateF acceleration;
+
 	public:
 		MovingEntity(Math::CoordinateF position, Math::CoordinateF size, ID id);
 		~MovingEntity();

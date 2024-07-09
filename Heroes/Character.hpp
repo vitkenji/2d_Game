@@ -9,10 +9,14 @@ namespace Entities
 		{
 		protected:
 			int life;
+			int damage;
+
 
 		public:
 			Character(Math::CoordinateF position, Math::CoordinateF size, ID id);
 			~Character();
+
+			void restartSprite(const float dt, float animationTime);
 		
 		};
 	}

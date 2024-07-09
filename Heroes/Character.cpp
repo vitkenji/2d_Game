@@ -9,8 +9,14 @@ namespace Entities
 
 		}
 
-		Character::~Character(){}
+		Character::~Character()
+		{
+		}
 
+		void Character::restartSprite(const float dt, float animationTime)
+		{
+
+		}
 
 	}
 }

@@ -1,3 +1,4 @@
-#define WIDTH 1720
-#define HEIGHT 1080
+#define WIDTH 1200
+#define HEIGHT 800
 #define TICK_RATE 0.0078125
+#define GRAVITY 9.81

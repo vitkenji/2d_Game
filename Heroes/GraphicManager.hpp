@@ -13,7 +13,7 @@ namespace Managers
 		sf::View view;
 		std::map<const char*, sf::Texture*> textureMap;
 		std::map<const char*, sf::Font*> fontMap;
-		static Managers::GraphicManager* instance;
+		static GraphicManager* instance;
 
 		GraphicManager();
 

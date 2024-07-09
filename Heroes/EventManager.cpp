@@ -37,10 +37,12 @@ namespace Managers
 			else if (event.type == sf::Event::KeyPressed)
 			{
 				pInput->handleKeyPressed(event.key.code);
+				
 			}
 			else if (event.type == sf::Event::KeyReleased)
 			{
 				pInput->handleKeyReleased(event.key.code);
+			
 			}
 
 		}

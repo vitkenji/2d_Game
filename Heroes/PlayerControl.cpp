@@ -26,7 +26,7 @@ namespace Control
 		if (key == "Space") { pPlayer->attack(); }
 		else if (key == "W") { pPlayer->jump(); }
 		else if (key == "D") { pPlayer->walk(); }
-		else if (key == "A") { pPlayer->walk();}
+		else if (key == "A") { pPlayer->walk(); }
 		else if (key == "Shift") { pPlayer->sprint(); }
 
 	}
@@ -35,11 +35,12 @@ namespace Control
 	{
 		keysPressed[key] == false;
 
-		if (key == "Space") { pPlayer->attack(); }
-		else if (key == "W") { pPlayer->jump(); }
-		else if (key == "D") { pPlayer->walk(); }
-		else if (key == "A") { pPlayer->walk(); }
-		else if (key == "Shift") { pPlayer->sprint(); }
+		if (key == "Space") { pPlayer->stopAttacking(); }
+		else if (key == "W") { pPlayer->stopJumping(); }
+		else if (key == "D") { pPlayer->stopWalking(); }
+		else if (key == "A") { pPlayer->stopWalking(); }
+		else if (key == "Shift") { pPlayer->stopSprinting(); }
+
 	}
 
 	void PlayerControl::setPlayer(Entities::Characters::Player* pPlayer)

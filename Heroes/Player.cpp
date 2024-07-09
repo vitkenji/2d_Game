@@ -45,6 +45,27 @@ namespace Entities
 			canJump = false;
 		}
 
+		void Player::stopWalking()
+		{
+			isWalking = false;
+		}
+
+		void Player::stopJumping()
+		{
+			isJumping = false;
+		}
+
+		void Player::stopAttacking()
+		{
+			isAttacking = false;
+		}
+
+		void Player::stopSprinting()
+		{
+			isSprinting = false;
+		}
+
+
 		void Player::updateSprite(const float dt)
 		{
 			if(isAttacking)

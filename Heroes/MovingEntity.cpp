@@ -15,4 +15,14 @@ namespace Entities
 		sprite.render();
 	}
 
+	void MovingEntity::setFacingRight(bool right)
+	{
+		facingRight = right;
+	}
+
+	bool MovingEntity::isFacingRight()
+	{
+		return facingRight;
+	}
+
 }

@@ -21,7 +21,7 @@ namespace Entities
 
 			void attack();
 			void jump();
-			void walk();
+			void walk(bool right);
 			void sprint();
 
 			void stopWalking();

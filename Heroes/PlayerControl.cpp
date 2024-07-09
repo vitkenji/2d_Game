@@ -25,8 +25,8 @@ namespace Control
 
 		if (key == "Space") { pPlayer->attack(); }
 		else if (key == "W") { pPlayer->jump(); }
-		else if (key == "D") { pPlayer->walk(); }
-		else if (key == "A") { pPlayer->walk(); }
+		else if (key == "D") { pPlayer->walk(true); }
+		else if (key == "A") { pPlayer->walk(false); }
 		else if (key == "Shift") { pPlayer->sprint(); }
 
 	}

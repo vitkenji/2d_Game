@@ -8,6 +8,7 @@ namespace Entities
 			isWalking(false), isSprinting(false), isJumping(false), isAttacking(false), canJump(true)
 		{
 			addAnimations();
+			setFacingRight(true);
 		}
 
 		Player::~Player()
@@ -29,8 +30,9 @@ namespace Entities
 			isAttacking = true;
 		}
 
-		void Player::walk()
+		void Player::walk(bool right)
 		{
+			setFacingRight(right);
 			isWalking = true;
 		}
 
@@ -70,19 +72,19 @@ namespace Entities
 		{
 			if(isAttacking)
 			{
-				sprite.update(GraphicalElements::attack, true, Math::CoordinateF(50, 50), dt);
+				sprite.update(GraphicalElements::attack, isFacingRight(), Math::CoordinateF(50, 50), dt);
 			}
 			else if (isJumping)
 			{
-				sprite.update(GraphicalElements::jump, true, Math::CoordinateF(50, 50), dt);
+				sprite.update(GraphicalElements::jump, isFacingRight(), Math::CoordinateF(50, 50), dt);
 			}
 			else if (isWalking)
 			{
-				sprite.update(GraphicalElements::run, true, Math::CoordinateF(50, 50), dt);
+				sprite.update(GraphicalElements::run, isFacingRight(), Math::CoordinateF(50, 50), dt);
 			}
 			else
 			{
-				sprite.update(GraphicalElements::idle, true, Math::CoordinateF(50, 50), dt);
+				sprite.update(GraphicalElements::idle, isFacingRight(), Math::CoordinateF(50, 50), dt);
 			}
 		}
 

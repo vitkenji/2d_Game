@@ -6,11 +6,8 @@ namespace Entities
 	{
 
 	}
-
-	StaticEntity::~StaticEntity()
-	{
-
-	}
+	
+	StaticEntity::~StaticEntity(){}
 
 	void StaticEntity::render()
 	{

@@ -120,9 +120,6 @@
     <ClCompile Include="EventManager.cpp">
       <Filter>Arquivos de Origem\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="StaticEntity.hpp">
-      <Filter>Arquivos de Cabeçalho\Entities</Filter>
-    </ClCompile>
     <ClCompile Include="StaticEntity.cpp">
       <Filter>Arquivos de Origem\Entities</Filter>
     </ClCompile>
@@ -137,6 +134,12 @@
     </ClCompile>
     <ClCompile Include="EntityList.cpp">
       <Filter>Arquivos de Origem\List</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>Arquivos de Origem\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform.cpp">
+      <Filter>Arquivos de Origem\Entities\Obstacles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +211,15 @@
     </ClInclude>
     <ClInclude Include="EntityList.hpp">
       <Filter>Arquivos de Cabeçalho\List</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.hpp">
+      <Filter>Arquivos de Cabeçalho\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticEntity.hpp">
+      <Filter>Arquivos de Cabeçalho\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform.hpp">
+      <Filter>Arquivos de Cabeçalho\Entities\Obstacles</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

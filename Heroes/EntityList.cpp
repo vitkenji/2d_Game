@@ -63,8 +63,4 @@ namespace List
 		entitiesList.clear();
 
 	}
-
-
-
-
 }

@@ -11,11 +11,10 @@ namespace Entities
 
 	public:
 		StaticEntity(Math::CoordinateF position, Math::CoordinateF size, ID id);
-		~StaticEntity();
-
+		virtual ~StaticEntity();
 		void render();
+		virtual void update(const float dt){}
 		
-		void update(const float dt){}
 
 	};
 }

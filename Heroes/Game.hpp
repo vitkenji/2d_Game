@@ -11,6 +11,7 @@
 #include "Skeleton.hpp"
 #include "Goblin.hpp"
 #include "EntityList.hpp"
+#include "Platform.hpp"
 
 namespace States
 {

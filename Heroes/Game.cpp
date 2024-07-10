@@ -13,6 +13,14 @@ namespace States
         movingEntitiesList.addEntity(&skeleton);
         movingEntitiesList.addEntity(&goblin);
 
+        
+        for (int i = 0; i < 8; i++)
+        {
+            Entities::Obstacles::Platform* platform = new Entities::Obstacles::Platform(Math::CoordinateF(0 + 192 * i, 780));
+            staticEntitiesList.addEntity(platform);
+        }
+        
+
 		execute();
 
 	}
@@ -47,6 +55,13 @@ namespace States
                 movingEntitiesList[i]->update(dt);
                 movingEntitiesList[i]->render();
             }
+            
+            for (int i = 0; i < staticEntitiesList.getSize(); i++)
+            {
+            
+                staticEntitiesList[i]->render();
+            }
+
             pGraphic->display();
             
         }

@@ -9,7 +9,7 @@
 //enemies
 #define GOBLIN_IDLE_PATH "assets/enemies/goblin/Idle.png"
 #define GOBLIN_RUN_PATH "assets/enemies/goblin/Run.png"
-#define GOBLIN_ATTACK_PATH "assets/enemies/goblin/Attack3.png"
+#define GOBLIN_ATTACK_PATH "assets/enemies/goblin/Attack.png"
 #define GOBLIN_DEATH_PATH "assets/enemies/goblin/death.png"
 #define GOBLIN_TAKEHIT_PATH "assets/enemies/goblin/TakeHit.png"
 

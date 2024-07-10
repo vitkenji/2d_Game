@@ -126,6 +126,9 @@
     <ClCompile Include="Skeleton.cpp">
       <Filter>Arquivos de Origem\Entities\Characters\Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="Goblin.cpp">
+      <Filter>Arquivos de Origem\Entities\Characters\Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicManager.hpp">
@@ -186,6 +189,9 @@
       <Filter>Arquivos de Cabeçalho\Entities\Characters\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.hpp">
+      <Filter>Arquivos de Cabeçalho\Entities\Characters\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Goblin.hpp">
       <Filter>Arquivos de Cabeçalho\Entities\Characters\Enemies</Filter>
     </ClInclude>
   </ItemGroup>

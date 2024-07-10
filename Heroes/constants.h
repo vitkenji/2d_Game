@@ -18,3 +18,7 @@
 #define SKELETON_SIZE_X 45
 #define SKELETON_SIZE_Y 50
 
+//GOBLIN
+#define GOBLIN_SIZE_X 45
+#define GOBLIN_SIZE_Y 50
+

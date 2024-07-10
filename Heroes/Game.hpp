@@ -9,6 +9,7 @@
 #include "SingleFrameAnimation.hpp"
 #include "EventManager.hpp"
 #include "Skeleton.hpp"
+#include "Goblin.hpp"
 
 namespace States
 {
@@ -21,6 +22,7 @@ namespace States
 		Managers::EventManager* pEvent;
 		Entities::Characters::Player player;
 		Entities::Characters::Enemies::Skeleton skeleton;
+		Entities::Characters::Enemies::Goblin goblin;
 		Control::PlayerControl* pPlayerControl;
 		GraphicalElements::SingleFrameAnimation background;
 		

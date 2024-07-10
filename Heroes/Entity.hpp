@@ -7,7 +7,8 @@ namespace Entities
 	enum ID {
 		player = 0,
 		platform,
-		skeleton
+		skeleton,
+		goblin
 	};
 
 	class Entity : public Ent

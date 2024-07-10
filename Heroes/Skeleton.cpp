@@ -33,7 +33,7 @@ namespace Entities
 
 			void Skeleton::updateSprite(const float dt)
 			{
-				sprite.update(GraphicalElements::takeHit, isFacingRight(), Math::CoordinateF(100,50), dt);
+				sprite.update(GraphicalElements::idle, isFacingRight(), Math::CoordinateF(100,50), dt);
 
 			}
 

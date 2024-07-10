@@ -6,7 +6,7 @@ namespace Entities
 {
 	class MovingEntity : public Entity
 	{
-	public:
+	protected:
 		GraphicalElements::MultiFrameAnimation sprite;
 		Math::CoordinateF velocity;
 		Math::CoordinateF acceleration;

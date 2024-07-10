@@ -1,6 +1,5 @@
 #pragma once
 #include "Enemy.hpp"
-#include "Player.hpp"
 
 namespace Entities
 {
@@ -8,14 +7,12 @@ namespace Entities
 	{
 		namespace Enemies
 		{
-			class Skeleton : public Enemy
+			class Goblin : public Enemy
 			{
 			private:
-				Player* pPlayer;
-
 			public:
-				Skeleton(Math::CoordinateF position);
-				~Skeleton();
+				Goblin(Math::CoordinateF position);
+				~Goblin();
 				void addAnimations();
 				void update(const float dt);
 				void updateSprite(const float dt);

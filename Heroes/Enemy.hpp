@@ -16,6 +16,7 @@ namespace Entities
 				~Enemy();
 
 				virtual void update(const float dt) = 0;
+				void collide(Entity* other, Math::CoordinateF intersection);
 
 			};
 		

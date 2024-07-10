@@ -28,6 +28,9 @@ namespace Entities
 
 			void Skeleton::update(const float dt)
 			{
+				position.y += velocity.y + (GRAVITY * dt * dt) / 2.0f;
+				velocity.y += GRAVITY * dt;
+
 				updateSprite(dt);
 			}
 

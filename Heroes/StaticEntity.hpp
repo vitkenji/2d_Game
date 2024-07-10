@@ -14,7 +14,7 @@ namespace Entities
 		virtual ~StaticEntity();
 		void render();
 		virtual void update(const float dt){}
-		
+		void collide(Entity* other, Math::CoordinateF intersection);
 
 	};
 }

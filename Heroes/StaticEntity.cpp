@@ -13,4 +13,10 @@ namespace Entities
 	{
 		sprite.render();
 	}
+
+	void StaticEntity::collide(Entity* other, Math::CoordinateF intersection)
+	{
+
+	}
+
 }

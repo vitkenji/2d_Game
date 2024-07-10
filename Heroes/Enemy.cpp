@@ -15,6 +15,15 @@ namespace Entities
 			{
 
 			}
+
+			void Enemy::collide(Entity* other, Math::CoordinateF intersection)
+			{
+				if (other->getID() == platform)
+				{
+					
+					velocity.y = 0;
+				}
+			}
 		}
 	}
 }

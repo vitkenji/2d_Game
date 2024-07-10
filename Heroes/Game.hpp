@@ -12,6 +12,7 @@
 #include "Goblin.hpp"
 #include "EntityList.hpp"
 #include "Platform.hpp"
+#include "CollisionManager.hpp"
 
 namespace States
 {
@@ -22,14 +23,18 @@ namespace States
 		float dt;
 		Managers::GraphicManager* pGraphic;
 		Managers::EventManager* pEvent;
+		Managers::CollisionManager collisionManager;
+
 		Entities::Characters::Player player;
 		Entities::Characters::Enemies::Skeleton skeleton;
 		Entities::Characters::Enemies::Goblin goblin;
+
 		Control::PlayerControl* pPlayerControl;
 		GraphicalElements::SingleFrameAnimation background;
+
 		List::EntityList staticEntitiesList;
 		List::EntityList movingEntitiesList;
-
+	
 		
 	public:
 		Game();

@@ -7,6 +7,7 @@ namespace Entities
 		Player::Player() : Character(Math::CoordinateF(50, 50), Math::CoordinateF(50, 50),ID::player),
 			isWalking(false), isSprinting(false), isJumping(false), isAttacking(false), canJump(true)
 		{
+			velocity.y = 0.5;
 			addAnimations();
 			setFacingRight(true);
 		}
@@ -95,6 +96,12 @@ namespace Entities
 
 		void Player::update(const float dt)
 		{
+			if (velocity.y != 0)
+			{
+				position.y += velocity.y + (GRAVITY * dt * dt) / 2.0f;
+				velocity.y += GRAVITY * dt;
+			}
+
 			if (isWalking)
 			{
 				position.x += velocity.x * dt;
@@ -117,6 +124,16 @@ namespace Entities
 				//stopWalking();
 			}
 		}
+
+		void Player::collide(Entity* other, Math::CoordinateF intersection)
+		{
+			if (other->getID() == platform)
+			{
+
+				velocity.y = 0;
+			}
+		}
+
 
 	}
 }

@@ -1,5 +1,7 @@
 #pragma once
 #include "EntityList.hpp"
+#include "MovingEntity.hpp"
+#include "StaticEntity.hpp"
 
 namespace Managers
 {

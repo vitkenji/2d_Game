@@ -33,6 +33,7 @@ namespace Entities
 			void addAnimations();
 			void updateSprite(const float dt);
 			void update(const float dt);
+			void collide(Entity* other, Math::CoordinateF intersection);
 
 		};
 	}

@@ -6,7 +6,7 @@ namespace Entities
 	{
 		Character::Character(Math::CoordinateF position, Math::CoordinateF size, ID id) : MovingEntity(position, size, id)
 		{
-
+			acceleration = Math::CoordinateF(0, GRAVITY);
 		}
 
 		Character::~Character()

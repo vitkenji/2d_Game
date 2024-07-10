@@ -20,3 +20,5 @@
 #define SKELETON_TAKEHIT_PATH "assets/enemies/skeleton/Take_Hit.png"
 
 #define BACKGROUND_PATH "assets/background_cave.png"
+
+#define PLATFORM_PATH "assets/obstacles/platform1.png"

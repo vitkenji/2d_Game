@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Ent.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EventManager.cpp" />
@@ -149,11 +150,15 @@
     <ClCompile Include="PlayerControl.cpp" />
     <ClCompile Include="SingleAnimation.cpp" />
     <ClCompile Include="SingleFrameAnimation.cpp" />
+    <ClCompile Include="Skeleton.cpp" />
+    <ClCompile Include="StaticEntity.cpp" />
+    <ClCompile Include="StaticEntity.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.hpp" />
     <ClInclude Include="Character.hpp" />
     <ClInclude Include="Coordinate.hpp" />
+    <ClInclude Include="Enemy.hpp" />
     <ClInclude Include="Ent.hpp" />
     <ClInclude Include="Entity.hpp" />
     <ClInclude Include="EventManager.hpp" />
@@ -169,6 +174,7 @@
     <ClInclude Include="PlayerControl.hpp" />
     <ClInclude Include="SingleAnimation.hpp" />
     <ClInclude Include="SingleFrameAnimation.hpp" />
+    <ClInclude Include="Skeleton.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

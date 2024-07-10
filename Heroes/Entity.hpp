@@ -5,7 +5,9 @@
 namespace Entities
 {
 	enum ID {
-		player = 0
+		player = 0,
+		platform,
+		skeleton
 	};
 
 	class Entity : public Ent

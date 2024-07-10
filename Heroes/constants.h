@@ -3,7 +3,6 @@
 #define HEIGHT 800
 #define TICK_RATE 0.0078125
 
-
 #define GRAVITY 9.81
 
 //PLAYER
@@ -11,5 +10,11 @@
 #define PLAYER_SIZE_Y 64
 #define PLAYER_VELOCITY_X 20
 
+//PLATFORM
+#define PLATFORM_WIDTH 192
+#define PLATFORM_HEIGHT 48
 
+//SKELETON
+#define SKELETON_SIZE_X 45
+#define SKELETON_SIZE_Y 50
 

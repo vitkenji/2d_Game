@@ -2,7 +2,7 @@
 
 namespace States
 {
-	Game::Game() : clock(), dt(0), pGraphic(Managers::GraphicManager::getInstance()), pEvent(Managers::EventManager::getInstance())
+	Game::Game() : clock(), dt(0), pGraphic(Managers::GraphicManager::getInstance()), pEvent(Managers::EventManager::getInstance()), skeleton(Math::CoordinateF(100,50))
 	{
         background.initialize(BACKGROUND_PATH, Math::CoordinateF(600, 400), Math::CoordinateF(WIDTH + 30, HEIGHT + 20));
         pPlayerControl = new Control::PlayerControl(&player);
@@ -38,6 +38,8 @@ namespace States
 
             player.update(dt);
             player.render();
+            skeleton.update(dt);
+            skeleton.render();
             pGraphic->display();
             
         }

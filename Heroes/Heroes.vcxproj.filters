@@ -55,6 +55,15 @@
     <Filter Include="Arquivos de Origem\Control">
       <UniqueIdentifier>{e0a7e80f-da83-407b-9d22-a2e963366e10}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Entities\Obstacles">
+      <UniqueIdentifier>{83b40cb0-eddb-403d-b604-29f75e1bdcba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Entities\Obstacles">
+      <UniqueIdentifier>{d3e374fd-6e4e-4663-8afd-43d178e6e85b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Entities\Characters\Enemies">
+      <UniqueIdentifier>{9fde7281-3f0a-4567-95fd-14f72b09494d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Heroes.cpp">
@@ -104,6 +113,18 @@
     </ClCompile>
     <ClCompile Include="EventManager.cpp">
       <Filter>Arquivos de Origem\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticEntity.hpp">
+      <Filter>Arquivos de Cabeçalho\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticEntity.cpp">
+      <Filter>Arquivos de Origem\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Arquivos de Origem\Entities\Characters\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Skeleton.cpp">
+      <Filter>Arquivos de Origem\Entities\Characters\Enemies</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +181,12 @@
     </ClInclude>
     <ClInclude Include="EventManager.hpp">
       <Filter>Arquivos de Cabeçalho\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Skeleton.hpp">
+      <Filter>Arquivos de Cabeçalho\Entities\Characters\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.hpp">
+      <Filter>Arquivos de Cabeçalho\Entities\Characters\Enemies</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -8,6 +8,7 @@
 #include "PlayerControl.hpp"
 #include "SingleFrameAnimation.hpp"
 #include "EventManager.hpp"
+#include "Skeleton.hpp"
 
 namespace States
 {
@@ -19,6 +20,7 @@ namespace States
 		Managers::GraphicManager* pGraphic;
 		Managers::EventManager* pEvent;
 		Entities::Characters::Player player;
+		Entities::Characters::Enemies::Skeleton skeleton;
 		Control::PlayerControl* pPlayerControl;
 		GraphicalElements::SingleFrameAnimation background;
 		

@@ -1,7 +1,6 @@
 #pragma once
 #include "Entity.hpp"
 #include "MultiFrameAnimation.hpp"
-#include "paths.h"
 
 namespace Entities
 {

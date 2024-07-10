@@ -168,6 +168,7 @@
     <ClInclude Include="GraphicManager.hpp" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="InputManager.hpp" />
+    <ClInclude Include="List.hpp" />
     <ClInclude Include="MovingEntity.hpp" />
     <ClInclude Include="MultiFrameAnimation.hpp" />
     <ClInclude Include="Observer.hpp" />

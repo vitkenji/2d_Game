@@ -32,7 +32,7 @@ namespace Entities
 
 			void Goblin::updateSprite(const float dt)
 			{
-				sprite.update(GraphicalElements::death, isFacingRight(), Math::CoordinateF(150, 50), dt);
+				sprite.update(GraphicalElements::idle, isFacingRight(), Math::CoordinateF(150, 50), dt);
 			}
 		}
 	}

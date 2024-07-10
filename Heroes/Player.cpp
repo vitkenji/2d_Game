@@ -27,6 +27,7 @@ namespace Entities
 
 		void Player::attack()
 		{
+			isWalking = false;
 			isAttacking = true;
 		}
 
@@ -36,6 +37,7 @@ namespace Entities
 			else { velocity.x = -PLAYER_VELOCITY_X; }
 			setFacingRight(right);
 			isWalking = true;
+			isAttacking = false;
 		}
 
 		void Player::sprint()

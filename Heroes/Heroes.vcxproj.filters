@@ -67,6 +67,9 @@
     <Filter Include="Arquivos de Cabeçalho\List">
       <UniqueIdentifier>{fadc9a06-4687-44f7-848f-ce30da13e2b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arquivos de Origem\List">
+      <UniqueIdentifier>{a84f306d-a9fc-4080-9869-7629c0800f94}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Heroes.cpp">
@@ -131,6 +134,9 @@
     </ClCompile>
     <ClCompile Include="Goblin.cpp">
       <Filter>Arquivos de Origem\Entities\Characters\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityList.cpp">
+      <Filter>Arquivos de Origem\List</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +204,9 @@
       <Filter>Arquivos de Cabeçalho\Entities\Characters\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="List.hpp">
+      <Filter>Arquivos de Cabeçalho\List</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityList.hpp">
       <Filter>Arquivos de Cabeçalho\List</Filter>
     </ClInclude>
   </ItemGroup>

@@ -10,6 +10,7 @@
 #include "EventManager.hpp"
 #include "Skeleton.hpp"
 #include "Goblin.hpp"
+#include "EntityList.hpp"
 
 namespace States
 {
@@ -25,6 +26,9 @@ namespace States
 		Entities::Characters::Enemies::Goblin goblin;
 		Control::PlayerControl* pPlayerControl;
 		GraphicalElements::SingleFrameAnimation background;
+		List::EntityList staticEntitiesList;
+		List::EntityList movingEntitiesList;
+
 		
 	public:
 		Game();

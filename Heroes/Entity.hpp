@@ -24,5 +24,8 @@ namespace Entities
 		void setID(ID id);
 		ID getID() const;
 
+		virtual void render() = 0;
+		virtual void update(const float dt) = 0;
+
 	};
 }

@@ -8,6 +8,11 @@ namespace States
         background.initialize(BACKGROUND_PATH, Math::CoordinateF(600, 400), Math::CoordinateF(WIDTH + 30, HEIGHT + 20));
         pPlayerControl = new Control::PlayerControl(&player);
 		clock.restart();
+
+        movingEntitiesList.addEntity(&player);
+        movingEntitiesList.addEntity(&skeleton);
+        movingEntitiesList.addEntity(&goblin);
+
 		execute();
 
 	}
@@ -37,12 +42,11 @@ namespace States
                 dt -= TICK_RATE;
             }
 
-            player.update(dt);
-            player.render();
-            skeleton.update(dt);
-            skeleton.render();
-            goblin.update(dt);
-            goblin.render();
+            for (int i = 0; i < movingEntitiesList.getSize(); i++)
+            {
+                movingEntitiesList[i]->update(dt);
+                movingEntitiesList[i]->render();
+            }
             pGraphic->display();
             
         }

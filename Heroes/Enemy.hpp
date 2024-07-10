@@ -10,9 +10,13 @@ namespace Entities
 			class Enemy : public Character
 			{
 			protected:
+
 			public:
 				Enemy(Math::CoordinateF position, Math::CoordinateF size, ID id);
 				~Enemy();
+
+				virtual void update(const float dt) = 0;
+
 			};
 		
 		}

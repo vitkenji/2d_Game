@@ -15,9 +15,11 @@ namespace Entities
 	public:
 		MovingEntity(Math::CoordinateF position, Math::CoordinateF size, ID id);
 		~MovingEntity();
-		void render();
 		void setFacingRight(bool right);
 		bool isFacingRight();
+		void render();
+
+		virtual void update(const float dt) = 0;
 
 	};
 }

@@ -19,4 +19,6 @@ public:
 	Math::CoordinateF getPosition();
 	Math::CoordinateF getSize();
 
+	virtual void render() = 0;
+
 };

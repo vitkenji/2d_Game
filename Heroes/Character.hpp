@@ -17,7 +17,7 @@ namespace Entities
 			~Character();
 
 			void restartSprite(const float dt, float animationTime);
-		
+			virtual void update(const float dt) = 0;
 		};
 	}
 }

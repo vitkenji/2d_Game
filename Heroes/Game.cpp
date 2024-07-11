@@ -3,7 +3,7 @@
 namespace States
 {
 	Game::Game() : clock(), dt(0), pGraphic(Managers::GraphicManager::getInstance()), pEvent(Managers::EventManager::getInstance()), 
-        skeleton(Math::CoordinateF(100,50)), goblin(Math::CoordinateF(150, 50)), collisionManager(&movingEntitiesList, &staticEntitiesList)
+        skeleton(Math::CoordinateF(500,50)), goblin(Math::CoordinateF(650, 50)), collisionManager(&movingEntitiesList, &staticEntitiesList)
 	{
         background.initialize(BACKGROUND_PATH, Math::CoordinateF(600, 400), Math::CoordinateF(WIDTH + 30, HEIGHT + 20));
         pPlayerControl = new Control::PlayerControl(&player);
@@ -35,7 +35,7 @@ namespace States
 
         while (pGraphic->isWindowOpen())
         {
-            //std::cout << staticEntitiesList.getSize() << std::endl;
+           
             pGraphic->clear();
             background.render();
       

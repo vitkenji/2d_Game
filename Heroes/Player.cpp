@@ -53,7 +53,7 @@ namespace Entities
 			{
 				isJumping = true;
 				canJump = false;
-				velocity.y = -0.3;
+				velocity.y = -sqrt(2 * GRAVITY * PLAYER_JUMP_HEIGHT);
 			}
 		}
 
@@ -149,7 +149,26 @@ namespace Entities
 
 			if (other->getID() == skeleton || other->getID() == goblin)
 			{
-
+				if (intersection.x < 0.f)
+				{
+					if (velocity.x > 0)
+					{
+						position.x -= 2;
+					}
+					else if (velocity.x < 0)
+					{
+						position.x += 2;
+					}
+					velocity.x = 0;
+					
+				}
+				if (intersection.y < 0.f)
+				{
+					canJump = true;
+					isJumping = false;
+					velocity.y = 0;
+				
+				}
 			}
 		}
 

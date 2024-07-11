@@ -25,17 +25,19 @@ namespace Entities
 				sprite.addNewAnimation(GraphicalElements::death, GOBLIN_DEATH_PATH, 4, 1.7);
 			}
 
+			//maybe in enemy class
 			void Goblin::update(const float dt)
 			{
-				position.y += velocity.y + (GRAVITY * dt * dt) / 2.0f;
-				velocity.y += GRAVITY * dt;
+				position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
+				velocity.y += acceleration.y  * dt;
 
 				updateSprite(dt);
 			}
 
+			//maybe in enemy class
 			void Goblin::updateSprite(const float dt)
 			{
-				sprite.update(GraphicalElements::idle, isFacingRight(), Math::CoordinateF(150, 50), dt);
+				sprite.update(GraphicalElements::idle, isFacingRight(), this->position, dt);
 			}
 		}
 	}

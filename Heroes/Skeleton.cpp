@@ -26,17 +26,19 @@ namespace Entities
 
 			}
 
+			//maybe in enemy class
 			void Skeleton::update(const float dt)
 			{
-				position.y += velocity.y + (GRAVITY * dt * dt) / 2.0f;
-				velocity.y += GRAVITY * dt;
+				position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
+				velocity.y += acceleration.y * dt;
 
 				updateSprite(dt);
 			}
 
+			//maybe in enemy class
 			void Skeleton::updateSprite(const float dt)
 			{
-				sprite.update(GraphicalElements::idle, isFacingRight(), Math::CoordinateF(100,50), dt);
+				sprite.update(GraphicalElements::idle, isFacingRight(), this->position, dt);
 
 			}
 

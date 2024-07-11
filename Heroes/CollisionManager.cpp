@@ -16,7 +16,6 @@ namespace Managers
 
 	void CollisionManager::collide()
 	{
-		//static-moving
 		for (int i = 0; i < staticEntities->getSize(); i++)
 		{
 			Math::CoordinateF distance; Math::CoordinateF intersection; Math::CoordinateF length;
@@ -38,7 +37,6 @@ namespace Managers
 			}
 		}
 
-		//moving-moving
 		for (int i = 0; i < movingEntities->getSize(); i++)
 		{
 			Math::CoordinateF distance; Math::CoordinateF intersection; Math::CoordinateF length;

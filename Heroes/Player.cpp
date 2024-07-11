@@ -7,7 +7,7 @@ namespace Entities
 		Player::Player() : Character(Math::CoordinateF(50, 50), Math::CoordinateF(50, 50),ID::player),
 			isWalking(false), isSprinting(false), isJumping(false), isAttacking(false), canJump(true)
 		{
-			velocity.y = 0.5;
+			
 			addAnimations();
 			setFacingRight(true);
 		}
@@ -96,11 +96,10 @@ namespace Entities
 
 		void Player::update(const float dt)
 		{
-			if (velocity.y != 0)
-			{
-				position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
-				velocity.y += acceleration.y * dt;
-			}
+		
+			position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
+			velocity.y += acceleration.y * dt;
+			
 
 			if (isWalking)
 			{

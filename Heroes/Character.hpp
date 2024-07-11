@@ -13,14 +13,16 @@ namespace Entities
 			bool isTakingHit;
 			bool isWalking;
 			bool isAttacking;
+			float swordDistance;
 
 		public:
 			Character(Math::CoordinateF position, Math::CoordinateF size, ID id);
 			~Character();
 
+			float getSwordDistance();
+
 			void setIsAttacking(bool isAttacking);
 			bool getIsAttacking();
-			
 
 			void restartSprite(const float dt, float animationTime);
 			virtual void update(const float dt) = 0;

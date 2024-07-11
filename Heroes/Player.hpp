@@ -13,8 +13,7 @@ namespace Entities
 			bool isSprinting;
 			bool canJump;
 
-			int swordDistance;
-
+			float cooldown; //maybe in character
 		public:
 			Player();
 			~Player();

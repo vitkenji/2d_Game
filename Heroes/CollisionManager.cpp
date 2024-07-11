@@ -40,7 +40,7 @@ namespace Managers
 		for (int i = 0; i < movingEntities->getSize(); i++)
 		{
 			Math::CoordinateF distance; Math::CoordinateF intersection; Math::CoordinateF length;
-
+			int swordDistance;
 			for (int j = 0; j < movingEntities->getSize(); j++)
 			{
 

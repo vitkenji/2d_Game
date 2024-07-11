@@ -5,13 +5,18 @@ namespace Entities
 	namespace Characters
 	{
 		Character::Character(Math::CoordinateF position, Math::CoordinateF size, ID id) : MovingEntity(position, size, id), 
-			isWalking(false), isAttacking(false), isTakingHit(false)
+			isWalking(false), isAttacking(false), isTakingHit(false), swordDistance(0)
 		{
 			acceleration = Math::CoordinateF(0, GRAVITY);
 		}
 
 		Character::~Character()
 		{
+		}
+
+		float Character::getSwordDistance()
+		{
+			return this->swordDistance;
 		}
 
 		void Character::setIsAttacking(bool isAttacking)

@@ -5,9 +5,9 @@ namespace Entities
 	namespace Characters
 	{
 		Player::Player() : Character(Math::CoordinateF(50, 50), Math::CoordinateF(50, 50), ID::player),
-			isSprinting(false), isJumping(false), canJump(false), swordDistance(5)
+			isSprinting(false), isJumping(false), canJump(false), cooldown(0)
 		{
-			
+			swordDistance = 5;
 			addAnimations();
 			setFacingRight(true);
 		}
@@ -21,7 +21,7 @@ namespace Entities
 			sprite.addNewAnimation(GraphicalElements::idle, PLAYER_IDLE_PATH, 8, 0.9);
 			sprite.addNewAnimation(GraphicalElements::attack, PLAYER_ATTACK_PATH, 6, 0.9);
 			sprite.addNewAnimation(GraphicalElements::run, PLAYER_RUN_PATH, 8, 0.9);
-			sprite.addNewAnimation(GraphicalElements::takeHit, PLAYER_TAKEHIT_PATH, 4, 0.9);
+			sprite.addNewAnimation(GraphicalElements::takeHit, PLAYER_TAKEHIT_PATH, 4, 1);
 			sprite.addNewAnimation(GraphicalElements::jump, PLAYER_JUMP_PATH, 2, 1);
 			sprite.addNewAnimation(GraphicalElements::fall, PLAYER_FALL_PATH, 2, 1);
 		}
@@ -119,6 +119,18 @@ namespace Entities
 
 		void Player::update(const float dt)
 		{
+			std::cout << isTakingHit << std::endl;
+			if (isTakingHit == true)
+			{
+				cooldown += dt;
+				if (cooldown >= 10)
+				{
+					cooldown = 0;
+					isTakingHit = false;
+				
+				}
+			}
+
 			position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
 			velocity.y += acceleration.y * dt;
 		

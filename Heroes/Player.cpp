@@ -4,8 +4,8 @@ namespace Entities
 {
 	namespace Characters
 	{
-		Player::Player() : Character(Math::CoordinateF(50, 50), Math::CoordinateF(50, 50),ID::player),
-			isWalking(false), isSprinting(false), isJumping(false), isAttacking(false), canJump(false)
+		Player::Player() : Character(Math::CoordinateF(50, 50), Math::CoordinateF(50, 50), ID::player),
+			isSprinting(false), isJumping(false), canJump(false), swordDistance(5)
 		{
 			
 			addAnimations();
@@ -39,6 +39,7 @@ namespace Entities
 			setFacingRight(right);
 			isWalking = true;
 			isAttacking = false;
+			
 		}
 
 		void Player::sprint()
@@ -60,6 +61,7 @@ namespace Entities
 		void Player::stopWalking()
 		{
 			this->isWalking = false;
+
 		}
 
 		void Player::stopJumping()
@@ -98,10 +100,17 @@ namespace Entities
 					sprite.update(GraphicalElements::idle, isFacingRight(), position, dt);
 				}
 			}
+
 			else if (isWalking)
 			{
 				sprite.update(GraphicalElements::run, isFacingRight(), position, dt);
 			}
+
+			else if (isTakingHit)
+			{
+				sprite.update(GraphicalElements::takeHit, isFacingRight(), position, dt);
+			}
+
 			else
 			{
 				sprite.update(GraphicalElements::idle, isFacingRight(), position, dt);
@@ -140,11 +149,33 @@ namespace Entities
 
 		void Player::collide(Entity* other, Math::CoordinateF intersection)
 		{
+			checkCollision(other, intersection);
 			if (other->getID() == platform)
 			{
 				canJump = true;
-				velocity.y = 0;
 				isJumping = false;
+			}
+
+			if (other->getID() == skeleton || other->getID() == goblin)
+			{
+				Character* pCharacter = dynamic_cast<Character*>(other);
+				if (intersection.y < 0.f)
+				{
+					canJump = true;
+					isJumping = false;
+				}
+				if (intersection.x < 0.f && pCharacter->getIsAttacking())
+				{
+					isTakingHit = true;
+				}
+			}
+		}
+
+		void Player::checkCollision(Entity* other, Math::CoordinateF intersection)
+		{
+			if (other->getID() == platform)
+			{		
+				velocity.y = 0;	
 			}
 
 			if (other->getID() == skeleton || other->getID() == goblin)
@@ -160,18 +191,13 @@ namespace Entities
 						position.x += 2;
 					}
 					velocity.x = 0;
-					
+
 				}
 				if (intersection.y < 0.f)
 				{
-					canJump = true;
-					isJumping = false;
 					velocity.y = 0;
-				
 				}
 			}
 		}
-
-
 	}
 }

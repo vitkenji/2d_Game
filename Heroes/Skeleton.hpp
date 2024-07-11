@@ -12,6 +12,7 @@ namespace Entities
 			{
 			private:
 				Player* pPlayer;
+				int swordDistance;
 
 			public:
 				Skeleton(Math::CoordinateF position);

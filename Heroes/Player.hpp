@@ -9,11 +9,11 @@ namespace Entities
 		class Player : public Character
 		{
 		protected:
-			bool isWalking;
 			bool isJumping;
 			bool isSprinting;
-			bool isAttacking;
 			bool canJump;
+
+			int swordDistance;
 
 		public:
 			Player();
@@ -33,8 +33,9 @@ namespace Entities
 			void addAnimations();
 			void updateSprite(const float dt);
 			void update(const float dt);
-			void collide(Entity* other, Math::CoordinateF intersection);
 
+			void collide(Entity* other, Math::CoordinateF intersection);
+			void checkCollision(Entity* other, Math::CoordinateF intersection);
 		};
 	}
 }

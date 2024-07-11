@@ -6,7 +6,7 @@ namespace Entities
 	{
 		namespace Enemies
 		{
-			Skeleton::Skeleton(Math::CoordinateF position) : Enemy(position, Math::CoordinateF(SKELETON_SIZE_X, SKELETON_SIZE_Y), skeleton)
+			Skeleton::Skeleton(Math::CoordinateF position) : Enemy(position, Math::CoordinateF(SKELETON_SIZE_X, SKELETON_SIZE_Y), skeleton), swordDistance(5)
 			{
 				addAnimations();
 			}
@@ -38,8 +38,18 @@ namespace Entities
 			//maybe in enemy class
 			void Skeleton::updateSprite(const float dt)
 			{
-				sprite.update(GraphicalElements::idle, isFacingRight(), this->position, dt);
-
+				if (isAttacking)
+				{
+					sprite.update(GraphicalElements::attack, isFacingRight(), this->position, dt);
+				}
+				else if (isWalking)
+				{
+					sprite.update(GraphicalElements::run, isFacingRight(), this->position, dt);
+				}
+				else
+				{
+					sprite.update(GraphicalElements::idle, isFacingRight(), this->position, dt);
+				}
 			}
 
 		}

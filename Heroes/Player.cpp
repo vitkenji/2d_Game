@@ -98,8 +98,8 @@ namespace Entities
 		{
 			if (velocity.y != 0)
 			{
-				position.y += velocity.y + (GRAVITY * dt * dt) / 2.0f;
-				velocity.y += GRAVITY * dt;
+				position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
+				velocity.y += acceleration.y * dt;
 			}
 
 			if (isWalking)

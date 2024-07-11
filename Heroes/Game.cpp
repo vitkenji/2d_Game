@@ -35,6 +35,7 @@ namespace States
 
         while (pGraphic->isWindowOpen())
         {
+            //std::cout << staticEntitiesList.getSize() << std::endl;
             pGraphic->clear();
             background.render();
       

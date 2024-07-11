@@ -10,42 +10,17 @@ namespace Managers
 
 	CollisionManager::~CollisionManager()
 	{
-
+		staticEntities = nullptr;
+		movingEntities = nullptr;
 	}
 
 	void CollisionManager::collide()
 	{
-		
-		for (int i = 0; i < movingEntities->getSize(); i++)
-		{
-			
-			Math::CoordinateF distance; Math::CoordinateF intersection; Math::CoordinateF length;
-			for (int j = 0; j < movingEntities->getSize(); j++)
-			{
-				distance.x = fabs((*movingEntities)[i]->getPosition().x - (*movingEntities)[j]->getPosition().x);
-				distance.y = fabs((*movingEntities)[i]->getPosition().y - (*movingEntities)[j]->getPosition().y);
-
-				length.x = ((*movingEntities)[i]->getSize().x / 2) + ((*movingEntities)[j]->getSize().x / 2);
-				length.y = ((*movingEntities)[i]->getSize().y / 2) + ((*movingEntities)[j]->getSize().y / 2);
-
-				if (length.x >= distance.x && length.y >= distance.y)
-				{
-					intersection = Math::CoordinateF(distance.x - length.x, distance.y - length.y);
-					if ((*movingEntities)[i] != (*movingEntities)[j])
-					{
-						std::cout << "collided" << std::endl;
-						(*movingEntities)[i]->collide((*movingEntities)[j], intersection);
-						(*movingEntities)[j]->collide((*movingEntities)[i], intersection);
-					}
-				}
-
-			}
-		}
-
+		//static-moving
 		for (int i = 0; i < staticEntities->getSize(); i++)
 		{
-
 			Math::CoordinateF distance; Math::CoordinateF intersection; Math::CoordinateF length;
+
 			for (int j = 0; j < movingEntities->getSize(); j++)
 			{
 				distance.x = fabs((*staticEntities)[i]->getPosition().x - (*movingEntities)[j]->getPosition().x);
@@ -56,17 +31,42 @@ namespace Managers
 
 				if (length.x >= distance.x && length.y >= distance.y)
 				{
-					std::cout << "collided" << std::endl;
 					intersection = Math::CoordinateF(distance.x - length.x, distance.y - length.y);
-					(*movingEntities)[i]->collide((*staticEntities)[j], intersection);
+					(*movingEntities)[j]->collide((*staticEntities)[i], intersection);
 
 				}
-
 			}
 		}
-		clear();
+
+		//moving-moving
+		for (int i = 0; i < movingEntities->getSize(); i++)
+		{
+			Math::CoordinateF distance; Math::CoordinateF intersection; Math::CoordinateF length;
+
+			for (int j = 0; j < movingEntities->getSize(); j++)
+			{
+
+				distance.x = fabs((*movingEntities)[i]->getPosition().x - (*movingEntities)[j]->getPosition().x);
+				distance.y = fabs((*movingEntities)[i]->getPosition().y - (*movingEntities)[j]->getPosition().y);
+
+				length.x = ((*movingEntities)[i]->getSize().x / 2) + ((*movingEntities)[j]->getSize().x / 2);
+				length.y = ((*movingEntities)[i]->getSize().y / 2) + ((*movingEntities)[j]->getSize().y / 2);
+
+				if (length.x >= distance.x && length.y >= distance.y)
+				{
+					intersection = Math::CoordinateF(distance.x - length.x, distance.y - length.y);
+					if ((*movingEntities)[j] != (*movingEntities)[i])
+					{
+						(*movingEntities)[j]->collide((*movingEntities)[i], intersection);
+						(*movingEntities)[i]->collide((*movingEntities)[j], intersection);
+					}
+				}
+			}
+		}
+		//clear();
 
 	}
+
 
 	void CollisionManager::clear()
 	{

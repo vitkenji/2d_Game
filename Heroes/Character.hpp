@@ -19,6 +19,7 @@ namespace Entities
 			void restartSprite(const float dt, float animationTime);
 			virtual void update(const float dt) = 0;
 			virtual void collide(Entity* other, Math::CoordinateF intersection) = 0;
+			
 		};
 	}
 }

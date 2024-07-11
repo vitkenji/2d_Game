@@ -5,7 +5,7 @@ namespace Entities
 	namespace Characters
 	{
 		Player::Player() : Character(Math::CoordinateF(50, 50), Math::CoordinateF(50, 50),ID::player),
-			isWalking(false), isSprinting(false), isJumping(false), isAttacking(false), canJump(true)
+			isWalking(false), isSprinting(false), isJumping(false), isAttacking(false), canJump(false)
 		{
 			
 			addAnimations();
@@ -22,8 +22,8 @@ namespace Entities
 			sprite.addNewAnimation(GraphicalElements::attack, PLAYER_ATTACK_PATH, 6, 0.9);
 			sprite.addNewAnimation(GraphicalElements::run, PLAYER_RUN_PATH, 8, 0.9);
 			sprite.addNewAnimation(GraphicalElements::takeHit, PLAYER_TAKEHIT_PATH, 4, 0.9);
-			sprite.addNewAnimation(GraphicalElements::jump, PLAYER_JUMP_PATH, 2, 0.9);
-			sprite.addNewAnimation(GraphicalElements::fall, PLAYER_FALL_PATH, 2, 0.9);
+			sprite.addNewAnimation(GraphicalElements::jump, PLAYER_JUMP_PATH, 2, 1);
+			sprite.addNewAnimation(GraphicalElements::fall, PLAYER_FALL_PATH, 2, 1);
 		}
 
 		void Player::attack()
@@ -49,8 +49,12 @@ namespace Entities
 
 		void Player::jump()
 		{
-			isJumping = true;
-			canJump = false;
+			if (canJump)
+			{
+				isJumping = true;
+				canJump = false;
+				velocity.y = -0.3;
+			}
 		}
 
 		void Player::stopWalking()
@@ -60,7 +64,6 @@ namespace Entities
 
 		void Player::stopJumping()
 		{
-			this->isJumping = false;
 		}
 
 		void Player::stopAttacking()
@@ -82,7 +85,18 @@ namespace Entities
 			}
 			else if (isJumping)
 			{
-				sprite.update(GraphicalElements::jump, isFacingRight(), position, dt);
+				if (velocity.y < 0 && !canJump)
+				{
+					sprite.update(GraphicalElements::jump, isFacingRight(), position, dt);
+				}
+				else if(velocity.y > 0 && !canJump)
+				{
+					sprite.update(GraphicalElements::fall, isFacingRight(), position, dt);
+				}
+				else
+				{
+					sprite.update(GraphicalElements::idle, isFacingRight(), position, dt);
+				}
 			}
 			else if (isWalking)
 			{
@@ -96,15 +110,15 @@ namespace Entities
 
 		void Player::update(const float dt)
 		{
-		
 			position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
 			velocity.y += acceleration.y * dt;
-			
-
+		
 			if (isWalking)
 			{
 				position.x += velocity.x * dt;
 			}
+
+
 			limitSprint();
 			
 			updateSprite(dt);
@@ -128,8 +142,14 @@ namespace Entities
 		{
 			if (other->getID() == platform)
 			{
-
+				canJump = true;
 				velocity.y = 0;
+				isJumping = false;
+			}
+
+			if (other->getID() == skeleton || other->getID() == goblin)
+			{
+
 			}
 		}
 

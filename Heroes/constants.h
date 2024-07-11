@@ -3,7 +3,7 @@
 #define HEIGHT 800
 #define TICK_RATE 0.0078125
 
-#define GRAVITY 0.1
+#define GRAVITY 0.09
 
 //PLAYER
 #define PLAYER_SIZE_X 32

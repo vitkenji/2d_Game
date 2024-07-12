@@ -8,7 +8,7 @@ namespace Entities
 		{
 			Skeleton::Skeleton(Math::CoordinateF position) : Enemy(position, Math::CoordinateF(SKELETON_SIZE_X, SKELETON_SIZE_Y), skeleton)
 			{
-				swordDistance = 5;
+				swordDistance = 8;
 				addAnimations();
 			}
 
@@ -30,27 +30,22 @@ namespace Entities
 			//maybe in enemy class
 			void Skeleton::update(const float dt)
 			{
+
+				if (isTakingHit == true)
+				{
+					cooldown += dt;
+					if (cooldown >= 10)
+					{
+						cooldown = 0;
+						isTakingHit = false;
+
+					}
+				}
+
 				position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
 				velocity.y += acceleration.y * dt;
 
 				updateSprite(dt);
-			}
-
-			//maybe in enemy class
-			void Skeleton::updateSprite(const float dt)
-			{
-				if (isAttacking)
-				{
-					sprite.update(GraphicalElements::attack, isFacingRight(), this->position, dt);
-				}
-				else if (isWalking)
-				{
-					sprite.update(GraphicalElements::run, isFacingRight(), this->position, dt);
-				}
-				else
-				{
-					sprite.update(GraphicalElements::idle, isFacingRight(), this->position, dt);
-				}
 			}
 
 		}

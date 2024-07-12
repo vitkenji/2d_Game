@@ -20,6 +20,7 @@ namespace Entities
 				void setPlayer(Player* pPlayer);
 
 				virtual void update(const float dt) = 0;
+				virtual void updateSprite(const float dt);
 				virtual void collide(Entity* other, Math::CoordinateF intersection);
 				void checkCollision(Entity* other, Math::CoordinateF intersection);
 			};

@@ -3,7 +3,7 @@
 namespace Entities
 {
 	MovingEntity::MovingEntity(Math::CoordinateF position, Math::CoordinateF size, ID id) : Entity(position, size, id),
-		sprite(), velocity(Math::CoordinateF(0,0)), acceleration(0, 0)
+		sprite(), velocity(Math::CoordinateF(0,0)), acceleration(0, 0), active(true)
 	{
 
 	}

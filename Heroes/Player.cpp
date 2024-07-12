@@ -5,9 +5,11 @@ namespace Entities
 	namespace Characters
 	{
 		Player::Player() : Character(Math::CoordinateF(50, 50), Math::CoordinateF(50, 50), ID::player),
-			isSprinting(false), isJumping(false), canJump(false), cooldown(0)
+			isSprinting(false), isJumping(false), canJump(false)
 		{
-			swordDistance = 5;
+			swordDistance = 10;
+			life = 5000;
+			damage = 600;
 			addAnimations();
 			setFacingRight(true);
 		}
@@ -21,7 +23,7 @@ namespace Entities
 			sprite.addNewAnimation(GraphicalElements::idle, PLAYER_IDLE_PATH, 8, 0.9);
 			sprite.addNewAnimation(GraphicalElements::attack, PLAYER_ATTACK_PATH, 6, 0.9);
 			sprite.addNewAnimation(GraphicalElements::run, PLAYER_RUN_PATH, 8, 0.9);
-			sprite.addNewAnimation(GraphicalElements::takeHit, PLAYER_TAKEHIT_PATH, 4, 1);
+			sprite.addNewAnimation(GraphicalElements::takeHit, PLAYER_TAKEHIT_PATH, 4, 1.6);
 			sprite.addNewAnimation(GraphicalElements::jump, PLAYER_JUMP_PATH, 2, 1);
 			sprite.addNewAnimation(GraphicalElements::fall, PLAYER_FALL_PATH, 2, 1);
 		}
@@ -119,7 +121,6 @@ namespace Entities
 
 		void Player::update(const float dt)
 		{
-			std::cout << isTakingHit << std::endl;
 			if (isTakingHit == true)
 			{
 				cooldown += dt;
@@ -179,6 +180,7 @@ namespace Entities
 				if (intersection.x < 0.f && pCharacter->getIsAttacking())
 				{
 					isTakingHit = true;
+					takeDamage(this->damage);
 				}
 			}
 		}
@@ -192,7 +194,7 @@ namespace Entities
 
 			if (other->getID() == skeleton || other->getID() == goblin)
 			{
-				if (intersection.x < 0.f)
+				if (intersection.x  + swordDistance< 0.f)
 				{
 					if (velocity.x > 0)
 					{

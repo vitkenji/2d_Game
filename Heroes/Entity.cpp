@@ -2,7 +2,7 @@
 
 namespace Entities
 {
-	Entity::Entity(Math::CoordinateF position, Math::CoordinateF size, ID id) : Ent(position, size), id(id)
+	Entity::Entity(Math::CoordinateF position, Math::CoordinateF size, ID id) : Ent(position, size), id(id), swordDistance(0)
 	{
 
 	}
@@ -10,6 +10,11 @@ namespace Entities
 	Entity::~Entity()
 	{
 
+	}
+
+	float Entity::getSwordDistance()
+	{
+		return this->swordDistance;
 	}
 
 	void Entity::setID(ID id)

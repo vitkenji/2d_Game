@@ -24,6 +24,7 @@ namespace Entities
 
 			void Enemy::collide(Entity* other, Math::CoordinateF intersection)
 			{
+				Player* pPlayer = dynamic_cast<Player*>(other);
 				checkCollision(other, intersection);
 				if (other->getID() == platform)
 				{
@@ -32,7 +33,12 @@ namespace Entities
 				if (other->getID() == player)
 				{
 					isAttacking = true;
+					if (intersection.x < 0.f && pPlayer->getIsAttacking())
+					{
+						isTakingHit = true;
+					}
 				}
+
 			}
 
 			void Enemy::checkCollision(Entity* other, Math::CoordinateF intersection)
@@ -59,6 +65,29 @@ namespace Entities
 					}
 				}
 			}
+
+			void Enemy::updateSprite(const float dt)
+			{
+				if (isAttacking && !isTakingHit)
+				{
+					sprite.update(GraphicalElements::attack, isFacingRight(), this->position, dt);
+				}
+				else if (isWalking)
+				{
+					sprite.update(GraphicalElements::run, isFacingRight(), this->position, dt);
+				}
+
+				else if (isTakingHit)
+				{
+					sprite.update(GraphicalElements::takeHit, isFacingRight(), position, dt);
+				}
+
+				else
+				{
+					sprite.update(GraphicalElements::idle, isFacingRight(), this->position, dt);
+				}
+			}
+
 		}
 	}
 }

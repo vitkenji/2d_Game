@@ -15,6 +15,7 @@ namespace Entities
 	{
 	protected:
 		ID id;
+		float swordDistance;
 
 	public:
 		Entity(Math::CoordinateF position, Math::CoordinateF size, ID id);
@@ -23,6 +24,8 @@ namespace Entities
 
 		void setID(ID id);
 		ID getID() const;
+
+		float getSwordDistance();
 
 		virtual void render() = 0;
 		virtual void update(const float dt) = 0;

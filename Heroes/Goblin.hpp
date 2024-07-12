@@ -15,7 +15,6 @@ namespace Entities
 				~Goblin();
 				void addAnimations();
 				void update(const float dt);
-				void updateSprite(const float dt);
 
 			};
 		}

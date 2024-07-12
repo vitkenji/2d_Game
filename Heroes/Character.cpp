@@ -5,18 +5,13 @@ namespace Entities
 	namespace Characters
 	{
 		Character::Character(Math::CoordinateF position, Math::CoordinateF size, ID id) : MovingEntity(position, size, id), 
-			isWalking(false), isAttacking(false), isTakingHit(false), swordDistance(0)
+			isWalking(false), isAttacking(false), isTakingHit(false), cooldown(0), life(1000)
 		{
 			acceleration = Math::CoordinateF(0, GRAVITY);
 		}
 
 		Character::~Character()
 		{
-		}
-
-		float Character::getSwordDistance()
-		{
-			return this->swordDistance;
 		}
 
 		void Character::setIsAttacking(bool isAttacking)
@@ -31,6 +26,12 @@ namespace Entities
 
 		void Character::restartSprite(const float dt, float animationTime)
 		{
+
+		}
+
+		void Character::takeDamage(float damage)
+		{
+			this->life -= damage;
 
 		}
 

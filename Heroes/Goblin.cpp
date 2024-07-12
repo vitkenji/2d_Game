@@ -8,6 +8,7 @@ namespace Entities
 		{
 			Goblin::Goblin(Math::CoordinateF position) : Enemy(position, Math::CoordinateF(GOBLIN_SIZE_X, GOBLIN_SIZE_Y), goblin)
 			{
+				swordDistance = 5;
 				addAnimations();
 			}
 
@@ -34,11 +35,7 @@ namespace Entities
 				updateSprite(dt);
 			}
 
-			//maybe in enemy class
-			void Goblin::updateSprite(const float dt)
-			{
-				sprite.update(GraphicalElements::idle, isFacingRight(), this->position, dt);
-			}
+
 		}
 	}
 }

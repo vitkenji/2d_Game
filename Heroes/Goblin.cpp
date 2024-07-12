@@ -29,32 +29,12 @@ namespace Entities
 			//maybe in enemy class
 			void Goblin::update(const float dt)
 			{
-				if (isTakingHit == true)
-				{
-					cooldown += dt;
-					if (cooldown >= 10)
-					{
-						cooldown = 0;
-						isTakingHit = false;
-
-					}
-				}
+				manageTakeHitCooldown(dt);
 				if (life <= 0 && deathCooldown == 0)
 				{
 					isDying = true;
-					deathCooldown += dt;
 				}
-				if (isDying)
-				{
-					deathCooldown += dt;
-					if (deathCooldown >= 6)
-					{
-						isDying = false;
-						active = false;
-
-					}
-
-				}
+				manageDeathCooldown(dt);
 
 				position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
 				velocity.y += acceleration.y  * dt;

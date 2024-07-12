@@ -20,7 +20,7 @@ namespace Entities
 				virtual ~Enemy();
 
 				void setPlayer(Player* pPlayer);
-
+				void manageDeathCooldown(const float dt);
 				virtual void update(const float dt) = 0;
 				virtual void updateSprite(const float dt);
 				virtual void collide(Entity* other, Math::CoordinateF intersection);

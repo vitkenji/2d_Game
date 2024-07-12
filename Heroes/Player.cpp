@@ -121,16 +121,7 @@ namespace Entities
 
 		void Player::update(const float dt)
 		{
-			if (isTakingHit == true)
-			{
-				cooldown += dt;
-				if (cooldown >= 10)
-				{
-					cooldown = 0;
-					isTakingHit = false;
-				
-				}
-			}
+			manageTakeHitCooldown(dt);
 
 			position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
 			velocity.y += acceleration.y * dt;

@@ -24,9 +24,18 @@ namespace Entities
 			return this->isAttacking;
 		}
 
-		void Character::restartSprite(const float dt, float animationTime)
+		void Character::manageTakeHitCooldown(const float dt)
 		{
+			if (isTakingHit == true)
+			{
+				cooldown += dt;
+				if (cooldown >= 10)
+				{
+					cooldown = 0;
+					isTakingHit = false;
 
+				}
+			}
 		}
 
 		void Character::takeDamage(float damage)

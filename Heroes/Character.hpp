@@ -26,7 +26,8 @@ namespace Entities
 			void takeDamage(float damage);
 			int getDamage();
 
-			void restartSprite(const float dt, float animationTime);
+			void manageTakeHitCooldown(const float dt);
+
 			virtual void update(const float dt) = 0;
 			virtual void collide(Entity* other, Math::CoordinateF intersection) = 0;
 			virtual void checkCollision(Entity* other, Math::CoordinateF insersection) = 0;

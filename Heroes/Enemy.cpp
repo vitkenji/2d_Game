@@ -93,6 +93,21 @@ namespace Entities
 				}
 			}
 
+			void Enemy::manageDeathCooldown(const float dt)
+			{
+				if (isDying)
+				{
+					deathCooldown += dt;
+					if (deathCooldown >= 6)
+					{
+						isDying = false;
+						active = false;
+
+					}
+
+				}
+			}
+
 		}
 	}
 }

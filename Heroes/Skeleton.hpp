@@ -11,7 +11,6 @@ namespace Entities
 			class Skeleton : public Enemy
 			{
 			private:
-				Player* pPlayer;
 			
 			public:
 				Skeleton(Math::CoordinateF position);

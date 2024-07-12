@@ -8,8 +8,8 @@ namespace Entities
 			isSprinting(false), isJumping(false), canJump(false)
 		{
 			swordDistance = 10;
-			life = 5000;
-			damage = 600;
+			life = 50000;
+			damage = 1;
 			addAnimations();
 			setFacingRight(true);
 		}
@@ -180,7 +180,7 @@ namespace Entities
 				if (intersection.x < 0.f && pCharacter->getIsAttacking())
 				{
 					isTakingHit = true;
-					takeDamage(this->damage);
+					takeDamage(pCharacter->getDamage());
 				}
 			}
 		}

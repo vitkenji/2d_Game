@@ -35,7 +35,6 @@ namespace States
 
         while (pGraphic->isWindowOpen())
         {
-           
             pGraphic->clear();
             background.render();
       

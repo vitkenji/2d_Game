@@ -15,7 +15,7 @@ namespace Entities
 			
 			public:
 				Skeleton(Math::CoordinateF position);
-				~Skeleton();
+				virtual ~Skeleton();
 
 				void addAnimations();
 				void update(const float dt);

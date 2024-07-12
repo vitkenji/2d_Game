@@ -15,7 +15,7 @@ namespace Entities
 
 		public:
 			Player();
-			~Player();
+			virtual ~Player();
 
 			void attack();
 			void jump();

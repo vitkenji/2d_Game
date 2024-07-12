@@ -15,10 +15,11 @@ namespace Entities
 
 	public:
 		MovingEntity(Math::CoordinateF position, Math::CoordinateF size, ID id);
-		~MovingEntity();
+		virtual ~MovingEntity();
 		void setFacingRight(bool right);
 		bool isFacingRight();
 		void render();
+		bool isActive();
 
 		virtual void update(const float dt) = 0;
 		virtual void collide(Entity* other, Math::CoordinateF intersection) = 0;

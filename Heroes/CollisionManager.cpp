@@ -10,8 +10,7 @@ namespace Managers
 
 	CollisionManager::~CollisionManager()
 	{
-		staticEntities = nullptr;
-		movingEntities = nullptr;
+		
 	}
 
 	void CollisionManager::collide()
@@ -61,14 +60,14 @@ namespace Managers
 				}
 			}
 		}
-		//clear();
+		clear();
 
 	}
 
 
 	void CollisionManager::clear()
 	{
-		/*
+		
 		Entities::MovingEntity* pAux = nullptr;
 		for (int i = 0; i < movingEntities->getSize(); i++) {
 			pAux = static_cast<Entities::MovingEntity*>((*movingEntities)[i]);
@@ -79,6 +78,6 @@ namespace Managers
 					if (i < 0) { i = -1; }
 				}
 			}
-		}*/
+		}
 	}
 }

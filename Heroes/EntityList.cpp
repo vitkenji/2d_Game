@@ -33,9 +33,9 @@ namespace List
 
 	void EntityList::deleteEntity(Entities::Entity* pEntity)
 	{
-		Entities::Entity* ptr = nullptr;
-		ptr = entitiesList.pop(pEntity);
-		if (ptr) { delete ptr; }
+		Entities::Entity* tmp = nullptr;
+
+		tmp = entitiesList.pop(pEntity);
 
 	}
 

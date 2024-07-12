@@ -12,10 +12,12 @@ namespace Entities
 			{
 			protected:
 				Player* pPlayer;
+				bool isDying;
+				float deathCooldown;
 
 			public:
 				Enemy(Math::CoordinateF position, Math::CoordinateF size, ID id);
-				~Enemy();
+				virtual ~Enemy();
 
 				void setPlayer(Player* pPlayer);
 

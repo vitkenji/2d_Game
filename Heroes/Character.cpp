@@ -5,7 +5,7 @@ namespace Entities
 	namespace Characters
 	{
 		Character::Character(Math::CoordinateF position, Math::CoordinateF size, ID id) : MovingEntity(position, size, id), 
-			isWalking(false), isAttacking(false), isTakingHit(false), cooldown(0), life(1000)
+			isWalking(false), isAttacking(false), isTakingHit(false), cooldown(0), life(10000)
 		{
 			acceleration = Math::CoordinateF(0, GRAVITY);
 		}
@@ -33,6 +33,11 @@ namespace Entities
 		{
 			this->life -= damage;
 
+		}
+
+		int Character::getDamage()
+		{
+			return this->damage;
 		}
 
 	}

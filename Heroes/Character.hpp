@@ -18,12 +18,13 @@ namespace Entities
 
 		public:
 			Character(Math::CoordinateF position, Math::CoordinateF size, ID id);
-			~Character();
+			virtual ~Character();
 
 			void setIsAttacking(bool isAttacking);
 			bool getIsAttacking();
 
 			void takeDamage(float damage);
+			int getDamage();
 
 			void restartSprite(const float dt, float animationTime);
 			virtual void update(const float dt) = 0;

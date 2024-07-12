@@ -25,4 +25,9 @@ namespace Entities
 		return facingRight;
 	}
 
+	bool MovingEntity::isActive()
+	{
+		return active;
+	}
+
 }

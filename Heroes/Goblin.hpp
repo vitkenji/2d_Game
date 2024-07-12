@@ -12,7 +12,7 @@ namespace Entities
 			private:
 			public:
 				Goblin(Math::CoordinateF position);
-				~Goblin();
+				virtual ~Goblin();
 				void addAnimations();
 				void update(const float dt);
 

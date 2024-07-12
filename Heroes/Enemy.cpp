@@ -6,7 +6,7 @@ namespace Entities
 	{
 		namespace Enemies
 		{
-			Enemy::Enemy(Math::CoordinateF position, Math::CoordinateF size, ID id) : Character(position, size, id)
+			Enemy::Enemy(Math::CoordinateF position, Math::CoordinateF size, ID id) : Character(position, size, id), isDying(false), deathCooldown(0)
 			{
 
 			}
@@ -36,6 +36,7 @@ namespace Entities
 					if (intersection.x < 0.f && pPlayer->getIsAttacking())
 					{
 						isTakingHit = true;
+						takeDamage(pPlayer->getDamage());
 					}
 				}
 
@@ -68,7 +69,11 @@ namespace Entities
 
 			void Enemy::updateSprite(const float dt)
 			{
-				if (isAttacking && !isTakingHit)
+				if (isDying)
+				{
+					sprite.update(GraphicalElements::death, isFacingRight(), this->position, dt);
+				}
+				else if (isAttacking && !isTakingHit)
 				{
 					sprite.update(GraphicalElements::attack, isFacingRight(), this->position, dt);
 				}

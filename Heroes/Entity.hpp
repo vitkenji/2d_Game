@@ -8,7 +8,8 @@ namespace Entities
 		player = 0,
 		platform,
 		skeleton,
-		goblin
+		goblin,
+		bomb,
 	};
 
 	class Entity : public Ent

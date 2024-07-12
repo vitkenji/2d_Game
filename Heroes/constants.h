@@ -23,3 +23,9 @@
 #define GOBLIN_SIZE_X 45
 #define GOBLIN_SIZE_Y 50
 
+//PROJECTILES
+
+//BOMB
+#define BOMB_SIZE_X 30
+#define BOMB_SIZE_Y 30
+

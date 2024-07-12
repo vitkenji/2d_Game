@@ -14,7 +14,8 @@ namespace GraphicalElements
 		jump,
 		takeHit,
 		death,
-		fall
+		fall,
+		explode
 
 	};
 

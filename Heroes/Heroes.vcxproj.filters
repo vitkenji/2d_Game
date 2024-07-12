@@ -70,6 +70,12 @@
     <Filter Include="Arquivos de Origem\List">
       <UniqueIdentifier>{a84f306d-a9fc-4080-9869-7629c0800f94}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Entities\Projectiles">
+      <UniqueIdentifier>{06a937c7-565b-4c09-9954-fa6acdfd997f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Entities\Projectiles">
+      <UniqueIdentifier>{e9dc254c-6047-468b-9c59-5bc5979baa27}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Heroes.cpp">
@@ -140,6 +146,12 @@
     </ClCompile>
     <ClCompile Include="Platform.cpp">
       <Filter>Arquivos de Origem\Entities\Obstacles</Filter>
+    </ClCompile>
+    <ClCompile Include="Projectile.cpp">
+      <Filter>Arquivos de Origem\Entities\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Bomb.cpp">
+      <Filter>Arquivos de Origem\Entities\Projectiles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +232,12 @@
     </ClInclude>
     <ClInclude Include="Platform.hpp">
       <Filter>Arquivos de Cabeçalho\Entities\Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectile.hpp">
+      <Filter>Arquivos de Cabeçalho\Entities\Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Bomb.hpp">
+      <Filter>Arquivos de Cabeçalho\Entities\Projectiles</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -21,6 +21,8 @@ namespace Entities
 
 		void Bomb::update(const float dt)
 		{
+			position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
+			velocity.y += acceleration.y * dt;
 			updateSprite(dt);
 		}
 
@@ -32,6 +34,14 @@ namespace Entities
 		void Bomb::collide(Entity* other, Math::CoordinateF intersection)
 		{
 
+			if (other->getID() == platform)
+			{
+				velocity.y /= -1.21;
+			}
+		}
+
+		void Bomb::checkCollision(Entity* other, Math::CoordinateF intersection)
+		{
 		}
 
 

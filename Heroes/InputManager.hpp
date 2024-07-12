@@ -23,6 +23,7 @@ namespace Managers
 
 	public:
 		~InputManager();
+
 		static InputManager* getInstance();
 		void attach(Control::Observer* pObserver);
 		void detach(Control::Observer* pObserver);

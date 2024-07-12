@@ -16,6 +16,7 @@ namespace Entities
 	public:
 		MovingEntity(Math::CoordinateF position, Math::CoordinateF size, ID id);
 		virtual ~MovingEntity();
+
 		void setFacingRight(bool right);
 		bool isFacingRight();
 		void render();
@@ -23,6 +24,7 @@ namespace Entities
 
 		virtual void update(const float dt) = 0;
 		virtual void collide(Entity* other, Math::CoordinateF intersection) = 0;
+		virtual void checkCollision(Entity* other, Math::CoordinateF insersection) = 0;
 
 	};
 }

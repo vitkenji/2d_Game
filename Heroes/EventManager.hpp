@@ -16,6 +16,7 @@ namespace Managers
 
 	public:
 		~EventManager();
+
 		static EventManager* getInstance();
 		void pollEvents();
 	};

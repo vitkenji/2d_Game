@@ -12,6 +12,7 @@ namespace Entities
 	public:
 		StaticEntity(Math::CoordinateF position, Math::CoordinateF size, ID id);
 		virtual ~StaticEntity();
+
 		void render();
 		virtual void update(const float dt){}
 		void collide(Entity* other, Math::CoordinateF intersection);

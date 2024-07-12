@@ -12,8 +12,8 @@ protected:
 
 public:
 	Ent(Math::CoordinateF position, Math::CoordinateF size);
-	Ent();
 	virtual ~Ent();
+
 	void setPosition(Math::CoordinateF position);
 	void setSize(Math::CoordinateF size);
 	Math::CoordinateF getPosition();

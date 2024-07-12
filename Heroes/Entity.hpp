@@ -20,7 +20,6 @@ namespace Entities
 
 	public:
 		Entity(Math::CoordinateF position, Math::CoordinateF size, ID id);
-		Entity();
 		virtual ~Entity();
 
 		void setID(ID id);

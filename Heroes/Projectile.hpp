@@ -11,6 +11,7 @@ namespace Entities
 		public:
 			Projectile(Math::CoordinateF position, Math::CoordinateF size, ID id);
 			virtual ~Projectile();
+
 			virtual void collide(Entity* other, Math::CoordinateF intersection) = 0;
 
 		};

@@ -19,6 +19,7 @@ namespace Managers
 
 	public:
 		~GraphicManager();
+
 		static GraphicManager* getInstance();
 		void render(sf::RectangleShape* body);
 		void render(sf::Text* text);

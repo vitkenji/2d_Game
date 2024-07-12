@@ -4,7 +4,7 @@ namespace States
 {
 	Game::Game() : clock(), dt(0), pGraphic(Managers::GraphicManager::getInstance()), pEvent(Managers::EventManager::getInstance()), 
         skeleton(Math::CoordinateF(450,50)), goblin(Math::CoordinateF(800, 50)), collisionManager(&movingEntitiesList, &staticEntitiesList)
-	, bomb(Math::CoordinateF(700, 50)){
+	, bomb(Math::CoordinateF(750, 650)){
         background.initialize(BACKGROUND_PATH, Math::CoordinateF(600, 400), Math::CoordinateF(WIDTH + 30, HEIGHT + 20));
         pPlayerControl = new Control::PlayerControl(&player);
 		clock.restart();
@@ -13,6 +13,8 @@ namespace States
         movingEntitiesList.addEntity(&skeleton);
         movingEntitiesList.addEntity(&goblin);
         movingEntitiesList.addEntity(&bomb);
+
+        goblin.bombList.push_back(bomb);
 
         
         for (int i = 0; i < 8; i++)

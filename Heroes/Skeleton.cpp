@@ -48,7 +48,7 @@ namespace Entities
 				if (isDying)
 				{
 					deathCooldown += dt;
-					if (deathCooldown >= 9)
+					if (deathCooldown >= 6)
 					{
 						isDying = false;
 						active = false;

@@ -1,11 +1,6 @@
 #pragma once
 #include "Ent.hpp"
 
-Ent::Ent()
-{
-
-}
-
 Ent::Ent(Math::CoordinateF position, Math::CoordinateF size)
 {
 	this->position = position;

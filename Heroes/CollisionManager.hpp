@@ -14,7 +14,9 @@ namespace Managers
 	public:
 		CollisionManager(List::EntityList* movingEntities, List::EntityList* staticEntities);
 		~CollisionManager();
+
 		void collide();
 		void clear();
+
 	};
 }

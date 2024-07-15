@@ -56,23 +56,35 @@ namespace Entities
 				Math::CoordinateF distance = Math::CoordinateF(fabs(pPlayer->getPosition().x - this->position.x), fabs(pPlayer->getPosition().y - this->position.y));
 				if (distance.x < 300)
 				{				
-					if (distance.x <= 60)
-					{
-						velocity.x = 0;
-					}
 					if (pPlayer->getPosition().x > this->position.x)
 					{
 						isWalking = true;
 						isAttacking = false;
 						setFacingRight(true);
-						velocity.x = 8;
+						if (distance.x > 49)
+						{
+							velocity.x = 8;
+						}
+						else
+						{
+							isAttacking = true;
+							velocity.x = 0;
+						}
 					}
 					else
 					{
 						isWalking = true;
 						isAttacking = false;
 						setFacingRight(false);
-						velocity.x = -8;
+						if (distance.x > 49)
+						{
+							velocity.x = -8;
+						}
+						else
+						{
+							isAttacking = true;
+							velocity.x = 0;
+						}
 					}
 				}
 

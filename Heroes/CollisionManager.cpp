@@ -39,10 +39,10 @@ namespace Managers
 		for (int i = 0; i < movingEntities->getSize(); i++)
 		{
 			Math::CoordinateF distance; Math::CoordinateF intersection; Math::CoordinateF length;
-			float swordDistance;
+			// float swordDistance;
 			for (int j = 0; j < movingEntities->getSize(); j++)
 			{
-				swordDistance = (*movingEntities)[i]->getSwordDistance() + (*movingEntities)[j]->getSwordDistance();
+				//swordDistance = (*movingEntities)[i]->getSwordDistance() + (*movingEntities)[j]->getSwordDistance();
 				distance.x = fabs((*movingEntities)[i]->getPosition().x - (*movingEntities)[j]->getPosition().x + 1);
 				distance.y = fabs((*movingEntities)[i]->getPosition().y - (*movingEntities)[j]->getPosition().y + 1);
 

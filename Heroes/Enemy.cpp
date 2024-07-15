@@ -77,7 +77,7 @@ namespace Entities
 				{
 					sprite.update(GraphicalElements::attack, isFacingRight(), this->position, dt);
 				}
-				else if (isWalking)
+				else if (isWalking && !isAttacking)
 				{
 					sprite.update(GraphicalElements::run, isFacingRight(), this->position, dt);
 				}

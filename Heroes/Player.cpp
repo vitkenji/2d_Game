@@ -138,12 +138,11 @@ namespace Entities
 			if (velocity.x >= 100)
 			{
 				velocity.x = 100;
-				//stopWalking();
 			}
 			else if (velocity.x <= -100)
 			{
 				velocity.x = -100;
-				//stopWalking();
+				
 			}
 		}
 

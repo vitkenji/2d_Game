@@ -11,7 +11,7 @@ namespace Entities
 		Math::CoordinateF velocity;
 		Math::CoordinateF acceleration;
 		bool facingRight;
-		bool active;
+		
 
 	public:
 		MovingEntity(Math::CoordinateF position, Math::CoordinateF size, ID id);
@@ -19,7 +19,7 @@ namespace Entities
 
 		void setFacingRight(bool right);
 		bool isFacingRight();
-		void render();
+		virtual void render();
 		bool isActive();
 
 		void setVelocity(Math::CoordinateF velocity);

@@ -8,6 +8,8 @@ namespace Entities
 		{
 			Goblin::Goblin(Math::CoordinateF position) : Enemy(position, Math::CoordinateF(GOBLIN_SIZE_X, GOBLIN_SIZE_Y), goblin)
 			{
+				i = bombList.begin();
+				bombCooldown = 10;
 				swordDistance = 5;
 				addAnimations();
 			}
@@ -28,6 +30,13 @@ namespace Entities
 			//maybe in enemy class
 			void Goblin::update(const float dt)
 			{
+				Math::CoordinateF distance = Math::CoordinateF(fabs(pPlayer->getPosition().x - this->position.x), fabs(pPlayer->getPosition().y - this->position.y));
+				if (distance.x < 400)
+				{
+  					shoot();
+				}
+
+
 				manageTakeHitCooldown(dt);
 				if (life <= 0 && deathCooldown == 0)
 				{
@@ -36,11 +45,25 @@ namespace Entities
 				manageDeathCooldown(dt);
 
 				position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
-				velocity.y += acceleration.y  * dt;
+				velocity.y += acceleration.y * dt;
 
 				updateSprite(dt);
 			}
 
+			void Goblin::shoot()
+			{
+				Projectiles::Bomb* bomb = nullptr;
+
+				if (i == bombList.end() || i == bombList.end()--)
+				{
+					i = bombList.begin();
+				}
+
+				bomb = *i;
+				++i; 
+
+				bomb->activateProjectile(); 
+			}
 
 		}
 	}

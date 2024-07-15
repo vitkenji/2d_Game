@@ -39,7 +39,6 @@ namespace Entities
 						takeDamage(pPlayer->getDamage());
 					}
 				}
-
 			}
 
 			void Enemy::checkCollision(Entity* other, Math::CoordinateF intersection)

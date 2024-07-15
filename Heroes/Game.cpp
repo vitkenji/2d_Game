@@ -11,10 +11,18 @@ namespace States
 
         
         skeleton.setPlayer(&player);
+        goblin.setPlayer(&player);
 
         movingEntitiesList.addEntity(&player);
         movingEntitiesList.addEntity(&skeleton);
-       // movingEntitiesList.addEntity(&goblin);
+        movingEntitiesList.addEntity(&goblin);
+
+        for (int i = 0; i < 40; i++)
+        {
+            Entities::Projectiles::Bomb* bomb = new Entities::Projectiles::Bomb(goblin.getPosition());
+            goblin.bombList.push_back(bomb);
+            movingEntitiesList.addEntity(bomb);
+        }
        
         for (int i = 0; i < 8; i++)
         {

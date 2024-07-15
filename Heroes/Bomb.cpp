@@ -6,12 +6,12 @@ namespace Entities
 	{
 		Bomb::Bomb(Math::CoordinateF position) : Projectile(position, Math::CoordinateF(BOMB_SIZE_X, BOMB_SIZE_Y), bomb)
 		{
+			
 			addAnimations();
 		}
 
 		Bomb::~Bomb()
 		{
-
 		}
 
 		void Bomb::addAnimations()
@@ -44,7 +44,7 @@ namespace Entities
 		{
 		}
 
-
+		
 
 	}
 }

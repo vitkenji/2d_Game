@@ -90,7 +90,7 @@ namespace Entities
 
 				else
 				{
-					std::cout << direction << std::endl;
+					
 					if (direction > 0 && direction <= 13)
 					{
 						isWalking = true;

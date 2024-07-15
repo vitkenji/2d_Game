@@ -12,17 +12,20 @@ namespace Entities
 			class Goblin : public Enemy
 			{
 			private:
+				float bombCooldown;
+				float attackAnimationTime;
 
 			public:
-				std::list<Projectiles::Bomb> bombList;
-				std::list<Projectiles::Bomb>::iterator i;
+				std::list<Projectiles::Bomb*> bombList;
+				std::list<Projectiles::Bomb*>::iterator i;
 
 				Goblin(Math::CoordinateF position);
 				virtual ~Goblin();
 
 				void addAnimations();
 				void update(const float dt);
-
+				void shoot();
+	
 			};
 		}
 	}

@@ -16,6 +16,7 @@ namespace Entities
 	{
 	protected:
 		ID id;
+		bool active;
 		float swordDistance;
 
 	public:

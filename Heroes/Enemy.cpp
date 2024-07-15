@@ -6,7 +6,7 @@ namespace Entities
 	{
 		namespace Enemies
 		{
-			Enemy::Enemy(Math::CoordinateF position, Math::CoordinateF size, ID id) : Character(position, size, id), isDying(false), deathCooldown(0)
+			Enemy::Enemy(Math::CoordinateF position, Math::CoordinateF size, ID id) : Character(position, size, id), isDying(false), deathCooldown(0), pPlayer()
 			{
 
 			}
@@ -55,11 +55,11 @@ namespace Entities
 					{
 						if (velocity.x > 0)
 						{
-							position.x -= 2;
+							position.x -= 1;
 						}
 						else if (velocity.x < 0)
 						{
-							position.x += 2;
+							position.x += 1;
 						}
 						velocity.x = 0;
 

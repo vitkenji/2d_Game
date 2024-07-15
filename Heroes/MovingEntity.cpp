@@ -30,4 +30,14 @@ namespace Entities
 		return active;
 	}
 
+	void MovingEntity::setVelocity(Math::CoordinateF velocity)
+	{
+		this->velocity = velocity;
+	}
+
+	Math::CoordinateF MovingEntity::getVelocity()
+	{
+		return this->velocity;
+	}
+
 }

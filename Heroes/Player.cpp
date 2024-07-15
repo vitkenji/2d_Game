@@ -66,10 +66,6 @@ namespace Entities
 
 		}
 
-		void Player::stopJumping()
-		{
-		}
-
 		void Player::stopAttacking()
 		{
 			this->isAttacking = false;
@@ -189,11 +185,11 @@ namespace Entities
 				{
 					if (velocity.x > 0)
 					{
-						position.x -= 2;
+						position.x -= 1;
 					}
 					else if (velocity.x < 0)
 					{
-						position.x += 2;
+						position.x += 1;
 					}
 					velocity.x = 0;
 

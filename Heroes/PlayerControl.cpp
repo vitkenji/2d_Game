@@ -7,7 +7,7 @@ namespace Control
 	{
 		jump = "W";
 		left = "A";
-		right = "R";
+		right = "D";
 		attack = "Space";
 		sprint = "Shift";
 		
@@ -36,7 +36,6 @@ namespace Control
 		keysPressed[key] == false;
 
 		if (key == "Space") { pPlayer->stopAttacking(); }
-		else if (key == "W") { pPlayer->stopJumping(); }
 		else if (key == "D") { pPlayer->stopWalking(); }
 		else if (key == "A") { pPlayer->stopWalking(); }
 		else if (key == "Shift") { pPlayer->stopSprinting(); }

@@ -9,9 +9,12 @@ namespace States
         pPlayerControl = new Control::PlayerControl(&player);
 		clock.restart();
 
+        
+        skeleton.setPlayer(&player);
+
         movingEntitiesList.addEntity(&player);
         movingEntitiesList.addEntity(&skeleton);
-        movingEntitiesList.addEntity(&goblin);
+       // movingEntitiesList.addEntity(&goblin);
        
         for (int i = 0; i < 8; i++)
         {

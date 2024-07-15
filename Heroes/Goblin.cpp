@@ -14,7 +14,6 @@ namespace Entities
 
 			Goblin::~Goblin()
 			{
-
 			}
 
 			void Goblin::addAnimations()

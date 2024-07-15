@@ -26,7 +26,6 @@ namespace Entities
 			void stopWalking();
 			void stopAttacking();
 			void stopSprinting();
-			void stopJumping();
 
 			void addAnimations();
 			void updateSprite(const float dt);

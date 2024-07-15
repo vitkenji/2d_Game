@@ -24,7 +24,7 @@ void Ent::setSize(Math::CoordinateF size)
 
 Math::CoordinateF Ent::getPosition()
 {
-	return this->position;
+	return position;
 }
 
 Math::CoordinateF Ent::getSize()

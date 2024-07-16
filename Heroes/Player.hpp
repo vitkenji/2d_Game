@@ -10,7 +10,6 @@ namespace Entities
 		{
 		protected:
 			bool isJumping;
-			bool isSprinting;
 			bool canJump;
 
 		public:
@@ -25,7 +24,6 @@ namespace Entities
 
 			void stopWalking();
 			void stopAttacking();
-			void stopSprinting();
 
 			void addAnimations();
 			void updateSprite(const float dt);

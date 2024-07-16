@@ -7,10 +7,7 @@ Ent::Ent(Math::CoordinateF position, Math::CoordinateF size)
 	this->size = size;
 }
 
-Ent::~Ent()
-{
-
-}
+Ent::~Ent() {}
 
 void Ent::setPosition(Math::CoordinateF position)
 {
@@ -24,7 +21,7 @@ void Ent::setSize(Math::CoordinateF size)
 
 Math::CoordinateF Ent::getPosition()
 {
-	return position;
+	return this->position;
 }
 
 Math::CoordinateF Ent::getSize()

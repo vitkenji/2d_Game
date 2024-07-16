@@ -3,7 +3,7 @@
 namespace States
 {
 	Game::Game() : clock(), dt(0), pGraphic(Managers::GraphicManager::getInstance()), pEvent(Managers::EventManager::getInstance()), 
-        skeleton(Math::CoordinateF(450,50)), goblin(Math::CoordinateF(800, 50)), collisionManager(&movingEntitiesList, &staticEntitiesList)
+        skeleton(Math::CoordinateF(450,50)), goblin(Math::CoordinateF(900, 200)), collisionManager(&movingEntitiesList, &staticEntitiesList)
 	{
         background.initialize(BACKGROUND_PATH, Math::CoordinateF(600, 400), Math::CoordinateF(WIDTH + 30, HEIGHT + 20));
         pPlayerControl = new Control::PlayerControl(&player);
@@ -14,14 +14,13 @@ namespace States
         goblin.setPlayer(&player);
 
         movingEntitiesList.addEntity(&player);
-        movingEntitiesList.addEntity(&skeleton);
+        //movingEntitiesList.addEntity(&skeleton);
         movingEntitiesList.addEntity(&goblin);
 
-        for (int i = 0; i < 40; i++)
+        std::list<Entities::Projectiles::Bomb*>::iterator i;
+        for (i = goblin.bombList.begin(); i != goblin.bombList.end(); i++)
         {
-            Entities::Projectiles::Bomb* bomb = new Entities::Projectiles::Bomb(goblin.getPosition());
-            goblin.bombList.push_back(bomb);
-            movingEntitiesList.addEntity(bomb);
+            movingEntitiesList.addEntity((*i));
         }
        
         for (int i = 0; i < 8; i++)

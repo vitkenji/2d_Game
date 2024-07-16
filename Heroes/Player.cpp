@@ -5,7 +5,7 @@ namespace Entities
 	namespace Characters
 	{
 		Player::Player() : Character(Math::CoordinateF(50, 50), Math::CoordinateF(50, 50), ID::player),
-			isSprinting(false), isJumping(false), canJump(false)
+		 isJumping(false), canJump(false)
 		{
 			swordDistance = 10;
 			life = 50000;
@@ -47,7 +47,6 @@ namespace Entities
 		void Player::sprint()
 		{
 			velocity.x *= 1.5;
-			isSprinting = true;
 		}
 
 		void Player::jump()
@@ -70,12 +69,6 @@ namespace Entities
 		{
 			this->isAttacking = false;
 		}
-
-		void Player::stopSprinting()
-		{
-			this->isSprinting = false;
-		}
-
 
 		void Player::updateSprite(const float dt)
 		{
@@ -119,17 +112,14 @@ namespace Entities
 		{
 			manageTakeHitCooldown(dt);
 
-			position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
-			velocity.y += acceleration.y * dt;
+			fallToGravity(dt);
 		
 			if (isWalking)
 			{
 				position.x += velocity.x * dt;
 			}
 
-
 			limitSprint();
-			
 			updateSprite(dt);
 		}
 

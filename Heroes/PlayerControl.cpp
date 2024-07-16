@@ -38,7 +38,6 @@ namespace Control
 		if (key == "Space") { pPlayer->stopAttacking(); }
 		else if (key == "D") { pPlayer->stopWalking(); }
 		else if (key == "A") { pPlayer->stopWalking(); }
-		else if (key == "Shift") { pPlayer->stopSprinting(); }
 
 	}
 

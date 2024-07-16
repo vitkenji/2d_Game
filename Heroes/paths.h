@@ -25,8 +25,8 @@
 //PROJECTILES
 
 //BOMB
-#define BOMB_PATH "assets/enemies/goblin/Bomb_sprite.png"
-
+#define BOMB_SHOT_PATH "assets/enemies/goblin/Bomb_sprite.png"
+#define BOMB_IDLE_PATH "assets/enemies/goblin/Bomb_idle_sprite.png"
 #define BACKGROUND_PATH "assets/background_cave.png"
 
 #define PLATFORM_PATH "assets/obstacles/platform1.png"

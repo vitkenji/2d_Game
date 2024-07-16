@@ -13,7 +13,6 @@ namespace Entities
 			bool isTakingHit;
 			bool isWalking;
 			bool isAttacking;
-
 			float cooldown;
 
 		public:
@@ -27,7 +26,7 @@ namespace Entities
 			int getDamage();
 
 			void manageTakeHitCooldown(const float dt);
-
+			
 			virtual void update(const float dt) = 0;
 			virtual void collide(Entity* other, Math::CoordinateF intersection) = 0;
 			virtual void checkCollision(Entity* other, Math::CoordinateF insersection) = 0;

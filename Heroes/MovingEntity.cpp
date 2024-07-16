@@ -40,4 +40,10 @@ namespace Entities
 		return this->velocity;
 	}
 
+	void MovingEntity::fallToGravity(const float dt)
+	{
+		position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
+		velocity.y += acceleration.y * dt;
+	}
+
 }

@@ -28,7 +28,6 @@ namespace Entities
 
 			}
 
-			//maybe in enemy class
 			void Skeleton::update(const float dt)
 			{
 				manageTakeHitCooldown(dt);
@@ -40,8 +39,7 @@ namespace Entities
 				walk();
 				position.x += velocity.x * dt;
 
-				position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
-				velocity.y += acceleration.y * dt;
+				fallToGravity(dt);
 
 				updateSprite(dt);
 				

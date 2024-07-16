@@ -5,7 +5,7 @@ namespace Entities
 	namespace Projectiles
 	{
 		
-		Projectile::Projectile(Math::CoordinateF position, Math::CoordinateF size, ID id) : MovingEntity(position, size, id)
+		Projectile::Projectile(Math::CoordinateF position, Math::CoordinateF size, ID id) : MovingEntity(position, size, id), cooldown(0)
 		{
 			this->active = true;
 			this->shot = false;
@@ -18,16 +18,18 @@ namespace Entities
 
 		void Projectile::activateProjectile()
 		{
-			if (facingRight)
-			{
-				this->velocity.x = 20;
-			}
-			else
-			{
-				this->velocity.x = -20;
-			}
+			std::cout << "activated" << std::endl;
 			this->active = true;
 			this->shot = true;
+		}
+
+		void Projectile::deactivateProjectile()
+		{
+			if (shot)
+			{
+				this->active = false;
+			}
+			this->shot = false;
 		}
 
 		void Projectile::render()

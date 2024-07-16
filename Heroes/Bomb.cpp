@@ -10,25 +10,33 @@ namespace Entities
 			addAnimations();
 		}
 
-		Bomb::~Bomb()
-		{
-		}
+		Bomb::~Bomb() {}
 
 		void Bomb::addAnimations()
 		{
-			sprite.addNewAnimation(GraphicalElements::explode, BOMB_PATH, 19, 1);
+			sprite.addNewAnimation(GraphicalElements::idle, BOMB_IDLE_PATH, 1, 1);
+			sprite.addNewAnimation(GraphicalElements::explode, BOMB_SHOT_PATH, 19, 1.5);
 		}
 
 		void Bomb::update(const float dt)
 		{
-			position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
-			velocity.y += acceleration.y * dt;
+			fallToGravity(dt);
+
+			position.x += velocity.x * dt;
+			
 			updateSprite(dt);
 		}
 
 		void Bomb::updateSprite(const float dt)
 		{
-			sprite.update(GraphicalElements::explode, isFacingRight(), this->position, dt);
+			if (shot)
+			{
+				sprite.update(GraphicalElements::explode, isFacingRight(), this->position, dt);
+			}
+			else
+			{
+				sprite.update(GraphicalElements::idle, isFacingRight(), this->position, dt);
+			}
 		}
 
 		void Bomb::collide(Entity* other, Math::CoordinateF intersection)
@@ -36,7 +44,8 @@ namespace Entities
 
 			if (other->getID() == platform)
 			{
-				velocity.y /= -1.21;
+				velocity.x *= 0.9;
+				velocity.y *= 0.7;
 			}
 		}
 

@@ -8,8 +8,15 @@ namespace Entities
 		{
 			Goblin::Goblin(Math::CoordinateF position) : Enemy(position, Math::CoordinateF(GOBLIN_SIZE_X, GOBLIN_SIZE_Y), goblin)
 			{
+				for (int i = 0; i < 2; i++)
+				{
+					Projectiles::Bomb* bomb = new Projectiles::Bomb(Math::CoordinateF(position.x - 50, position.y - 40));
+					bombList.push_back(bomb);
+				}
+				
 				i = bombList.begin();
-				bombCooldown = 10;
+				bombCooldown = 0;
+				attackAnimationTime = 0;
 				swordDistance = 5;
 				addAnimations();
 			}
@@ -27,15 +34,29 @@ namespace Entities
 				sprite.addNewAnimation(GraphicalElements::death, GOBLIN_DEATH_PATH, 4, 1.7);
 			}
 
-			//maybe in enemy class
 			void Goblin::update(const float dt)
 			{
 				Math::CoordinateF distance = Math::CoordinateF(fabs(pPlayer->getPosition().x - this->position.x), fabs(pPlayer->getPosition().y - this->position.y));
 				if (distance.x < 400)
 				{
-  					shoot();
+					if (attackAnimationTime == 0)
+					{
+						isAttacking = true;
+					}
+					attackAnimationTime += dt;
+					if (attackAnimationTime >= 10)
+					{
+						attackAnimationTime = 0;
+						isAttacking = false;
+						shoot();
+						bombCooldown += dt;
+						if (bombCooldown >= 8)
+						{
+							(*i)->deactivateProjectile();
+							bombCooldown = 0;
+						}
+					}
 				}
-
 
 				manageTakeHitCooldown(dt);
 				if (life <= 0 && deathCooldown == 0)
@@ -44,8 +65,7 @@ namespace Entities
 				}
 				manageDeathCooldown(dt);
 
-				position.y += velocity.y + (acceleration.y * dt * dt) / 2.0f;
-				velocity.y += acceleration.y * dt;
+				fallToGravity(dt);
 
 				updateSprite(dt);
 			}
@@ -53,7 +73,7 @@ namespace Entities
 			void Goblin::shoot()
 			{
 				Projectiles::Bomb* bomb = nullptr;
-
+				std::cout << bombList.size() << std::endl;
 				if (i == bombList.end() || i == bombList.end()--)
 				{
 					i = bombList.begin();
@@ -63,6 +83,15 @@ namespace Entities
 				++i; 
 
 				bomb->activateProjectile(); 
+
+				if (facingRight)
+				{
+					//bomb->setVelocity(Math::CoordinateF(20, -2));
+				}
+				else
+				{
+					//bomb->setVelocity(Math::CoordinateF(-20, -2));
+				}
 			}
 
 		}

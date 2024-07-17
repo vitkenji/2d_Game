@@ -28,13 +28,13 @@ namespace GraphicalElements
 		if (selected)
 		{
 			body.setTexture(selectedTexture);
-			body.setFillColor(sf::Color(150,150,150));
+			body.setFillColor(sf::Color(255, 255, 255));
 			
 		}
 		else
 		{
 			body.setTexture(defaultTexture);
-			body.setFillColor(sf::Color(255, 255, 255));
+			body.setFillColor(sf::Color(150, 150, 150));
 			
 		}
 	}
@@ -43,5 +43,15 @@ namespace GraphicalElements
 	{
 		pGraphic->render(&body);
 		textInfo.render();
+	}
+
+	void Button::lowerTextPosition()
+	{
+		textInfo.setPosition(Math::CoordinateF(textInfo.getPosition().x, textInfo.getPosition().y + 8));
+	}
+
+	void Button::raiseTextPosition()
+	{
+		textInfo.setPosition(Math::CoordinateF(textInfo.getPosition().x, textInfo.getPosition().y - 8));
 	}
 }

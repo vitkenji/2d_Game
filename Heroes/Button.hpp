@@ -17,6 +17,8 @@ namespace GraphicalElements
 		~Button();
 		void select(bool selected);
 		void render();
+		void lowerTextPosition();
+		void raiseTextPosition();
 
 	};
 }

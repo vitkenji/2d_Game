@@ -1,4 +1,6 @@
 #include "MenuControl.hpp"
+#include "Menu.hpp"
+#include <iostream>
 
 namespace Control
 {
@@ -22,19 +24,11 @@ namespace Control
 		
 		if (key == "Down")
 		{
-
+			pMenu->selectDown();
 		}
 		if (key == "Up")
 		{
-
-		}
-		if (key == "Enter")
-		{
-
-		}
-		if (key == "Escape")
-		{
-
+			pMenu->selectUp();
 		}
 	}
 

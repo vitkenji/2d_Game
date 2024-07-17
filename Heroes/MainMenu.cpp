@@ -6,23 +6,31 @@ namespace Menus
 	Managers::GraphicManager* pG = Managers::GraphicManager::getInstance();
 
 	MainMenu::MainMenu(States::Game* pGame) : Menu(), States::State(static_cast<States::StateMachine*>(pGame), States::StateID::mainMenu), pGame(pGame),
-		title(Math::CoordinateF(pG->getWindowSize().x / 2.0f, pG->getWindowSize().y / 2), "HEROES")
+		title(Math::CoordinateF(300, 300), "HEROES")
 	{
 
 		GraphicalElements::Button* button = nullptr;
-		button = new GraphicalElements::Button(Math::CoordinateF(pG->getWindowSize().x / 2.0f, pG->getWindowSize().y / 2 + 100), "SINGLEPLAYER");
+		button = new GraphicalElements::Button(Math::CoordinateF(pG->getWindowSize().x / 2.0f, pG->getWindowSize().y / 2 ), "PLAY");
 		button->select(true);
 		buttons.push_back(button);
 
-		button = new GraphicalElements::Button(Math::CoordinateF(pG->getWindowSize().x / 2.0f, pG->getWindowSize().y / 2 + 200), "MULTIPLAYER");
+		button = new GraphicalElements::Button(Math::CoordinateF(pG->getWindowSize().x / 2.0f, pG->getWindowSize().y / 2 + 100), "SETTINGS");
 		button->select(false);
 		buttons.push_back(button);
 
-		title.setFontSize(FONT_SIZE);
+		button = new GraphicalElements::Button(Math::CoordinateF(pG->getWindowSize().x / 2.0f, pG->getWindowSize().y / 2 + 200), "LEADERBOARD");
+		button->select(false);
+		buttons.push_back(button);
+
+		button = new GraphicalElements::Button(Math::CoordinateF(pG->getWindowSize().x / 2.0f, pG->getWindowSize().y / 2 + 300), "QUIT");
+		button->select(false);
+		buttons.push_back(button);
+
+		title.setFontSize(100);
 		title.setTextInfo("HEROES");
 		title.setTextColor(255, 255 ,255);
 		title.setTextAlignment(GraphicalElements::TextAlignment::center);
-		title.setPosition(Math::CoordinateF(pG->getWindowSize().x / 2, title.getSize().y / 2));
+		title.setPosition(Math::CoordinateF(pG->getWindowSize().x / 2.0f, pG->getWindowSize().y / 2 - 200));
 
 		max = 3;
 
@@ -36,28 +44,44 @@ namespace Menus
 	void MainMenu::update(const float dt)
 	{
 		active = true;
-		if (title.getPosition().y < 200)
-		{
-			title.setPosition(Math::CoordinateF(title.getPosition().x, title.getPosition().y + 1));
-		}
+
+
 
 	}
 	void MainMenu::render()
 	{
 		updateView();
-		//back.render();
+		back.render();
 		for (i = buttons.begin(); i != buttons.end(); i++)
 		{
 			(*i)->render();
 		}
+		
 		title.render();
 	}
 	void MainMenu::resetState()
 	{
-		title.setPosition(Math::CoordinateF(title.getPosition().x, 0.0f - title.getSize().y / 2));
+		
 	}
 	void MainMenu::execute()
 	{
-
+		if (active) {
+			active = false;
+			switch (selected) {
+			case 0:
+				changeState(States::StateID::playing);
+				break;
+			case 1:
+				changeState(States::StateID::leaderboard);
+				break;
+			case 2:
+				changeState(States::StateID::settings);
+				break;
+			case 3:
+				break;
+			default:
+				break;
+			}
+		}
 	}
 }

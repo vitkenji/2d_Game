@@ -27,6 +27,18 @@
 //BOMB
 #define BOMB_SHOT_PATH "assets/enemies/goblin/Bomb_sprite.png"
 #define BOMB_IDLE_PATH "assets/enemies/goblin/Bomb_idle_sprite.png"
+
+//OBSTACLES
+
+//PLATFORM
+#define PLATFORM_PATH "assets/obstacles/platform1.png"
+
+
+//BUTTON
+#define DEFAULT_BUTTON_PATH "./assets/button/DefaultButton.png"
+#define SELECTED_BUTTON_PATH "./assets/button/SelectedButton.png"
+
 #define BACKGROUND_PATH "assets/background_cave.png"
 
-#define PLATFORM_PATH "assets/obstacles/platform1.png"
+//FONT
+#define FONT_PATH "assets/font.ttf"

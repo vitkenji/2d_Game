@@ -28,10 +28,14 @@ namespace GraphicalElements
 		if (selected)
 		{
 			body.setTexture(selectedTexture);
+			body.setFillColor(sf::Color(150,150,150));
+			
 		}
 		else
 		{
 			body.setTexture(defaultTexture);
+			body.setFillColor(sf::Color(255, 255, 255));
+			
 		}
 	}
 

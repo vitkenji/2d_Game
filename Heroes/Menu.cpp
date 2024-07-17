@@ -6,7 +6,7 @@ namespace Menus
 	{
 		Managers::GraphicManager* pG = Managers::GraphicManager::getInstance();
 		back.initialize(BACKGROUND_PATH, Math::CoordinateF(pG->getWindowSize().x / 2, pG->getWindowSize().y / 2), Math::CoordinateF(pG->getWindowSize().x, pG->getWindowSize().y));
-
+		menuControl = Control::MenuControl(this);
 	}
 
 	Menu::~Menu()
@@ -42,6 +42,7 @@ namespace Menus
 
 	void Menu::selectDown()
 	{
+		active = true;
 		if (active)
 		{
 			buttons[selected]->select(false);

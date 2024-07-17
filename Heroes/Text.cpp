@@ -15,11 +15,6 @@ namespace GraphicalElements
 
 	}
 
-	Text::Text()
-	{
-
-	}
-
 	Text::~Text()
 	{
 

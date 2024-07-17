@@ -1,5 +1,7 @@
 #pragma once
 #include "GraphicManager.hpp"
+#include "constants.h"
+#include "paths.h"
 
 namespace GraphicalElements
 {

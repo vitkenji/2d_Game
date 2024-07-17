@@ -29,12 +29,11 @@ namespace GraphicalElements
 		{
 			body.setTexture(selectedTexture);
 			body.setFillColor(sf::Color(255, 255, 255));
-			
 		}
 		else
 		{
 			body.setTexture(defaultTexture);
-			body.setFillColor(sf::Color(150, 150, 150));
+			body.setFillColor(sf::Color(190, 190, 190));
 			
 		}
 	}

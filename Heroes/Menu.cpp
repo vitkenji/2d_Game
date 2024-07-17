@@ -28,30 +28,28 @@ namespace Menus
 
 	void Menu::selectUp()
 	{
-		if (active)
+		if (active && selected > min)
 		{
 			buttons[selected]->select(false);
+			buttons[selected]->raiseTextPosition();
 			selected--;
+			buttons[selected]->lowerTextPosition();
 		}
-		if (selected < min)
-		{
-			selected = max;
-		}
+
 		buttons[selected]->select(true);
 	}
 
 	void Menu::selectDown()
 	{
 		active = true;
-		if (active)
+		if (active && selected < max)
 		{
 			buttons[selected]->select(false);
+			buttons[selected]->raiseTextPosition();
 			selected++;
+			buttons[selected]->lowerTextPosition();
 		}
-		if (selected > max)
-		{
-			selected = min;
-		}
+
 		buttons[selected]->select(true);
 	}
 

@@ -1,5 +1,6 @@
 #pragma once
 #include "InputManager.hpp"
+#include <iostream>
 
 namespace Control
 {

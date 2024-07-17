@@ -14,16 +14,20 @@
 #include "Platform.hpp"
 #include "CollisionManager.hpp"
 #include "Bomb.hpp"
+#include "StateMachine.hpp"
+#include "MainMenu.hpp"
+
 
 namespace States
 {
-	class Game
+	class Game : public StateMachine
 	{
 	private:
 		sf::Clock clock;
 		float dt;
 		Managers::GraphicManager* pGraphic;
 		Managers::EventManager* pEvent;
+
 		Managers::CollisionManager collisionManager;
 
 		Entities::Characters::Player player;

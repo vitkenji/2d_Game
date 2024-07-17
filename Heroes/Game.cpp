@@ -9,12 +9,11 @@ namespace States
         pPlayerControl = new Control::PlayerControl(&player);
 		clock.restart();
 
-        
         skeleton.setPlayer(&player);
         goblin.setPlayer(&player);
 
         movingEntitiesList.addEntity(&player);
-        //movingEntitiesList.addEntity(&skeleton);
+        movingEntitiesList.addEntity(&skeleton);
         movingEntitiesList.addEntity(&goblin);
 
         std::list<Entities::Projectiles::Bomb*>::iterator i;
@@ -29,6 +28,10 @@ namespace States
             staticEntitiesList.addEntity(platform);
         }
         
+        State* states;
+        states = static_cast<State*>(new Menus::MainMenu(this));
+        insertState(states);
+        changeCurrentState(StateID::mainMenu);
 
 		execute();
 
@@ -44,11 +47,9 @@ namespace States
 
         while (pGraphic->isWindowOpen())
         {
-            pGraphic->clear();
-            background.render();
-      
             pEvent->pollEvents();
-
+            pGraphic->clear();
+            //background.render();
             if (dt < TICK_RATE)
             {
                 dt += clock.getElapsedTime().asSeconds();
@@ -58,7 +59,7 @@ namespace States
             {
                 dt -= TICK_RATE;
             }
-
+            /*
             for (int i = 0; i < movingEntitiesList.getSize(); i++)
             {
                 movingEntitiesList[i]->update(dt);
@@ -69,8 +70,11 @@ namespace States
             {
             
                 staticEntitiesList[i]->render();
-            }
-            collisionManager.collide();
+            }*/
+
+            //collisionManager.collide();
+
+            renderCurrentState();
             pGraphic->display();
             
         }

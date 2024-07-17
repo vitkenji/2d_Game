@@ -29,3 +29,10 @@
 #define BOMB_SIZE_X 30
 #define BOMB_SIZE_Y 30
 
+//TEXT
+#define FONT_SIZE 24
+
+//BUTTONS
+#define BUTTON_HEIGHT 80
+#define BUTTON_WIDTH 300
+#define BUTTON_TEXT_COLOR 77.6, 68.2, 44.3

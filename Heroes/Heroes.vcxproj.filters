@@ -76,6 +76,12 @@
     <Filter Include="Arquivos de Origem\Entities\Projectiles">
       <UniqueIdentifier>{e9dc254c-6047-468b-9c59-5bc5979baa27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Menus">
+      <UniqueIdentifier>{31869c71-d490-43ab-9645-115ec3bcde8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Menus">
+      <UniqueIdentifier>{f85a48f8-2660-4a31-a554-d9c27a290f4e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Heroes.cpp">
@@ -152,6 +158,30 @@
     </ClCompile>
     <ClCompile Include="Bomb.cpp">
       <Filter>Arquivos de Origem\Entities\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>Arquivos de Origem\States</Filter>
+    </ClCompile>
+    <ClCompile Include="StateMachhine.cpp">
+      <Filter>Arquivos de Origem\States</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuControl.cpp">
+      <Filter>Arquivos de Origem\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Arquivos de Origem\GraphicalElements</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Arquivos de Origem\GraphicalElements</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Arquivos de Origem\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Arquivos de Origem\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Arquivos de Origem\States</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +268,30 @@
     </ClInclude>
     <ClInclude Include="Bomb.hpp">
       <Filter>Arquivos de Cabeçalho\Entities\Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="State.hpp">
+      <Filter>Arquivos de Cabeçalho\States</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMachine.hpp">
+      <Filter>Arquivos de Cabeçalho\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.hpp">
+      <Filter>Arquivos de Cabeçalho\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuControl.hpp">
+      <Filter>Arquivos de Cabeçalho\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.hpp">
+      <Filter>Arquivos de Cabeçalho\GraphicalElements</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.hpp">
+      <Filter>Arquivos de Cabeçalho\GraphicalElements</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenu.hpp">
+      <Filter>Arquivos de Cabeçalho\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.hpp">
+      <Filter>Arquivos de Cabeçalho\States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -15,6 +15,11 @@ namespace GraphicalElements
 
 	}
 
+	Text::Text()
+	{
+
+	}
+
 	Text::~Text()
 	{
 
@@ -52,6 +57,11 @@ namespace GraphicalElements
 			text.setOrigin(getSize().x / 2, getSize().y);
 			break;
 		}
+	}
+
+	void Text::setFontSize(const int size)
+	{
+		text.setCharacterSize(size);
 	}
 
 	void Text::render()

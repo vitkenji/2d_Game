@@ -4,12 +4,12 @@ namespace Entities
 {
 	namespace Characters
 	{
-		Player::Player() : Character(Math::CoordinateF(50, 50), Math::CoordinateF(50, 50), ID::player),
+		Player::Player() : Character(Math::CoordinateF(50, 600), Math::CoordinateF(PLAYER_SIZE_X, PLAYER_SIZE_Y), ID::player),
 		 isJumping(false), canJump(false)
 		{
 			swordDistance = 10;
 			life = 50000;
-			damage = 1;
+			damage = 16;
 			addAnimations();
 			setFacingRight(true);
 		}
@@ -20,12 +20,12 @@ namespace Entities
 
 		void Player::addAnimations()
 		{
-			sprite.addNewAnimation(GraphicalElements::idle, PLAYER_IDLE_PATH, 8, 0.9);
-			sprite.addNewAnimation(GraphicalElements::attack, PLAYER_ATTACK_PATH, 6, 0.9);
-			sprite.addNewAnimation(GraphicalElements::run, PLAYER_RUN_PATH, 8, 0.9);
-			sprite.addNewAnimation(GraphicalElements::takeHit, PLAYER_TAKEHIT_PATH, 4, 1.6);
-			sprite.addNewAnimation(GraphicalElements::jump, PLAYER_JUMP_PATH, 2, 1);
-			sprite.addNewAnimation(GraphicalElements::fall, PLAYER_FALL_PATH, 2, 1);
+			sprite.addNewAnimation(GraphicalElements::idle, PLAYER_IDLE_PATH, 8, 0.1);
+			sprite.addNewAnimation(GraphicalElements::attack, PLAYER_ATTACK_PATH, 6, 0.1);
+			sprite.addNewAnimation(GraphicalElements::run, PLAYER_RUN_PATH, 8, 0.1);
+			sprite.addNewAnimation(GraphicalElements::takeHit, PLAYER_TAKEHIT_PATH, 4, 0.21);
+			sprite.addNewAnimation(GraphicalElements::jump, PLAYER_JUMP_PATH, 2, 0.1);
+			sprite.addNewAnimation(GraphicalElements::fall, PLAYER_FALL_PATH, 2, 0.1);
 		}
 
 		void Player::attack()
@@ -124,13 +124,13 @@ namespace Entities
 
 		void Player::limitSprint()
 		{
-			if (velocity.x >= 100)
+			if (velocity.x >= 600)
 			{
-				velocity.x = 100;
+				velocity.x = 600;
 			}
-			else if (velocity.x <= -100)
+			else if (velocity.x <= -600)
 			{
-				velocity.x = -100;
+				velocity.x = -600;
 				
 			}
 		}
@@ -165,6 +165,7 @@ namespace Entities
 			if (other->getID() == platform)
 			{		
 				velocity.y = 0;	
+				
 			}
 
 			if (other->getID() == skeleton || other->getID() == goblin)

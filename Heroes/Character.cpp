@@ -29,7 +29,7 @@ namespace Entities
 			if (isTakingHit == true)
 			{
 				cooldown += dt;
-				if (cooldown >= 10)
+				if (cooldown >= 2)
 				{
 					cooldown = 0;
 					isTakingHit = false;

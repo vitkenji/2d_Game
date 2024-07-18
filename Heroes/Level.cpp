@@ -2,8 +2,9 @@
 
 namespace States
 {
-	Level::Level(StateMachine* pStateMachine) : State(pStateMachine, StateID::playing), movingEntitiesList(), staticEntitiesList(),
-		skeleton(Math::CoordinateF(450, 50)), goblin(Math::CoordinateF(900, 200)), collisionManager(&movingEntitiesList, &staticEntitiesList)
+	Level::Level(StateMachine* pStateMachine) : State(pStateMachine, StateID::playing), movingEntitiesList(), staticEntitiesList()
+		,collisionManager(&movingEntitiesList, &staticEntitiesList)
+        ,skeleton(Math::CoordinateF(450, 600)), goblin(Math::CoordinateF(900, 600))
 	{
         background.initialize(BACKGROUND_PATH, Math::CoordinateF(600, 400), Math::CoordinateF(WIDTH + 30, HEIGHT + 20));
         pPlayerControl = new Control::PlayerControl(&player);
@@ -14,18 +15,18 @@ namespace States
         movingEntitiesList.addEntity(&player);
         movingEntitiesList.addEntity(&skeleton);
         movingEntitiesList.addEntity(&goblin);
-
+        
         std::list<Entities::Projectiles::Bomb*>::iterator i;
         for (i = goblin.bombList.begin(); i != goblin.bombList.end(); i++)
         {
             movingEntitiesList.addEntity((*i));
         }
-
+        
         for (int i = 0; i < 8; i++)
         {
             Entities::Obstacles::Platform* platform = new Entities::Obstacles::Platform(Math::CoordinateF(0 + 192 * i, 780));
             staticEntitiesList.addEntity(platform);
-        }
+        } 
 	}
 
     Level::~Level()

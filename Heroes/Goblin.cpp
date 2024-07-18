@@ -27,11 +27,11 @@ namespace Entities
 
 			void Goblin::addAnimations()
 			{
-				sprite.addNewAnimation(GraphicalElements::idle, GOBLIN_IDLE_PATH, 4, 1.3);
-				sprite.addNewAnimation(GraphicalElements::run, GOBLIN_RUN_PATH, 8, 1);
-				sprite.addNewAnimation(GraphicalElements::takeHit, GOBLIN_TAKEHIT_PATH, 4, 1.2);
-				sprite.addNewAnimation(GraphicalElements::attack, GOBLIN_ATTACK_PATH, 12, 1);
-				sprite.addNewAnimation(GraphicalElements::death, GOBLIN_DEATH_PATH, 4, 1.7);
+				sprite.addNewAnimation(GraphicalElements::idle, GOBLIN_IDLE_PATH, 4, 0.2);
+				sprite.addNewAnimation(GraphicalElements::run, GOBLIN_RUN_PATH, 8, 0.2);
+				sprite.addNewAnimation(GraphicalElements::takeHit, GOBLIN_TAKEHIT_PATH, 4, 0.2);
+				sprite.addNewAnimation(GraphicalElements::attack, GOBLIN_ATTACK_PATH, 12, 0.2);
+				sprite.addNewAnimation(GraphicalElements::death, GOBLIN_DEATH_PATH, 4, 0.45);
 			}
 
 			void Goblin::update(const float dt)
@@ -72,7 +72,7 @@ namespace Entities
 			void Goblin::shoot()
 			{
 				Projectiles::Bomb* bomb = nullptr;
-				std::cout << bombList.size() << std::endl;
+				//std::cout << bombList.size() << std::endl;
 				if (i == bombList.end() || i == bombList.end()--)
 				{
 					i = bombList.begin();

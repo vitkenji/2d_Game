@@ -18,9 +18,12 @@ namespace Managers
 		for (int i = 0; i < staticEntities->getSize(); i++)
 		{
 			Math::CoordinateF distance; Math::CoordinateF intersection; Math::CoordinateF length;
-
+			
 			for (int j = 0; j < movingEntities->getSize(); j++)
 			{
+				//std::cout << (*movingEntities)[j]->getSize().x << std::endl;
+				//std::cout << (*movingEntities)[j]->getSize().y << std::endl;
+
 				distance.x = fabs((*staticEntities)[i]->getPosition().x - (*movingEntities)[j]->getPosition().x);
 				distance.y = fabs((*staticEntities)[i]->getPosition().y - (*movingEntities)[j]->getPosition().y);
 

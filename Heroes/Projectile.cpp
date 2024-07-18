@@ -18,7 +18,7 @@ namespace Entities
 
 		void Projectile::activateProjectile()
 		{
-			std::cout << "activated" << std::endl;
+			//std::cout << "activated" << std::endl;
 			this->active = true;
 			this->shot = true;
 		}

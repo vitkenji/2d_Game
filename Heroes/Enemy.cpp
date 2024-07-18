@@ -52,14 +52,6 @@ namespace Entities
 				{
 					if (intersection.x < 0.f)
 					{
-						if (velocity.x > 0)
-						{
-							position.x -= 1;
-						}
-						else if (velocity.x < 0)
-						{
-							position.x += 1;
-						}
 						velocity.x = 0;
 
 					}
@@ -97,7 +89,7 @@ namespace Entities
 				if (isDying)
 				{
 					deathCooldown += dt;
-					if (deathCooldown >= 6)
+					if (deathCooldown >= 1.7)
 					{
 						isDying = false;
 						active = false;

@@ -20,11 +20,11 @@ namespace Entities
 
 			void Skeleton::addAnimations()
 			{
-				sprite.addNewAnimation(GraphicalElements::idle, SKELETON_IDLE_PATH, 4, 1.8);
-				sprite.addNewAnimation(GraphicalElements::attack, SKELETON_ATTACK_PATH, 8, 0.9);
-				sprite.addNewAnimation(GraphicalElements::death, SKELETON_DEATH_PATH, 4, 1.8);
-				sprite.addNewAnimation(GraphicalElements::run, SKELETON_RUN_PATH, 4, 1);
-				sprite.addNewAnimation(GraphicalElements::takeHit, SKELETON_TAKEHIT_PATH, 4, 1.5);
+				sprite.addNewAnimation(GraphicalElements::idle, SKELETON_IDLE_PATH, 4, 0.2);
+				sprite.addNewAnimation(GraphicalElements::attack, SKELETON_ATTACK_PATH, 8, 0.15);
+				sprite.addNewAnimation(GraphicalElements::death, SKELETON_DEATH_PATH, 4, 0.43);
+				sprite.addNewAnimation(GraphicalElements::run, SKELETON_RUN_PATH, 4, 0.2);
+				sprite.addNewAnimation(GraphicalElements::takeHit, SKELETON_TAKEHIT_PATH, 4, 0.2);
 
 			}
 
@@ -53,7 +53,7 @@ namespace Entities
 					setFacingRight(true);
 					if (distance.x > 49)
 					{
-						velocity.x = 8;
+						velocity.x = 70;
 					}
 					else
 					{
@@ -68,7 +68,7 @@ namespace Entities
 					setFacingRight(false);
 					if (distance.x > 49)
 					{
-						velocity.x = -8;
+						velocity.x = -70;
 					}
 					else
 					{
@@ -97,7 +97,7 @@ namespace Entities
 						isWalking = true;
 						isAttacking = false;
 						setFacingRight(false);
-						velocity.x = -5;
+						velocity.x = -35;
 					}
 					else if (direction > 13 && direction <= 20)
 					{
@@ -109,7 +109,7 @@ namespace Entities
 						isWalking = true;
 						isAttacking = false;
 						setFacingRight(true);
-						velocity.x = 5;
+						velocity.x = 35;
 					}
 					else
 					{

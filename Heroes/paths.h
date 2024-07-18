@@ -39,7 +39,8 @@
 #define SELECTED_BUTTON_PATH "./assets/button/SelectedButton.png"
 
 //FONT
-#define FONT_PATH "assets/font.ttf"
+#define FONT1_PATH "assets/fonts/Font1.ttf"
+#define FONT2_PATH "assets/fonts/Font2.ttf"
 
 //BACKGROUNDS
 #define BACKGROUND_PATH "assets/backgrounds/background_cave.png"

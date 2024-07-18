@@ -3,7 +3,7 @@
 namespace GraphicalElements
 {
 
-	Button::Button(Math::CoordinateF position, std::string info) : textInfo(position, info), defaultTexture(nullptr), selectedTexture(nullptr)
+	Button::Button(Math::CoordinateF position, std::string info) : textInfo(position, info, FONT1_PATH), defaultTexture(nullptr), selectedTexture(nullptr)
 	{
 		defaultTexture = pGraphic->loadTexture(DEFAULT_BUTTON_PATH);
 		selectedTexture = pGraphic->loadTexture(SELECTED_BUTTON_PATH);
@@ -20,7 +20,8 @@ namespace GraphicalElements
 
 	Button::~Button()
 	{
-
+		defaultTexture = nullptr;
+		selectedTexture = nullptr;
 	}
 
 	void Button::select(bool selected)
@@ -33,7 +34,7 @@ namespace GraphicalElements
 		else
 		{
 			body.setTexture(defaultTexture);
-			body.setFillColor(sf::Color(190, 190, 190));
+			body.setFillColor(sf::Color(220, 220, 220));
 			
 		}
 	}

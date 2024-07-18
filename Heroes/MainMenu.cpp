@@ -6,7 +6,7 @@ namespace Menus
 	Managers::GraphicManager* pG = Managers::GraphicManager::getInstance();
 
 	MainMenu::MainMenu(States::Game* pGame) : Menu(), States::State(static_cast<States::StateMachine*>(pGame), States::StateID::mainMenu), pGame(pGame),
-		title(Math::CoordinateF(300, 300), "HEROES")
+		title(Math::CoordinateF(300, 300), "HEROES", FONT2_PATH)
 	{
 
 		GraphicalElements::Button* button = nullptr;
@@ -26,7 +26,7 @@ namespace Menus
 		button->select(false);
 		buttons.push_back(button);
 
-		title.setFontSize(100);
+		title.setFontSize(160);
 		title.setTextInfo("HEROES");
 		title.setTextColor(0,0,0);
 		title.setTextAlignment(GraphicalElements::TextAlignment::center);

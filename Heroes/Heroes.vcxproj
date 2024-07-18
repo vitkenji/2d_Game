@@ -163,7 +163,7 @@
     <ClCompile Include="SingleFrameAnimation.cpp" />
     <ClCompile Include="Skeleton.cpp" />
     <ClCompile Include="State.cpp" />
-    <ClCompile Include="StateMachhine.cpp" />
+    <ClCompile Include="StateMachine.cpp" />
     <ClCompile Include="StaticEntity.cpp" />
     <ClCompile Include="Text.cpp" />
   </ItemGroup>

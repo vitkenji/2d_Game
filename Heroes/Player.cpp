@@ -111,15 +111,14 @@ namespace Entities
 		void Player::update(const float dt)
 		{
 			manageTakeHitCooldown(dt);
-
-			fallToGravity(dt);
-		
+	
 			if (isWalking)
 			{
 				position.x += velocity.x * dt;
 			}
 
 			limitSprint();
+			fallToGravity(dt);
 			updateSprite(dt);
 		}
 

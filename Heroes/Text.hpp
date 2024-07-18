@@ -20,7 +20,7 @@ namespace GraphicalElements
 		static Managers::GraphicManager* pGraphicManager;
 
 	public:
-		Text(Math::CoordinateF position, std::string info, const char* path = FONT_PATH);
+		Text(Math::CoordinateF position, std::string info, const char* path);
 		~Text();
 
 		void setTextInfo(std::string info);

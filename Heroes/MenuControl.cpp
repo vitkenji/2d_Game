@@ -30,6 +30,10 @@ namespace Control
 		{
 			pMenu->selectUp();
 		}
+		if (key == "Enter")
+		{
+			pMenu->execute();
+		}
 	}
 
 	void MenuControl::notifyReleased(std::string key)

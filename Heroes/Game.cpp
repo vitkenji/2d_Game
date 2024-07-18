@@ -31,6 +31,10 @@ namespace States
         State* states;
         states = static_cast<State*>(new Menus::MainMenu(this));
         insertState(states);
+
+        states = new Level(this);
+        insertState(states);
+
         changeCurrentState(StateID::mainMenu);
 
 		execute();
@@ -57,6 +61,7 @@ namespace States
             }
             else
             {
+                updateCurrentState(0.01);
                 dt -= TICK_RATE;
             }
             /*

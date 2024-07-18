@@ -162,7 +162,7 @@
     <ClCompile Include="State.cpp">
       <Filter>Arquivos de Origem\States</Filter>
     </ClCompile>
-    <ClCompile Include="StateMachhine.cpp">
+    <ClCompile Include="StateMachine.cpp">
       <Filter>Arquivos de Origem\States</Filter>
     </ClCompile>
     <ClCompile Include="MenuControl.cpp">

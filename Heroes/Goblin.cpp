@@ -66,7 +66,6 @@ namespace Entities
 				manageDeathCooldown(dt);
 
 				fallToGravity(dt);
-
 				updateSprite(dt);
 			}
 
@@ -92,6 +91,11 @@ namespace Entities
 				{
 					//bomb->setVelocity(Math::CoordinateF(-20, -2));
 				}
+			}
+
+			void Goblin::noticePlayer(Math::CoordinateF distance)
+			{
+
 			}
 
 		}

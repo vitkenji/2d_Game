@@ -19,6 +19,7 @@ namespace Entities
 				void addAnimations();
 				void update(const float dt);
 				void walk();
+				void noticePlayer(Math::CoordinateF distance);
 
 			};
 		}

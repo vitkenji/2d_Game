@@ -22,6 +22,8 @@ namespace Entities
 
 				void setPlayer(Player* pPlayer);
 				void manageDeathCooldown(const float dt);
+
+				virtual void noticePlayer(Math::CoordinateF distance) = 0;
 				virtual void update(const float dt) = 0;
 				virtual void updateSprite(const float dt);
 				virtual void collide(Entity* other, Math::CoordinateF intersection);

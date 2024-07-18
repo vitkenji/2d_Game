@@ -25,6 +25,7 @@ namespace Entities
 				void addAnimations();
 				void update(const float dt);
 				void shoot();
+				void noticePlayer(Math::CoordinateF distance);
 	
 			};
 		}

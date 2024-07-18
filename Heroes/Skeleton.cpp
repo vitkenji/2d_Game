@@ -40,11 +40,43 @@ namespace Entities
 				position.x += velocity.x * dt;
 
 				fallToGravity(dt);
-
 				updateSprite(dt);
 				
 			}
 
+			void Skeleton::noticePlayer(Math::CoordinateF distance)
+			{
+				if (pPlayer->getPosition().x > this->position.x)
+				{
+					isWalking = true;
+					isAttacking = false;
+					setFacingRight(true);
+					if (distance.x > 49)
+					{
+						velocity.x = 8;
+					}
+					else
+					{
+						isAttacking = true;
+						velocity.x = 0;
+					}
+				}
+				else
+				{
+					isWalking = true;
+					isAttacking = false;
+					setFacingRight(false);
+					if (distance.x > 49)
+					{
+						velocity.x = -8;
+					}
+					else
+					{
+						isAttacking = true;
+						velocity.x = 0;
+					}
+				}
+			}
 	
 			void Skeleton::walk()
 			{
@@ -54,36 +86,7 @@ namespace Entities
 				Math::CoordinateF distance = Math::CoordinateF(fabs(pPlayer->getPosition().x - this->position.x), fabs(pPlayer->getPosition().y - this->position.y));
 				if (distance.x < 300)
 				{				
-					if (pPlayer->getPosition().x > this->position.x)
-					{
-						isWalking = true;
-						isAttacking = false;
-						setFacingRight(true);
-						if (distance.x > 49)
-						{
-							velocity.x = 8;
-						}
-						else
-						{
-							isAttacking = true;
-							velocity.x = 0;
-						}
-					}
-					else
-					{
-						isWalking = true;
-						isAttacking = false;
-						setFacingRight(false);
-						if (distance.x > 49)
-						{
-							velocity.x = -8;
-						}
-						else
-						{
-							isAttacking = true;
-							velocity.x = 0;
-						}
-					}
+					noticePlayer(distance);
 				}
 
 				else

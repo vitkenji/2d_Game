@@ -5,7 +5,7 @@ namespace Menus
 	Menu::Menu() : selected(0), min(0), max(2), menuControl(this), active(false)
 	{
 		Managers::GraphicManager* pG = Managers::GraphicManager::getInstance();
-		back.initialize(BACKGROUND_PATH, Math::CoordinateF(pG->getWindowSize().x / 2, pG->getWindowSize().y / 2), Math::CoordinateF(pG->getWindowSize().x, pG->getWindowSize().y));
+		back.initialize(MAINMENUBACKGROUND_PATH, Math::CoordinateF(pG->getWindowSize().x / 2, pG->getWindowSize().y / 2), Math::CoordinateF(pG->getWindowSize().x, pG->getWindowSize().y));
 		menuControl = Control::MenuControl(this);
 	}
 

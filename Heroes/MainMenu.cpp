@@ -28,10 +28,11 @@ namespace Menus
 
 		title.setFontSize(100);
 		title.setTextInfo("HEROES");
-		title.setTextColor(255, 255 ,255);
+		title.setTextColor(0,0,0);
 		title.setTextAlignment(GraphicalElements::TextAlignment::center);
 		title.setPosition(Math::CoordinateF(pG->getWindowSize().x / 2.0f, pG->getWindowSize().y / 2 - 200));
 
+		min = 0;
 		max = 3;
 
 	}

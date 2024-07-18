@@ -38,7 +38,9 @@
 #define DEFAULT_BUTTON_PATH "./assets/button/DefaultButton.png"
 #define SELECTED_BUTTON_PATH "./assets/button/SelectedButton.png"
 
-#define BACKGROUND_PATH "assets/background_cave.png"
-
 //FONT
 #define FONT_PATH "assets/font.ttf"
+
+//BACKGROUNDS
+#define BACKGROUND_PATH "assets/backgrounds/background_cave.png"
+#define MAINMENUBACKGROUND_PATH "assets/backgrounds/MainMenu.png"

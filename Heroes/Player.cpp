@@ -144,7 +144,7 @@ namespace Entities
 				isJumping = false;
 			}
 
-			if (other->getID() == skeleton || other->getID() == goblin)
+			if (other->getID() == skeleton || other->getID() == goblin || other->getID() == mushroom)
 			{
 				Character* pCharacter = dynamic_cast<Character*>(other);
 				if (intersection.y < 0.f)
@@ -168,26 +168,6 @@ namespace Entities
 				
 			}
 
-			if (other->getID() == skeleton || other->getID() == goblin)
-			{
-				if (intersection.x  + swordDistance< 0.f)
-				{
-					if (velocity.x > 0)
-					{
-						position.x -= 1;
-					}
-					else if (velocity.x < 0)
-					{
-						position.x += 1;
-					}
-					velocity.x = 0;
-
-				}
-				if (intersection.y < 0.f)
-				{
-					velocity.y = 0;
-				}
-			}
 		}
 	}
 }

@@ -9,6 +9,9 @@ namespace Entities
 		platform,
 		skeleton,
 		goblin,
+		mushroom,
+		flyingeye,
+		boss,
 		bomb,
 	};
 

@@ -8,6 +8,8 @@
 #include "Goblin.hpp"
 #include "Platform.hpp"
 #include "Bomb.hpp"
+#include "Mushroom.hpp"
+
 
 namespace States
 {
@@ -21,6 +23,7 @@ namespace States
 		Entities::Characters::Player player;
 		Entities::Characters::Enemies::Skeleton skeleton;
 		Entities::Characters::Enemies::Goblin goblin;
+		Entities::Characters::Enemies::Mushroom mushroom;
 
 		Control::PlayerControl* pPlayerControl;
 		GraphicalElements::SingleFrameAnimation background;

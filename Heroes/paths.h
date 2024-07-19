@@ -22,6 +22,13 @@
 #define SKELETON_DEATH_PATH "assets/enemies/skeleton/Death.png"
 #define SKELETON_TAKEHIT_PATH "assets/enemies/skeleton/Take_Hit.png"
 
+//MUSHROOM
+#define MUSHROOM_IDLE_PATH "assets/enemies/mushroom/Idle.png"
+#define MUSHROOM_RUN_PATH "assets/enemies/mushroom/Run.png"
+#define MUSHROOM_ATTACK_PATH "assets/enemies/mushroom/Attack.png"
+#define MUSHROOM_DEATH_PATH "assets/enemies/mushroom/Death.png"
+#define MUSHROOM_TAKEHIT_PATH "assets/enemies/mushroom/Takehit.png"
+
 //PROJECTILES
 
 //BOMB

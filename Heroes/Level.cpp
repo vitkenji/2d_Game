@@ -4,17 +4,19 @@ namespace States
 {
 	Level::Level(StateMachine* pStateMachine) : State(pStateMachine, StateID::playing), movingEntitiesList(), staticEntitiesList()
 		,collisionManager(&movingEntitiesList, &staticEntitiesList), pGraphicManager(Managers::GraphicManager::getInstance())
-        ,skeleton(Math::CoordinateF(450, 600)), goblin(Math::CoordinateF(900, 600))
+        ,skeleton(Math::CoordinateF(450, 600)), goblin(Math::CoordinateF(1400, 600)), mushroom(Math::CoordinateF(900, 600))
 	{
         background.initialize(BACKGROUND_PATH, Math::CoordinateF(600, 400), Math::CoordinateF(WIDTH + 300, HEIGHT + 200));
         pPlayerControl = new Control::PlayerControl(&player);
        
         skeleton.setPlayer(&player);
         goblin.setPlayer(&player);
+        mushroom.setPlayer(&player);
 
         movingEntitiesList.addEntity(&player);
-       // movingEntitiesList.addEntity(&skeleton);
+        movingEntitiesList.addEntity(&skeleton);
         movingEntitiesList.addEntity(&goblin);
+        movingEntitiesList.addEntity(&mushroom);
 
         Entities::Projectiles::Bomb* bomb = goblin.bomb;
         movingEntitiesList.addEntity(bomb);

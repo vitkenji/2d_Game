@@ -1,4 +1,4 @@
-#include "Skeleton.hpp"
+#include "Mushroom.hpp"
 
 namespace Entities
 {
@@ -6,29 +6,27 @@ namespace Entities
 	{
 		namespace Enemies
 		{
-			
-			Skeleton::Skeleton(Math::CoordinateF position) : Enemy(position, Math::CoordinateF(SKELETON_SIZE_X, SKELETON_SIZE_Y), skeleton)
+			Mushroom::Mushroom(Math::CoordinateF position) : Enemy(position, Math::CoordinateF(MUSHROOM_SIZE_X, MUSHROOM_SIZE_Y), mushroom)
 			{
-				swordDistance = 8;
 				addAnimations();
 			}
 
-			Skeleton::~Skeleton()
+			Mushroom::~Mushroom()
 			{
 
 			}
 
-			void Skeleton::addAnimations()
+			void Mushroom::addAnimations()
 			{
-				sprite.addNewAnimation(GraphicalElements::idle, SKELETON_IDLE_PATH, 4, 0.19);
-				sprite.addNewAnimation(GraphicalElements::attack, SKELETON_ATTACK_PATH, 8, 0.15);
-				sprite.addNewAnimation(GraphicalElements::death, SKELETON_DEATH_PATH, 4, 0.43);
-				sprite.addNewAnimation(GraphicalElements::run, SKELETON_RUN_PATH, 4, 0.1);
-				sprite.addNewAnimation(GraphicalElements::takeHit, SKELETON_TAKEHIT_PATH, 4, 0.2);
+				sprite.addNewAnimation(GraphicalElements::idle, MUSHROOM_IDLE_PATH, 4, 0.1);
+				sprite.addNewAnimation(GraphicalElements::takeHit, MUSHROOM_TAKEHIT_PATH, 4, 0.1);
+				sprite.addNewAnimation(GraphicalElements::death, MUSHROOM_DEATH_PATH, 4, 0.43);
+				sprite.addNewAnimation(GraphicalElements::run, MUSHROOM_RUN_PATH, 8, 0.1);
+				sprite.addNewAnimation(GraphicalElements::attack, MUSHROOM_ATTACK_PATH, 8, 0.1);
 
 			}
 
-			void Skeleton::update(const float dt)
+			void Mushroom::update(const float dt)
 			{
 				manageTakeHitCooldown(dt);
 				if (life <= 0 && deathCooldown == 0)
@@ -41,10 +39,10 @@ namespace Entities
 
 				fallToGravity(dt);
 				updateSprite(dt);
-				
+
 			}
 
-			void Skeleton::noticePlayer(Math::CoordinateF distance)
+			void Mushroom::noticePlayer(Math::CoordinateF distance)
 			{
 				if (pPlayer->getPosition().x > this->position.x)
 				{
@@ -77,21 +75,21 @@ namespace Entities
 					}
 				}
 			}
-	
-			void Skeleton::walk()
+
+			void Mushroom::walk()
 			{
 				srand(time(NULL));
 				int direction = rand() % 40;
-				
+
 				Math::CoordinateF distance = Math::CoordinateF(fabs(pPlayer->getPosition().x - this->position.x), fabs(pPlayer->getPosition().y - this->position.y));
 				if (distance.x < 300)
-				{				
+				{
 					noticePlayer(distance);
 				}
 
 				else
 				{
-					
+
 					if (direction > 0 && direction <= 13)
 					{
 						isWalking = true;
@@ -120,6 +118,8 @@ namespace Entities
 				}
 
 			}
+
+			
 
 		}
 	}

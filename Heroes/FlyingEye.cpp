@@ -1,4 +1,4 @@
-#include "Goblin.hpp"
+#include "FlyingEye.hpp"
 
 namespace Entities
 {
@@ -6,31 +6,26 @@ namespace Entities
 	{
 		namespace Enemies
 		{
-			Goblin::Goblin(Math::CoordinateF position) : Enemy(position, Math::CoordinateF(GOBLIN_SIZE_X, GOBLIN_SIZE_Y), goblin)
+			FlyingEye::FlyingEye(Math::CoordinateF position) : Enemy(position, Math::CoordinateF(FLYINGEYE_SIZE_X, FLYINGEYE_SIZE_Y), flyingeye)
 			{
-				bomb = new Projectiles::Bomb(position);
-				bombCooldown = 0;
-				attackAnimationTime = 0;
-				swordDistance = 5;
 				addAnimations();
-				canShoot = true;
-
 			}
 
-			Goblin::~Goblin()
+			FlyingEye::~FlyingEye()
 			{
+
 			}
 
-			void Goblin::addAnimations()
+			void FlyingEye::addAnimations()
 			{
-				sprite.addNewAnimation(GraphicalElements::idle, GOBLIN_IDLE_PATH, 4, 0.2);
-				sprite.addNewAnimation(GraphicalElements::run, GOBLIN_RUN_PATH, 8, 0.2);
-				sprite.addNewAnimation(GraphicalElements::takeHit, GOBLIN_TAKEHIT_PATH, 4, 0.2);
-				sprite.addNewAnimation(GraphicalElements::attack, GOBLIN_ATTACK_PATH, 12, 0.2);
-				sprite.addNewAnimation(GraphicalElements::death, GOBLIN_DEATH_PATH, 4, 0.45);
+				sprite.addNewAnimation(GraphicalElements::idle, FLYINGEYE_IDLE_PATH, 8, 0.2);
+				sprite.addNewAnimation(GraphicalElements::run, FLYINGEYE_RUN_PATH, 8, 0.2);
+				sprite.addNewAnimation(GraphicalElements::takeHit, FLYINGEYE_TAKEHIT_PATH, 4, 0.2);
+				sprite.addNewAnimation(GraphicalElements::attack, FLYINGEYE_ATTACK_PATH, 6, 0.2);
+				sprite.addNewAnimation(GraphicalElements::death, FLYINGEYE_DEATH_PATH, 4, 0.45);
 			}
 
-			void Goblin::update(const float dt)
+			void FlyingEye::update(const float dt)
 			{
 				Math::CoordinateF distance = Math::CoordinateF(fabs(pPlayer->getPosition().x - this->position.x), fabs(pPlayer->getPosition().y - this->position.y));
 				if (distance.x < 400)
@@ -38,7 +33,7 @@ namespace Entities
 
 					if (pPlayer->getPosition().x > this->position.x)
 					{
-						setFacingRight(true);		
+						setFacingRight(true);
 					}
 					else
 					{
@@ -49,7 +44,7 @@ namespace Entities
 					{
 						isAttacking = true;
 					}
-					if(isAttacking)
+					if (isAttacking)
 					{
 						attackAnimationTime += dt;
 
@@ -57,7 +52,7 @@ namespace Entities
 
 					if (attackAnimationTime >= 1.2)
 					{
-	
+
 						isAttacking = false;
 						if (canShoot)
 						{
@@ -70,7 +65,7 @@ namespace Entities
 					if (!canShoot)
 					{
 						bombCooldown += dt;
-						
+
 						if (bombCooldown >= 5)
 						{
 							bombCooldown = 0;
@@ -84,39 +79,23 @@ namespace Entities
 				if (life <= 0 && deathCooldown == 0)
 				{
 					isDying = true;
-					bomb->setActive(false);
 				}
 				manageDeathCooldown(dt);
 
-				fallToGravity(dt);
+			
 				updateSprite(dt);
 			}
 
-			void Goblin::shoot(const float dt)
+			void FlyingEye::shoot(const float dt)
 			{
-					bomb->resetSprite(dt);
-					bomb->activateProjectile();
-					if (facingRight)
-					{
-						bomb->setPosition(Math::CoordinateF(this->position.x + 20, this->position.y - 10));
-					}
-					else
-					{
-						bomb->setPosition(Math::CoordinateF(this->position.x - 20, this->position.y - 10));
-					}
-
-					Math::CoordinateF bombVelocity = Math::CoordinateF((pPlayer->getPosition().x - this->position.x)/1.3, -6);
-
-					bomb->setVelocity(bombVelocity);
-				
 			}
 
-			void Goblin::noticePlayer(Math::CoordinateF distance)
+			void FlyingEye::noticePlayer(Math::CoordinateF distance)
 			{
 
 			}
 
-			void Goblin::collide(Entity* other, Math::CoordinateF intersection)
+			void FlyingEye::collide(Entity* other, Math::CoordinateF intersection)
 			{
 				Player* pPlayer = dynamic_cast<Player*>(other);
 				checkCollision(other, intersection);

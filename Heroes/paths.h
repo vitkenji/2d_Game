@@ -29,6 +29,13 @@
 #define MUSHROOM_DEATH_PATH "assets/enemies/mushroom/Death.png"
 #define MUSHROOM_TAKEHIT_PATH "assets/enemies/mushroom/Takehit.png"
 
+//FLYING EYE
+#define FLYINGEYE_IDLE_PATH "assets/enemies/flyingeye/Flight.png"
+#define FLYINGEYE_RUN_PATH "assets/enemies/flyingeye/Flight.png"
+#define FLYINGEYE_ATTACK_PATH "assets/enemies/flyingeye/Attack3.png"
+#define FLYINGEYE_DEATH_PATH "assets/enemies/flyingeye/Death.png"
+#define FLYINGEYE_TAKEHIT_PATH "assets/enemies/flyingeye/Takehit.png"
+
 //PROJECTILES
 
 //BOMB

@@ -9,7 +9,7 @@
 #include "Platform.hpp"
 #include "Bomb.hpp"
 #include "Mushroom.hpp"
-
+#include "FlyingEye.hpp"
 
 namespace States
 {
@@ -24,7 +24,7 @@ namespace States
 		Entities::Characters::Enemies::Skeleton skeleton;
 		Entities::Characters::Enemies::Goblin goblin;
 		Entities::Characters::Enemies::Mushroom mushroom;
-
+		Entities::Characters::Enemies::FlyingEye flyingEye;
 		Control::PlayerControl* pPlayerControl;
 		GraphicalElements::SingleFrameAnimation background;
 

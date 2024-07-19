@@ -186,6 +186,9 @@
     <ClCompile Include="Mushroom.cpp">
       <Filter>Arquivos de Origem\Entities\Characters\Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="FlyingEye.cpp">
+      <Filter>Arquivos de Origem\Entities\Characters\Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicManager.hpp">
@@ -297,6 +300,9 @@
       <Filter>Arquivos de Cabeçalho\States</Filter>
     </ClInclude>
     <ClInclude Include="Mushroom.hpp">
+      <Filter>Arquivos de Cabeçalho\Entities\Characters\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="FlyingEye.hpp">
       <Filter>Arquivos de Cabeçalho\Entities\Characters\Enemies</Filter>
     </ClInclude>
   </ItemGroup>

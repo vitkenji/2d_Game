@@ -2,7 +2,7 @@
 #include "Enemy.hpp"
 #include "Bomb.hpp"
 #include <list>
-
+#include <vector>
 namespace Entities
 {
 	namespace Characters
@@ -14,17 +14,17 @@ namespace Entities
 			private:
 				float bombCooldown;
 				float attackAnimationTime;
+				bool canShoot;
 
 			public:
-				std::list<Projectiles::Bomb*> bombList;
-				std::list<Projectiles::Bomb*>::iterator i;
+				Projectiles::Bomb* bomb;
 
 				Goblin(Math::CoordinateF position);
 				virtual ~Goblin();
 
 				void addAnimations();
 				void update(const float dt);
-				void shoot();
+				void shoot(const float dt);
 				void noticePlayer(Math::CoordinateF distance);
 	
 			};

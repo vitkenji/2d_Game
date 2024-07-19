@@ -8,6 +8,7 @@ namespace Entities
 		class Bomb : public Projectile
 		{
 		private:
+			float explosionTime;
 
 		public:
 			Bomb(Math::CoordinateF position);

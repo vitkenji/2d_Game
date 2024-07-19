@@ -8,17 +8,13 @@ namespace Entities
 		{
 			Goblin::Goblin(Math::CoordinateF position) : Enemy(position, Math::CoordinateF(GOBLIN_SIZE_X, GOBLIN_SIZE_Y), goblin)
 			{
-				for (int i = 0; i < 2; i++)
-				{
-					Projectiles::Bomb* bomb = new Projectiles::Bomb(Math::CoordinateF(position.x - 50, position.y - 40));
-					bombList.push_back(bomb);
-				}
-				
-				i = bombList.begin();
+				bomb = new Projectiles::Bomb(position);
 				bombCooldown = 0;
 				attackAnimationTime = 0;
 				swordDistance = 5;
 				addAnimations();
+				canShoot = true;
+
 			}
 
 			Goblin::~Goblin()
@@ -39,21 +35,47 @@ namespace Entities
 				Math::CoordinateF distance = Math::CoordinateF(fabs(pPlayer->getPosition().x - this->position.x), fabs(pPlayer->getPosition().y - this->position.y));
 				if (distance.x < 400)
 				{
-					if (attackAnimationTime == 0)
+
+					if (pPlayer->getPosition().x > this->position.x)
+					{
+						setFacingRight(true);		
+					}
+					else
+					{
+						setFacingRight(false);
+					}
+
+					if (canShoot)
 					{
 						isAttacking = true;
 					}
-					attackAnimationTime += dt;
-					if (attackAnimationTime >= 10)
+					if(isAttacking)
 					{
-						attackAnimationTime = 0;
+						attackAnimationTime += dt;
+
+					}
+
+					if (attackAnimationTime >= 1.6)
+					{
+	
 						isAttacking = false;
-						shoot();
-						bombCooldown += dt;
-						if (bombCooldown >= 8)
+						if (canShoot)
 						{
-							(*i)->deactivateProjectile();
+							shoot(dt);
+							//std::cout << "shooted" << std::endl;
+							canShoot = false;
+						}
+						attackAnimationTime = 0;
+					}
+					if (!canShoot)
+					{
+						bombCooldown += dt;
+						
+						if (bombCooldown >= 5)
+						{
 							bombCooldown = 0;
+							canShoot = true;
+							//std::cout << "now can shoot:" << std::endl;
 						}
 					}
 				}
@@ -69,28 +91,23 @@ namespace Entities
 				updateSprite(dt);
 			}
 
-			void Goblin::shoot()
+			void Goblin::shoot(const float dt)
 			{
-				Projectiles::Bomb* bomb = nullptr;
-				//std::cout << bombList.size() << std::endl;
-				if (i == bombList.end() || i == bombList.end()--)
-				{
-					i = bombList.begin();
-				}
+					bomb->resetSprite(dt);
+					bomb->activateProjectile();
+					if (facingRight)
+					{
+						bomb->setPosition(Math::CoordinateF(this->position.x + 20, this->position.y - 10));
+					}
+					else
+					{
+						bomb->setPosition(Math::CoordinateF(this->position.x - 20, this->position.y - 10));
+					}
 
-				bomb = *i;
-				++i; 
+					Math::CoordinateF bombVelocity = Math::CoordinateF((pPlayer->getPosition().x - this->position.x)/1.3, -6);
 
-				bomb->activateProjectile(); 
-
-				if (facingRight)
-				{
-					//bomb->setVelocity(Math::CoordinateF(20, -2));
-				}
-				else
-				{
-					//bomb->setVelocity(Math::CoordinateF(-20, -2));
-				}
+					bomb->setVelocity(bombVelocity);
+				
 			}
 
 			void Goblin::noticePlayer(Math::CoordinateF distance)

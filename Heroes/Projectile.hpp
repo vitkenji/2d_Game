@@ -17,6 +17,10 @@ namespace Entities
 
 			void activateProjectile();
 			void deactivateProjectile();
+			
+			bool wasShot();
+
+			void resetSprite(const float dt);
 
 			void render();
 			virtual void update(const float dt) = 0;

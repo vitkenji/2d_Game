@@ -6,7 +6,7 @@ namespace Entities
 	{
 		Bomb::Bomb(Math::CoordinateF position) : Projectile(position, Math::CoordinateF(BOMB_SIZE_X, BOMB_SIZE_Y), bomb)
 		{
-			
+			explosionTime = 0;
 			addAnimations();
 		}
 
@@ -15,13 +15,20 @@ namespace Entities
 		void Bomb::addAnimations()
 		{
 			sprite.addNewAnimation(GraphicalElements::idle, BOMB_IDLE_PATH, 1, 1);
-			sprite.addNewAnimation(GraphicalElements::explode, BOMB_SHOT_PATH, 19, 1.5);
+			sprite.addNewAnimation(GraphicalElements::explode, BOMB_SHOT_PATH, 19, 0.3);
 		}
 
 		void Bomb::update(const float dt)
 		{
-			fallToGravity(dt);
+			explosionTime += dt;
+			if (explosionTime >= 8)
+			{
+				
+				explosionTime = 0;
+			}
 
+			fallToGravity(dt);
+			if (velocity.x <= 0) { velocity.x += 0.17; }
 			position.x += velocity.x * dt;
 			
 			updateSprite(dt);
@@ -41,19 +48,17 @@ namespace Entities
 
 		void Bomb::collide(Entity* other, Math::CoordinateF intersection)
 		{
-
+			float aux = -1;
 			if (other->getID() == platform)
 			{
-				velocity.x *= 0.9;
-				velocity.y *= 0.7;
+				velocity.x = 0;
+				velocity.y = 0;
 			}
 		}
 
 		void Bomb::checkCollision(Entity* other, Math::CoordinateF intersection)
 		{
 		}
-
-		
 
 	}
 }

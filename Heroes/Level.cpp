@@ -13,15 +13,12 @@ namespace States
         goblin.setPlayer(&player);
 
         movingEntitiesList.addEntity(&player);
-        movingEntitiesList.addEntity(&skeleton);
+     //   movingEntitiesList.addEntity(&skeleton);
         movingEntitiesList.addEntity(&goblin);
-        
-        std::list<Entities::Projectiles::Bomb*>::iterator i;
-        for (i = goblin.bombList.begin(); i != goblin.bombList.end(); i++)
-        {
-            movingEntitiesList.addEntity((*i));
-        }
-        
+
+        Entities::Projectiles::Bomb* bomb = goblin.bomb;
+        movingEntitiesList.addEntity(bomb);
+
         for (int i = 0; i < 8; i++)
         {
             Entities::Obstacles::Platform* platform = new Entities::Obstacles::Platform(Math::CoordinateF(0 + 192 * i, 780));
@@ -46,6 +43,7 @@ namespace States
 
     void Level::render()
     {
+        std::cout << movingEntitiesList.getSize() << std::endl;
         background.render();
         for (int i = 0; i < movingEntitiesList.getSize(); i++)
         {

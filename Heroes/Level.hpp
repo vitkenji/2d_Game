@@ -7,6 +7,7 @@
 #include "Skeleton.hpp"
 #include "Goblin.hpp"
 #include "Platform.hpp"
+#include "Bomb.hpp"
 
 namespace States
 {
@@ -19,6 +20,8 @@ namespace States
 		Entities::Characters::Player player;
 		Entities::Characters::Enemies::Skeleton skeleton;
 		Entities::Characters::Enemies::Goblin goblin;
+
+		//Entities::Projectiles::Bomb bomb;
 
 		Control::PlayerControl* pPlayerControl;
 		GraphicalElements::SingleFrameAnimation background;

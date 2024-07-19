@@ -18,17 +18,16 @@ namespace Entities
 
 		void Projectile::activateProjectile()
 		{
-			//std::cout << "activated" << std::endl;
+			//std::cout << "activated";
 			this->active = true;
 			this->shot = true;
+
 		}
 
 		void Projectile::deactivateProjectile()
 		{
-			if (shot)
-			{
-				this->active = false;
-			}
+			std::cout << "deactivated";
+			this->active = false;
 			this->shot = false;
 		}
 
@@ -39,5 +38,16 @@ namespace Entities
 				sprite.render();
 			}
 		}
+
+		bool Projectile::wasShot()
+		{
+			return this->shot;
+		}
+
+		void Projectile::resetSprite(const float dt)
+		{
+			sprite.update(GraphicalElements::idle, isFacingRight(), this->position, dt);
+		}
+
 	}
 }

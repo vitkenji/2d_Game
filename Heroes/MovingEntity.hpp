@@ -20,7 +20,6 @@ namespace Entities
 		void setFacingRight(bool right);
 		bool isFacingRight();
 		virtual void render();
-		bool isActive();
 
 		void setVelocity(Math::CoordinateF velocity);
 		Math::CoordinateF getVelocity();

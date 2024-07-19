@@ -27,4 +27,15 @@ namespace Entities
 		return this->id;
 	}
 
+	void Entity::setActive(bool active)
+	{
+		this->active = active;
+	}
+
+
+	bool Entity::isActive()
+	{
+		return active;
+	}
+
 }

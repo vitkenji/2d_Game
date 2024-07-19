@@ -55,7 +55,7 @@ namespace Entities
 
 					}
 
-					if (attackAnimationTime >= 1.6)
+					if (attackAnimationTime >= 1.2)
 					{
 	
 						isAttacking = false;
@@ -84,6 +84,7 @@ namespace Entities
 				if (life <= 0 && deathCooldown == 0)
 				{
 					isDying = true;
+					bomb->setActive(false);
 				}
 				manageDeathCooldown(dt);
 
@@ -114,6 +115,25 @@ namespace Entities
 			{
 
 			}
+
+			void Goblin::collide(Entity* other, Math::CoordinateF intersection)
+			{
+				Player* pPlayer = dynamic_cast<Player*>(other);
+				checkCollision(other, intersection);
+				if (other->getID() == platform)
+				{
+					velocity.y = 0;
+				}
+				if (other->getID() == player)
+				{
+					if (intersection.x < 0.f && pPlayer->getIsAttacking())
+					{
+						isTakingHit = true;
+						takeDamage(pPlayer->getDamage());
+					}
+				}
+			}
+
 
 		}
 	}

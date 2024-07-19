@@ -16,12 +16,11 @@ namespace States
 	{
 	private:
 		Managers::CollisionManager collisionManager;
+		Managers::GraphicManager* pGraphicManager;
 
 		Entities::Characters::Player player;
 		Entities::Characters::Enemies::Skeleton skeleton;
 		Entities::Characters::Enemies::Goblin goblin;
-
-		//Entities::Projectiles::Bomb bomb;
 
 		Control::PlayerControl* pPlayerControl;
 		GraphicalElements::SingleFrameAnimation background;

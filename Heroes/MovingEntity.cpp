@@ -25,11 +25,6 @@ namespace Entities
 		return facingRight;
 	}
 
-	bool MovingEntity::isActive()
-	{
-		return active;
-	}
-
 	void MovingEntity::setVelocity(Math::CoordinateF velocity)
 	{
 		this->velocity = velocity;

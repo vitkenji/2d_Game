@@ -26,6 +26,8 @@ namespace Entities
 		void setID(ID id);
 		ID getID() const;
 
+		void setActive(bool active);
+		bool isActive();
 		float getSwordDistance();
 
 		virtual void render() = 0;

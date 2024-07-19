@@ -26,6 +26,8 @@ namespace Entities
 				void update(const float dt);
 				void shoot(const float dt);
 				void noticePlayer(Math::CoordinateF distance);
+
+				void collide(Entity* other, Math::CoordinateF intersection);
 	
 			};
 		}

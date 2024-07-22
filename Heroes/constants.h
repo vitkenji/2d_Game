@@ -19,7 +19,7 @@
 #define PLATFORM_HEIGHT 48
 
 //FIRE
-#define FIRE_WIDTH 50
+#define FIRE_WIDTH 10
 #define FIRE_HEIGHT 70
 
 /*----------------------------------------------------------------*/
@@ -41,7 +41,6 @@
 //FLYING EYE
 #define FLYINGEYE_SIZE_X 55
 #define FLYINGEYE_SIZE_Y 55
-
 
 /*----------------------------------------------------------------*/
 

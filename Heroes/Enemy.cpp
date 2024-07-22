@@ -36,6 +36,7 @@ namespace Entities
 					if (intersection.x < 0.f && pPlayer->getIsAttacking())
 					{
 						isTakingHit = true;
+						isAttacking = false;
 						takeDamage(pPlayer->getDamage());
 					}
 				}

@@ -5,7 +5,8 @@ namespace States
 	Level::Level(StateMachine* pStateMachine) : State(pStateMachine, StateID::playing), movingEntitiesList(), staticEntitiesList()
 		,collisionManager(&movingEntitiesList, &staticEntitiesList), pGraphicManager(Managers::GraphicManager::getInstance())
         ,skeleton(Math::CoordinateF(450, 600)), goblin(Math::CoordinateF(1800, 600)), mushroom(Math::CoordinateF(900, 600)),
-        flyingEye(Math::CoordinateF(1400, 600))
+        flyingEye(Math::CoordinateF(1400, 600)),
+        fire(Math::CoordinateF(300, 700))
 	{
         background.initialize(BACKGROUND_PATH, Math::CoordinateF(600, 400), Math::CoordinateF(WIDTH + 300, HEIGHT + 200));
         pPlayerControl = new Control::PlayerControl(&player);
@@ -16,10 +17,11 @@ namespace States
         flyingEye.setPlayer(&player);
 
         movingEntitiesList.addEntity(&player);
-        //movingEntitiesList.addEntity(&skeleton);
-        //movingEntitiesList.addEntity(&goblin);
-        //movingEntitiesList.addEntity(&mushroom);
+        movingEntitiesList.addEntity(&skeleton);
+        movingEntitiesList.addEntity(&goblin);
+        movingEntitiesList.addEntity(&mushroom);
         movingEntitiesList.addEntity(&flyingEye);
+        movingEntitiesList.addEntity(&fire); 
 
         Entities::Projectiles::Bomb* bomb = goblin.bomb;
         movingEntitiesList.addEntity(bomb);

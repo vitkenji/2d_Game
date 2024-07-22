@@ -11,9 +11,20 @@
 #define PLAYER_VELOCITY_X 200
 #define PLAYER_JUMP_HEIGHT 1.3
 
+/*----------------------------------------------------------------*/
+//OBSTACLES
+
 //PLATFORM
 #define PLATFORM_WIDTH 192
 #define PLATFORM_HEIGHT 48
+
+//FIRE
+#define FIRE_WIDTH 50
+#define FIRE_HEIGHT 70
+
+/*----------------------------------------------------------------*/
+
+//ENEMIES
 
 //SKELETON
 #define SKELETON_SIZE_X 55
@@ -30,6 +41,9 @@
 //FLYING EYE
 #define FLYINGEYE_SIZE_X 55
 #define FLYINGEYE_SIZE_Y 55
+
+
+/*----------------------------------------------------------------*/
 
 //PROJECTILES
 

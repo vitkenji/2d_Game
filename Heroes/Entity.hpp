@@ -13,6 +13,8 @@ namespace Entities
 		flyingeye,
 		boss,
 		bomb,
+		fire,
+		box
 	};
 
 	class Entity : public Ent

@@ -192,6 +192,9 @@
     <ClCompile Include="PauseMenu.cpp">
       <Filter>Arquivos de Origem\Menus</Filter>
     </ClCompile>
+    <ClCompile Include="Fire.cpp">
+      <Filter>Arquivos de Origem\Entities\Obstacles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicManager.hpp">
@@ -310,6 +313,9 @@
     </ClInclude>
     <ClInclude Include="PauseMenu.hpp">
       <Filter>Arquivos de Cabeçalho\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="Fire.hpp">
+      <Filter>Arquivos de Cabeçalho\Entities\Obstacles</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

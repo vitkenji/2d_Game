@@ -10,6 +10,7 @@
 #include "Bomb.hpp"
 #include "Mushroom.hpp"
 #include "FlyingEye.hpp"
+#include "Fire.hpp"
 
 namespace States
 {
@@ -27,6 +28,8 @@ namespace States
 		Entities::Characters::Enemies::FlyingEye flyingEye;
 		Control::PlayerControl* pPlayerControl;
 		GraphicalElements::SingleFrameAnimation background;
+
+		Entities::Obstacles::Fire fire;
 
 		List::EntityList staticEntitiesList;
 		List::EntityList movingEntitiesList;

@@ -9,6 +9,7 @@ namespace Menus
 	{
 	private:
 		States::Level* pLevel;
+		GraphicalElements::Text title;
 
 	public:
 		PauseMenu(States::StateMachine* pStateMachine, States::Level* pLevel);

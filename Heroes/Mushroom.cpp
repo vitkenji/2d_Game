@@ -8,6 +8,7 @@ namespace Entities
 		{
 			Mushroom::Mushroom(Math::CoordinateF position) : Enemy(position, Math::CoordinateF(MUSHROOM_SIZE_X, MUSHROOM_SIZE_Y), mushroom)
 			{
+				damage = 12;
 				addAnimations();
 			}
 

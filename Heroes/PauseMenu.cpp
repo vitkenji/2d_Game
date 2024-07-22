@@ -3,8 +3,15 @@
 namespace Menus
 {
 
-	PauseMenu::PauseMenu(States::StateMachine* pStateMachine, States::Level* pLevel) : Menu(), States::State(pStateMachine, States::StateID::pauseMenu)
+	PauseMenu::PauseMenu(States::StateMachine* pStateMachine, States::Level* pLevel) : Menu(), States::State(pStateMachine, States::StateID::pauseMenu),
+		title(Math::CoordinateF(300, 300), "HEROES", FONT2_PATH)
 	{
+		title.setFontSize(120);
+		title.setTextInfo("GAME PAUSED");
+		title.setTextColor(0, 0, 0);
+		title.setTextAlignment(GraphicalElements::TextAlignment::center);
+		title.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 - 200));
+
 		back.initialize(PAUSEMENUBACKGROUND_PATH, Math::CoordinateF(pGraphicManager->getWindowSize().x / 2, pGraphicManager->getWindowSize().y / 2), Math::CoordinateF(pGraphicManager->getWindowSize().x, pGraphicManager->getWindowSize().y));
 		GraphicalElements::Button* button = nullptr;
 		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 ), "RESUME");
@@ -36,6 +43,7 @@ namespace Menus
 		{
 			(*i)->render();
 		}
+		title.render();
 	}
 
 	void PauseMenu::update(const float dt)

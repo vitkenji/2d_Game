@@ -11,7 +11,7 @@ namespace Entities
 		Math::CoordinateF velocity;
 		Math::CoordinateF acceleration;
 		bool facingRight;
-		
+		int damage;
 
 	public:
 		MovingEntity(Math::CoordinateF position, Math::CoordinateF size, ID id);
@@ -23,6 +23,8 @@ namespace Entities
 
 		void setVelocity(Math::CoordinateF velocity);
 		Math::CoordinateF getVelocity();
+		void setDamage(int damage);
+		int getDamage();
 
 		void fallToGravity(const float dt);
 

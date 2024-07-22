@@ -1,4 +1,5 @@
 #include "Player.hpp"
+#include "Fire.hpp"
 
 namespace Entities
 {
@@ -110,6 +111,7 @@ namespace Entities
 
 		void Player::update(const float dt)
 		{
+			std::cout << life << std::endl;
 			manageTakeHitCooldown(dt);
 	
 			if (isWalking)
@@ -142,6 +144,16 @@ namespace Entities
 			{
 				canJump = true;
 				isJumping = false;
+			}
+
+			if (other->getID() == fire)
+			{
+				MovingEntity* pFire = dynamic_cast<MovingEntity*>(other);
+				if (intersection.x < 0.f)
+				{
+					isTakingHit = true;
+					takeDamage(pFire->getDamage());
+				}
 			}
 
 			if (other->getID() == skeleton || other->getID() == goblin || other->getID() == mushroom)

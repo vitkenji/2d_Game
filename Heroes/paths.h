@@ -6,6 +6,8 @@
 #define PLAYER_TAKEHIT_PATH "assets/players/player1_takehit.png"
 #define PLAYER_FALL_PATH "assets/players/player1_fall.png"
 
+/*----------------------------------------------------------------------------------*/
+
 //ENEMIES
 
 //GOBLIN
@@ -36,17 +38,25 @@
 #define FLYINGEYE_DEATH_PATH "assets/enemies/flyingeye/Death.png"
 #define FLYINGEYE_TAKEHIT_PATH "assets/enemies/flyingeye/Takehit.png"
 
+/*----------------------------------------------------------------------------------*/
+
 //PROJECTILES
 
 //BOMB
 #define BOMB_SHOT_PATH "assets/enemies/goblin/Bomb_sprite.png"
 #define BOMB_IDLE_PATH "assets/enemies/goblin/Bomb_idle_sprite.png"
 
+/*----------------------------------------------------------------------------------*/
+
 //OBSTACLES
 
 //PLATFORM
 #define PLATFORM_PATH "assets/obstacles/platform1.png"
 
+//FIRE
+#define FIRE_PATH "assets/obstacles/Fire.png"
+
+/*----------------------------------------------------------------------------------*/
 
 //BUTTON
 #define DEFAULT_BUTTON_PATH "./assets/button/DefaultButton.png"
@@ -55,6 +65,8 @@
 //FONT
 #define FONT1_PATH "assets/fonts/Font1.ttf"
 #define FONT2_PATH "assets/fonts/Font2.ttf"
+
+/*----------------------------------------------------------------------------------*/
 
 //BACKGROUNDS
 #define BACKGROUND_PATH "assets/backgrounds/background_cave.png"

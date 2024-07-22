@@ -56,6 +56,9 @@
 //FIRE
 #define FIRE_PATH "assets/obstacles/Fire.png"
 
+//BOX
+#define BOX_PATH "assets/obstacles/Box.png"
+
 /*----------------------------------------------------------------------------------*/
 
 //BUTTON

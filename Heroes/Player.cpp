@@ -140,7 +140,7 @@ namespace Entities
 		void Player::collide(Entity* other, Math::CoordinateF intersection)
 		{
 			checkCollision(other, intersection);
-			if (other->getID() == platform)
+			if (other->getID() == platform || other->getID() == box)
 			{
 				canJump = true;
 				isJumping = false;
@@ -178,6 +178,13 @@ namespace Entities
 			{		
 				velocity.y = 0;	
 				
+			}
+			if (other->getID() == box)
+			{
+				if (intersection.y < 0.f)
+				{
+					velocity.y = 0;
+				}
 			}
 
 		}

@@ -23,6 +23,7 @@ namespace Entities
 
 		void setVelocity(Math::CoordinateF velocity);
 		Math::CoordinateF getVelocity();
+
 		void setDamage(int damage);
 		int getDamage();
 

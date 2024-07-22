@@ -11,6 +11,7 @@
 #include "Mushroom.hpp"
 #include "FlyingEye.hpp"
 #include "Fire.hpp"
+#include "Box.hpp"
 
 namespace States
 {
@@ -30,7 +31,7 @@ namespace States
 		GraphicalElements::SingleFrameAnimation background;
 
 		Entities::Obstacles::Fire fire;
-
+		Entities::Obstacles::Box box;
 		List::EntityList staticEntitiesList;
 		List::EntityList movingEntitiesList;
 	

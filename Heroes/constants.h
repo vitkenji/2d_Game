@@ -22,6 +22,10 @@
 #define FIRE_WIDTH 10
 #define FIRE_HEIGHT 70
 
+//BOX
+#define BOX_WIDTH 40
+#define BOX_HEIGHT 40
+
 /*----------------------------------------------------------------*/
 
 //ENEMIES

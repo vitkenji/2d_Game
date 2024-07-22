@@ -3,6 +3,7 @@
 #include "Button.hpp"
 #include "MenuControl.hpp"
 #include "SingleFrameAnimation.hpp"
+#include "GraphicManager.hpp"
 
 namespace Menus
 {
@@ -17,6 +18,7 @@ namespace Menus
 		Control::MenuControl menuControl;
 		bool active;
 		GraphicalElements::SingleFrameAnimation back;
+		Managers::GraphicManager* pGraphicManager;
 
 	public:
 		Menu();

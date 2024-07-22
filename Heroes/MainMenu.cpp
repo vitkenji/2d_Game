@@ -3,26 +3,25 @@
 
 namespace Menus
 {
-	Managers::GraphicManager* pG = Managers::GraphicManager::getInstance();
 
 	MainMenu::MainMenu(States::Game* pGame) : Menu(), States::State(static_cast<States::StateMachine*>(pGame), States::StateID::mainMenu), pGame(pGame),
 		title(Math::CoordinateF(300, 300), "HEROES", FONT2_PATH)
 	{
 
 		GraphicalElements::Button* button = nullptr;
-		button = new GraphicalElements::Button(Math::CoordinateF(pG->getWindowSize().x / 2.0f, pG->getWindowSize().y / 2 ), "PLAY");
+		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 ), "PLAY");
 		button->select(true);
 		buttons.push_back(button);
 
-		button = new GraphicalElements::Button(Math::CoordinateF(pG->getWindowSize().x / 2.0f, pG->getWindowSize().y / 2 + 100), "SETTINGS");
+		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 + 100), "SETTINGS");
 		button->select(false);
 		buttons.push_back(button);
 
-		button = new GraphicalElements::Button(Math::CoordinateF(pG->getWindowSize().x / 2.0f, pG->getWindowSize().y / 2 + 200), "LEADERBOARD");
+		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 + 200), "LEADERBOARD");
 		button->select(false);
 		buttons.push_back(button);
 
-		button = new GraphicalElements::Button(Math::CoordinateF(pG->getWindowSize().x / 2.0f, pG->getWindowSize().y / 2 + 300), "QUIT");
+		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 + 300), "QUIT");
 		button->select(false);
 		buttons.push_back(button);
 
@@ -30,7 +29,7 @@ namespace Menus
 		title.setTextInfo("HEROES");
 		title.setTextColor(0,0,0);
 		title.setTextAlignment(GraphicalElements::TextAlignment::center);
-		title.setPosition(Math::CoordinateF(pG->getWindowSize().x / 2.0f, pG->getWindowSize().y / 2 - 200));
+		title.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 - 200));
 
 		min = 0;
 		max = 3;
@@ -45,8 +44,6 @@ namespace Menus
 	void MainMenu::update(const float dt)
 	{
 		active = true;
-
-
 
 	}
 	void MainMenu::render()

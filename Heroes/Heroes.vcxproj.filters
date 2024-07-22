@@ -189,6 +189,9 @@
     <ClCompile Include="FlyingEye.cpp">
       <Filter>Arquivos de Origem\Entities\Characters\Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="PauseMenu.cpp">
+      <Filter>Arquivos de Origem\Menus</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicManager.hpp">
@@ -304,6 +307,9 @@
     </ClInclude>
     <ClInclude Include="FlyingEye.hpp">
       <Filter>Arquivos de Cabeçalho\Entities\Characters\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseMenu.hpp">
+      <Filter>Arquivos de Cabeçalho\Menus</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

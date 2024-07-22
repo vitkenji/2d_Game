@@ -57,7 +57,6 @@ namespace Entities
 						if (canShoot)
 						{
 							shoot(dt);
-							//std::cout << "shooted" << std::endl;
 							canShoot = false;
 						}
 						attackAnimationTime = 0;
@@ -70,15 +69,15 @@ namespace Entities
 						{
 							bombCooldown = 0;
 							canShoot = true;
-							//std::cout << "now can shoot:" << std::endl;
 						}
 					}
 				}
 
 				manageTakeHitCooldown(dt);
-				if (life <= 0 && deathCooldown == 0)
+				if (life <= 0)
 				{
 					isDying = true;
+					fallToGravity(dt);
 				}
 				manageDeathCooldown(dt);
 

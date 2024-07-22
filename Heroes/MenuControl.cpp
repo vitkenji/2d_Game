@@ -1,6 +1,8 @@
 #include "MenuControl.hpp"
 #include "Menu.hpp"
+#include "PauseMenu.hpp"
 #include <iostream>
+
 
 namespace Control
 {
@@ -33,6 +35,11 @@ namespace Control
 		if (key == "Enter")
 		{
 			pMenu->execute();
+		}
+		if (key == "Escape")
+		{
+			Menus::PauseMenu* pPauseMenu = static_cast<Menus::PauseMenu*>(pMenu);
+			pPauseMenu->triggerPauseMenu();
 		}
 	}
 

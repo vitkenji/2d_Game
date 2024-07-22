@@ -16,9 +16,9 @@ namespace States
         flyingEye.setPlayer(&player);
 
         movingEntitiesList.addEntity(&player);
-        movingEntitiesList.addEntity(&skeleton);
-        movingEntitiesList.addEntity(&goblin);
-        movingEntitiesList.addEntity(&mushroom);
+        //movingEntitiesList.addEntity(&skeleton);
+        //movingEntitiesList.addEntity(&goblin);
+        //movingEntitiesList.addEntity(&mushroom);
         movingEntitiesList.addEntity(&flyingEye);
 
         Entities::Projectiles::Bomb* bomb = goblin.bomb;

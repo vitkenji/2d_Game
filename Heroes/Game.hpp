@@ -17,6 +17,7 @@
 #include "StateMachine.hpp"
 #include "MainMenu.hpp"
 #include "Level.hpp"
+#include "PauseMenu.hpp"
 
 namespace States
 {

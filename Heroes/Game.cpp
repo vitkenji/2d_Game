@@ -13,6 +13,9 @@ namespace States
         states = new Level(this);
         insertState(states);
 
+        states = static_cast<State*>(new Menus::PauseMenu(this, dynamic_cast<States::Level*>(statesMap[playing])));
+        insertState(states);
+
         changeCurrentState(StateID::mainMenu);
 
 		execute();

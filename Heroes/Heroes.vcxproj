@@ -157,6 +157,7 @@
     <ClCompile Include="MultiFrameAnimation.cpp" />
     <ClCompile Include="Mushroom.cpp" />
     <ClCompile Include="Observer.cpp" />
+    <ClCompile Include="PauseMenu.cpp" />
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerControl.cpp" />
@@ -197,6 +198,7 @@
     <ClInclude Include="Mushroom.hpp" />
     <ClInclude Include="Observer.hpp" />
     <ClInclude Include="paths.h" />
+    <ClInclude Include="PauseMenu.hpp" />
     <ClInclude Include="Platform.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="PlayerControl.hpp" />

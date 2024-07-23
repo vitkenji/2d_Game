@@ -29,7 +29,7 @@ namespace Managers
 		void closeWindow();
 		void setWindowSize(Math::CoordinateU size);
 		Math::CoordinateU getWindowSize() const;
-		Math::CoordinateF getPosition() const;
+		Math::CoordinateF getHudPosition() const;
 		sf::Texture* loadTexture(const char* path);
 		sf::Font* loadFont(const char* path);
 		void centerView(Math::CoordinateF position);

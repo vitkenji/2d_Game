@@ -51,6 +51,7 @@ namespace States
             }
 
             collisionManager.collide();
+            hud.update(dt);
     }
 
     void Level::render()

@@ -20,6 +20,7 @@ namespace GraphicalElements
 
 	void Heart::update(HeartID id, Math::CoordinateF position)
 	{
+		body.setPosition(sf::Vector2f(position.x, position.y));
 		switch (id)
 		{
 		case full:

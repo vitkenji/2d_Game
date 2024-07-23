@@ -67,9 +67,9 @@ namespace Managers
 		return Math::CoordinateU(window->getSize().x, window->getSize().y);
 	}
 
-	Math::CoordinateF GraphicManager::getPosition() const
+	Math::CoordinateF GraphicManager::getHudPosition() const
 	{
-		return Math::CoordinateF(window->getView().getCenter().x - window->getSize().x / 2, window->getView().getCenter().y - window->getSize().y / 2);
+		return Math::CoordinateF(window->getView().getCenter().x - 580 , window->getView().getCenter().y - 380);
 	}
 
 	void GraphicManager::centerView(Math::CoordinateF position)

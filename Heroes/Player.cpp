@@ -9,7 +9,7 @@ namespace Entities
 		 isJumping(false), canJump(false)
 		{
 			swordDistance = 10;
-			life = 50000;
+			life = 60000;
 			damage = 16;
 			addAnimations();
 			setFacingRight(true);
@@ -107,6 +107,11 @@ namespace Entities
 			{
 				sprite.update(GraphicalElements::idle, isFacingRight(), position, dt);
 			}
+		}
+
+		int Player::getLife()
+		{
+			return this->life;
 		}
 
 		void Player::update(const float dt)

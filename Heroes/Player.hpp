@@ -11,7 +11,7 @@ namespace Entities
 		protected:
 			bool isJumping;
 			bool canJump;
-
+			
 		public:
 			Player();
 			virtual ~Player();
@@ -21,6 +21,8 @@ namespace Entities
 			void walk(bool right);
 			void sprint();
 			void limitSprint();
+
+			int getLife();
 
 			void stopWalking();
 			void stopAttacking();

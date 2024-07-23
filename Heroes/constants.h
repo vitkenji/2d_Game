@@ -24,7 +24,7 @@
 
 //BOX
 #define BOX_WIDTH 35
-#define BOX_HEIGHT 35
+#define BOX_HEIGHT 38
 
 /*----------------------------------------------------------------*/
 

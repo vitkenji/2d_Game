@@ -54,9 +54,6 @@ namespace Entities
 				
 			if (other->getID() == player)
 			{
-				std::cout << "X: " << intersection.x << std::endl;
-				std::cout << "Y: " << intersection.y << std::endl;
-
 				MovingEntity* ptr = dynamic_cast<MovingEntity*>(other);
 				
 				if (intersection.x < 0.f && intersection.y < 0.f)

@@ -23,8 +23,8 @@
 #define FIRE_HEIGHT 70
 
 //BOX
-#define BOX_WIDTH 40
-#define BOX_HEIGHT 40
+#define BOX_WIDTH 35
+#define BOX_HEIGHT 35
 
 /*----------------------------------------------------------------*/
 

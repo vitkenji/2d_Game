@@ -111,7 +111,6 @@ namespace Entities
 
 		void Player::update(const float dt)
 		{
-			std::cout << life << std::endl;
 			manageTakeHitCooldown(dt);
 	
 			if (isWalking)
@@ -144,6 +143,18 @@ namespace Entities
 			{
 				canJump = true;
 				isJumping = false;
+			}
+
+			if (other->getID() == box)
+			{
+				if (intersection.x < 0)
+				{
+					velocity.x = PLAYER_VELOCITY_X / 5;
+					if (!facingRight)
+					{
+						velocity.x *= -1;
+					}
+				}
 			}
 
 			if (other->getID() == fire)

@@ -198,6 +198,12 @@
     <ClCompile Include="Box.cpp">
       <Filter>Arquivos de Origem\Entities\Obstacles</Filter>
     </ClCompile>
+    <ClCompile Include="Heart.cpp">
+      <Filter>Arquivos de Origem\GraphicalElements</Filter>
+    </ClCompile>
+    <ClCompile Include="Hud.cpp">
+      <Filter>Arquivos de Origem\GraphicalElements</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicManager.hpp">

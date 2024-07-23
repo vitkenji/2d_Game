@@ -149,7 +149,9 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Goblin.cpp" />
     <ClCompile Include="GraphicManager.cpp" />
+    <ClCompile Include="Heart.cpp" />
     <ClCompile Include="Heroes.cpp" />
+    <ClCompile Include="Hud.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="MainMenu.cpp" />

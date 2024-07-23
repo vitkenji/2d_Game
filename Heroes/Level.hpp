@@ -12,6 +12,7 @@
 #include "FlyingEye.hpp"
 #include "Fire.hpp"
 #include "Box.hpp"
+#include "Hud.hpp"
 
 namespace States
 {
@@ -35,6 +36,8 @@ namespace States
 		List::EntityList staticEntitiesList;
 		List::EntityList movingEntitiesList;
 	
+		GraphicalElements::Hud hud;
+
 	public:
 		Level(StateMachine* pStateMachine);
 		~Level();

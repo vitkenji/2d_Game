@@ -7,6 +7,10 @@ Ent::Ent(Math::CoordinateF position, Math::CoordinateF size)
 	this->size = size;
 }
 
+Ent::Ent()
+{
+}
+
 Ent::~Ent() {}
 
 void Ent::setPosition(Math::CoordinateF position)

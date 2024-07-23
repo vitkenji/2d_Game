@@ -125,13 +125,13 @@ namespace Entities
 
 		void Player::limitSprint()
 		{
-			if (velocity.x >= 600)
+			if (velocity.x >= 500)
 			{
-				velocity.x = 600;
+				velocity.x = 500;
 			}
-			else if (velocity.x <= -600)
+			else if (velocity.x <= -500)
 			{
-				velocity.x = -600;
+				velocity.x = -500;
 				
 			}
 		}
@@ -143,18 +143,6 @@ namespace Entities
 			{
 				canJump = true;
 				isJumping = false;
-			}
-
-			if (other->getID() == box)
-			{
-				if (intersection.x < 0)
-				{
-					velocity.x = PLAYER_VELOCITY_X / 5;
-					if (!facingRight)
-					{
-						velocity.x *= -1;
-					}
-				}
 			}
 
 			if (other->getID() == fire)
@@ -196,8 +184,15 @@ namespace Entities
 				{
 					velocity.y = 0;
 				}
+				if (intersection.x < 0.f)
+				{
+					velocity.x = PLAYER_VELOCITY_X / 5;
+					if (!facingRight)
+					{
+						velocity.x *= -1;
+					}
+				}
 			}
-
 		}
 	}
 }

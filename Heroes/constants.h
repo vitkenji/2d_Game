@@ -54,6 +54,13 @@
 #define BOMB_SIZE_X 30
 #define BOMB_SIZE_Y 30
 
+/*----------------------------------------------------------------*/
+//GRAPHICAL ELEMENTS
+
+//HEART
+#define HEART_SIZE_X 25
+#define HEART_SIZE_Y 21.5
+
 //TEXT
 #define FONT_SIZE 24
 

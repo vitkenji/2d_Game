@@ -61,6 +61,11 @@
 
 /*----------------------------------------------------------------------------------*/
 
+//HEART
+#define FULL_HEART_PATH "./assets/hearts/fullHeart.png"
+#define HALF_HEART_PATH "./assets/hearts/halfHeart.png"
+#define EMPTY_HEART_PATH "./assets/hearts/emptyHeart.png"
+
 //BUTTON
 #define DEFAULT_BUTTON_PATH "./assets/button/DefaultButton.png"
 #define SELECTED_BUTTON_PATH "./assets/button/SelectedButton.png"

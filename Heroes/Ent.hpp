@@ -9,6 +9,7 @@ protected:
 
 public:
 	Ent(Math::CoordinateF position, Math::CoordinateF size);
+	Ent();
 	virtual ~Ent();
 
 	void setPosition(Math::CoordinateF position);

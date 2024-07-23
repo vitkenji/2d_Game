@@ -1,7 +1,7 @@
 #pragma once
 #include "Animation.hpp"
 #include "GraphicManager.hpp"
-#include "Coordinate.hpp"
+#include "std.h"
 
 namespace GraphicalElements
 {

@@ -1,7 +1,6 @@
 #pragma once
 #include "State.hpp"
-#include <map>
-#include <iostream>
+#include "std.h"
 
 namespace States
 {

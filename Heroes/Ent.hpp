@@ -1,8 +1,5 @@
 #pragma once
-#include "Coordinate.hpp"
-#include "constants.h"
-#include "paths.h"
-
+#include "std.h"
 
 class Ent
 {

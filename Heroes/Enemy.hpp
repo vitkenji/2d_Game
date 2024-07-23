@@ -1,7 +1,7 @@
 #pragma once
 #include "Character.hpp"
 #include "Player.hpp"
-#include <time.h>
+#include "std.h"
 
 namespace Entities
 {

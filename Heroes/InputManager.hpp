@@ -1,8 +1,5 @@
 #pragma once
-#include <list>
-#include <map>
-#include <SFML/Graphics.hpp>
-#include <string>
+#include "std.h"
 
 namespace Control
 {

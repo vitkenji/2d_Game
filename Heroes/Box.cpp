@@ -51,7 +51,7 @@ namespace Entities
 				velocity.y = 0;
 
 			}
-				
+			
 			if (other->getID() == player)
 			{
 				MovingEntity* ptr = dynamic_cast<MovingEntity*>(other);

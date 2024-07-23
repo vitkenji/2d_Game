@@ -59,6 +59,5 @@ namespace Entities
 		void Bomb::checkCollision(Entity* other, Math::CoordinateF intersection)
 		{
 		}
-
 	}
 }

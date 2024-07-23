@@ -1,6 +1,6 @@
 #pragma once
 #include "Animation.hpp"
-#include "Coordinate.hpp"
+#include "std.h"
 #include "Text.hpp"
 
 namespace GraphicalElements

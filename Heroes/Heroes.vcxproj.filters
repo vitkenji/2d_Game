@@ -323,5 +323,14 @@
     <ClInclude Include="Box.hpp">
       <Filter>Arquivos de Cabeçalho\Entities\Obstacles</Filter>
     </ClInclude>
+    <ClInclude Include="Hud.hpp">
+      <Filter>Arquivos de Cabeçalho\GraphicalElements</Filter>
+    </ClInclude>
+    <ClInclude Include="Heart.hpp">
+      <Filter>Arquivos de Cabeçalho\GraphicalElements</Filter>
+    </ClInclude>
+    <ClInclude Include="std.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

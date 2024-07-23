@@ -38,6 +38,7 @@ namespace Entities
 				}
 				manageDeathCooldown(dt);
 				walk();
+
 				position.x += velocity.x * dt;
 
 				fallToGravity(dt);

@@ -191,6 +191,8 @@
     <ClInclude Include="Goblin.hpp" />
     <ClInclude Include="GraphicManager.hpp" />
     <ClInclude Include="constants.h" />
+    <ClInclude Include="Heart.hpp" />
+    <ClInclude Include="Hud.hpp" />
     <ClInclude Include="InputManager.hpp" />
     <ClInclude Include="Level.hpp" />
     <ClInclude Include="List.hpp" />
@@ -213,6 +215,7 @@
     <ClInclude Include="State.hpp" />
     <ClInclude Include="StateMachine.hpp" />
     <ClInclude Include="StaticEntity.hpp" />
+    <ClInclude Include="std.h" />
     <ClInclude Include="Text.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -25,6 +25,7 @@ namespace Entities
 			void Enemy::collide(Entity* other, Math::CoordinateF intersection)
 			{
 				Player* pPlayer = dynamic_cast<Player*>(other);
+
 				checkCollision(other, intersection);
 				if (other->getID() == platform)
 				{
@@ -44,6 +45,10 @@ namespace Entities
 
 			void Enemy::checkCollision(Entity* other, Math::CoordinateF intersection)
 			{
+				if (other->getID() == box)
+				{
+					velocity.x = 0;
+				}
 				if (other->getID() == platform)
 				{
 					velocity.y = 0;

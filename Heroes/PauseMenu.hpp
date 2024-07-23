@@ -1,3 +1,4 @@
+#pragma once
 #include "Menu.hpp"
 #include "State.hpp"
 #include "Level.hpp"

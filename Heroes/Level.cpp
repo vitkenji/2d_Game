@@ -54,6 +54,7 @@ namespace States
             hud.update(dt);
             if (player.getLife() <= 0)
             {
+                endLevel();
                 changeState(gameOver);
             }
 
@@ -79,4 +80,10 @@ namespace States
     {
 
     }
+
+    void Level::endLevel()
+    {
+       
+    }
+
 }

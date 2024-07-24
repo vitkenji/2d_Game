@@ -73,6 +73,10 @@
 //FONT
 #define FONT1_PATH "assets/fonts/Font1.ttf"
 #define FONT2_PATH "assets/fonts/Font2.ttf"
+#define FONT3_PATH
+
+//LEADERBOARD
+#define LEADERBOARD_PATH "saves/ranking.txt"
 
 /*----------------------------------------------------------------------------------*/
 

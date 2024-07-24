@@ -64,7 +64,7 @@ namespace Menus
 				changeState(States::StateID::leaderboard);
 				break;
 			case 2:
-				changeState(States::StateID::mainMenu);
+				pGraphicManager->closeWindow();
 				break;
 			default:
 				break;

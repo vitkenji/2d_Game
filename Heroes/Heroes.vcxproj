@@ -154,6 +154,7 @@
     <ClCompile Include="Heroes.cpp" />
     <ClCompile Include="Hud.cpp" />
     <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="LeaderboardMenu.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Menu.cpp" />
@@ -198,6 +199,7 @@
     <ClInclude Include="Heart.hpp" />
     <ClInclude Include="Hud.hpp" />
     <ClInclude Include="InputManager.hpp" />
+    <ClInclude Include="LeaderboardMenu.hpp" />
     <ClInclude Include="Level.hpp" />
     <ClInclude Include="List.hpp" />
     <ClInclude Include="MainMenu.hpp" />

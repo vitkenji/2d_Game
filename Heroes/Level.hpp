@@ -44,6 +44,7 @@ namespace States
 		void resetState();
 		void update(const float dt);
 		void render();
+		void endLevel();
 	};
 	
 }

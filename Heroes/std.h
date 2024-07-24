@@ -4,6 +4,7 @@
 #include <map>
 #include <time.h>
 #include <string>
+#include <fstream>
 
 #include "Coordinate.hpp"
 #include "constants.h"

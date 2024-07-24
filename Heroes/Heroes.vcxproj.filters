@@ -207,6 +207,9 @@
     <ClCompile Include="GameOverMenu.cpp">
       <Filter>Arquivos de Origem\Menus</Filter>
     </ClCompile>
+    <ClCompile Include="LeaderboardMenu.cpp">
+      <Filter>Arquivos de Origem\Menus</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicManager.hpp">
@@ -342,6 +345,9 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="GameOverMenu.hpp">
+      <Filter>Arquivos de Cabeçalho\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="LeaderboardMenu.hpp">
       <Filter>Arquivos de Cabeçalho\Menus</Filter>
     </ClInclude>
   </ItemGroup>

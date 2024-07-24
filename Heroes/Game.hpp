@@ -7,6 +7,7 @@
 #include "Level.hpp"
 #include "PauseMenu.hpp"
 #include "GameOverMenu.hpp"
+#include "LeaderboardMenu.hpp"
 
 namespace States
 {

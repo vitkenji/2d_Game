@@ -19,6 +19,7 @@ namespace States
 
 	void StateMachine::changeCurrentState(StateID id)
 	{
+		std::cout << "changed to" << id  << std::endl;
 		lastStateID = currentStateID;
 		currentStateID = id;
 		statesMap[currentStateID]->resetState();

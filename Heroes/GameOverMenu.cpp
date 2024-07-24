@@ -61,10 +61,10 @@ namespace Menus
 				changeState(States::StateID::playing);
 				break;
 			case 1:
-				changeState(States::StateID::leaderboard);
+				changeState(States::StateID::mainMenu);
 				break;
 			case 2:
-				changeState(States::StateID::mainMenu);
+				pGraphicManager->closeWindow();
 				break;
 			default:
 				break;
@@ -74,7 +74,13 @@ namespace Menus
 
 	void GameOverMenu::resetState()
 	{
-
+		for (i = buttons.begin(); i != buttons.end(); i++)
+		{
+			(*i)->select(false);
+		}
+		selected = 0;
+		buttons[selected]->select(true);
+		active = true;
 	}
 
 }

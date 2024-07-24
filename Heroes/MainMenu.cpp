@@ -44,6 +44,7 @@ namespace Menus
 	void MainMenu::update(const float dt)
 	{
 		active = true;
+		title.setPosition(Math::CoordinateF(title.getPosition().x, title.getPosition().y));
 
 	}
 	void MainMenu::render()
@@ -59,6 +60,9 @@ namespace Menus
 	}
 	void MainMenu::resetState()
 	{
+		buttons[selected]->select(false);
+		selected = 0;
+		buttons[selected]->select(true);
 		
 	}
 	void MainMenu::execute()
@@ -70,10 +74,10 @@ namespace Menus
 				changeState(States::StateID::playing);
 				break;
 			case 1:
-				changeState(States::StateID::leaderboard);
+				changeState(States::StateID::settings);
 				break;
 			case 2:
-				changeState(States::StateID::settings);
+				changeState(States::StateID::leaderboard);
 				break;
 			case 3:
 				pGame->quit();

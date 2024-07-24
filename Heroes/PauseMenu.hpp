@@ -20,6 +20,7 @@ namespace Menus
 		void execute();
 		void resetState();
 		void triggerPauseMenu();
+
 	};
 
 }

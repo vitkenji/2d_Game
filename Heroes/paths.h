@@ -80,3 +80,4 @@
 #define BACKGROUND_PATH "assets/backgrounds/background_cave.png"
 #define MAINMENUBACKGROUND_PATH "assets/backgrounds/MainMenu.png"
 #define PAUSEMENUBACKGROUND_PATH "assets/backgrounds/PauseMenu.png"
+#define GAMEOVERMENUBACKGROUND_PATH "assets/backgrounds/GameOverMenu.png"

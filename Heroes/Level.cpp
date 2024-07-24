@@ -52,6 +52,11 @@ namespace States
 
             collisionManager.collide();
             hud.update(dt);
+            if (player.getLife() <= 0)
+            {
+                changeState(gameOver);
+            }
+
     }
 
     void Level::render()

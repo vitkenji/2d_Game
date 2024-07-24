@@ -49,5 +49,10 @@ namespace Entities
 			return this->damage;
 		}
 
+		int Character::getLife()
+		{
+			return this->life;
+		}
+
 	}
 }

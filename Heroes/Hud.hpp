@@ -2,6 +2,8 @@
 #include "Ent.hpp"
 #include "Heart.hpp"
 #include "GraphicManager.hpp"
+#include "Text.hpp"
+#include "std.h"
 
 namespace Entities
 {
@@ -20,7 +22,8 @@ namespace GraphicalElements
 		Entities::Characters::Player* pPlayer;
 		Math::CoordinateU windowSize;
 		Heart* hearts;
-	
+		Text points;
+
 	public:
 		Hud(Entities::Characters::Player* pPlayer);
 		virtual ~Hud();
@@ -29,6 +32,7 @@ namespace GraphicalElements
 		void update(const float dt);
 		void initialize();
 		void updateHearts();
+		void updatePoints();
 
 	};
 }

@@ -97,6 +97,7 @@ namespace Entities
 					deathCooldown += dt;
 					if (deathCooldown >= 1.7)
 					{
+						pPlayer->increasePoints();
 						isDying = false;
 						active = false;
 

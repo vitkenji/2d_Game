@@ -339,4 +339,9 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Credits.md">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </None>
+  </ItemGroup>
 </Project>

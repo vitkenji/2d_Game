@@ -220,6 +220,9 @@
     <ClInclude Include="std.h" />
     <ClInclude Include="Text.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Credits.md" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

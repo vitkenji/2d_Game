@@ -6,7 +6,7 @@ namespace Entities
 	namespace Characters
 	{
 		Player::Player() : Character(Math::CoordinateF(50, 600), Math::CoordinateF(PLAYER_SIZE_X, PLAYER_SIZE_Y), ID::player),
-		 isJumping(false), canJump(false)
+		 isJumping(false), canJump(false), points(0)
 		{
 			swordDistance = 10;
 			life = 60000;
@@ -109,13 +109,9 @@ namespace Entities
 			}
 		}
 
-		int Player::getLife()
-		{
-			return this->life;
-		}
-
 		void Player::update(const float dt)
 		{
+			std::cout << points << std::endl;
 			manageTakeHitCooldown(dt);
 	
 			if (isWalking)
@@ -139,6 +135,16 @@ namespace Entities
 				velocity.x = -500;
 				
 			}
+		}
+
+		void Player::increasePoints()
+		{
+			this->points += 100;
+		}
+
+		int Player::getPoints()
+		{
+			return this->points;
 		}
 
 		void Player::collide(Entity* other, Math::CoordinateF intersection)

@@ -11,6 +11,7 @@ namespace Entities
 		protected:
 			bool isJumping;
 			bool canJump;
+			int points;
 			
 		public:
 			Player();
@@ -21,11 +22,12 @@ namespace Entities
 			void walk(bool right);
 			void sprint();
 			void limitSprint();
-
-			int getLife();
-
+			
 			void stopWalking();
 			void stopAttacking();
+			
+			void increasePoints();
+			int getPoints();
 
 			void addAnimations();
 			void updateSprite(const float dt);

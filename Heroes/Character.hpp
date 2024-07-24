@@ -25,6 +25,8 @@ namespace Entities
 			void takeDamage(float damage);
 			int getDamage();
 
+			int getLife();
+
 			void manageTakeHitCooldown(const float dt);
 			
 			virtual void update(const float dt) = 0;

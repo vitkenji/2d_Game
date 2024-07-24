@@ -29,6 +29,7 @@ namespace GraphicalElements
 		void setFontSize(const int size);
 		void setTextAlignment(TextAlignment aligment);
 		void render();
+		int getStringLength();
 		Math::CoordinateF getSize();
 		std::string getInfo();
 		Math::CoordinateF getPosition();

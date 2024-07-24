@@ -79,4 +79,9 @@ namespace GraphicalElements
 	{
 		return Math::CoordinateF(text.getPosition().x, text.getPosition().y);
 	}
+
+	int Text::getStringLength()
+	{
+		return info.length();
+	}
 }

@@ -9,7 +9,7 @@ namespace List
 
 	EntityList::~EntityList()
 	{
-		
+		entitiesList.clear();
 
 	}
 
@@ -41,9 +41,18 @@ namespace List
 
 	void EntityList::deleteEntity(unsigned int index)
 	{
+		
 		Entities::Entity* ptr = nullptr;
 		ptr = entitiesList.pop(index);
-		if (ptr) { delete ptr; }
+		if (ptr == nullptr)
+		{
+			std::cout << "Error: ptr is nullptr" << std::endl;
+		}
+		if (ptr)
+		{
+			std::cout << ptr->getID() << " deleted" << std::endl;
+			delete ptr; 
+		}
 
 	}
 

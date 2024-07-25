@@ -14,15 +14,11 @@ namespace Menus
 		button->select(true);
 		buttons.push_back(button);
 
-		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 + 100), "SETTINGS");
+		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 + 100), "LEADERBOARD");
 		button->select(false);
 		buttons.push_back(button);
 
-		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 + 200), "LEADERBOARD");
-		button->select(false);
-		buttons.push_back(button);
-
-		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 + 300), "QUIT");
+		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 + 200), "QUIT");
 		button->select(false);
 		buttons.push_back(button);
 
@@ -45,8 +41,7 @@ namespace Menus
 	void MainMenu::update(const float dt)
 	{
 		active = true;
-		//title.setPosition(Math::CoordinateF(title.getPosition().x, title.getPosition().y));
-
+		title.setPosition(Math::CoordinateF(title.getPosition().x, title.getPosition().y));
 	}
 	void MainMenu::render()
 	{
@@ -76,9 +71,6 @@ namespace Menus
 				changeState(States::StateID::playing);
 				break;
 			case 1:
-				changeState(States::StateID::settings);
-				break;
-			case 2:
 				changeState(States::StateID::leaderboard);
 				break;
 			case 3:

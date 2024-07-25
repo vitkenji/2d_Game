@@ -23,16 +23,16 @@ namespace States
 		Managers::CollisionManager collisionManager;
 		Managers::GraphicManager* pGraphicManager;
 
-		Entities::Characters::Player player;
-		Entities::Characters::Enemies::Skeleton skeleton;
-		Entities::Characters::Enemies::Goblin goblin;
-		Entities::Characters::Enemies::Mushroom mushroom;
-		Entities::Characters::Enemies::FlyingEye flyingEye;
+		Entities::Characters::Player* player;
+		Entities::Characters::Enemies::Skeleton* skeleton;
+		Entities::Characters::Enemies::Goblin* goblin;
+		Entities::Characters::Enemies::Mushroom* mushroom;
+		Entities::Characters::Enemies::FlyingEye* flyingEye;
 		Control::PlayerControl* pPlayerControl;
 		GraphicalElements::SingleFrameAnimation background;
 
-		Entities::Obstacles::Fire fire;
-		Entities::Obstacles::Box box;
+		Entities::Obstacles::Fire* fire;
+		Entities::Obstacles::Box* box;
 		List::EntityList staticEntitiesList;
 		List::EntityList movingEntitiesList;
 	
@@ -45,6 +45,7 @@ namespace States
 		void update(const float dt);
 		void render();
 		void endLevel();
+		void restartLevel();
 	};
 	
 }

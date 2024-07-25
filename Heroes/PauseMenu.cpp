@@ -21,16 +21,13 @@ namespace Menus
 		button->select(true);
 		buttons.push_back(button);
 
-		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 + 100), "LEADERBOARD");
+		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 + 100), "QUIT");
 		button->select(false);
 		buttons.push_back(button);
 
-		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 + 200), "QUIT");
-		button->select(false);
-		buttons.push_back(button);
 		
 		min = 0;
-		max = 2;
+		max = 1;
 	}
 
 	PauseMenu::~PauseMenu()
@@ -63,9 +60,6 @@ namespace Menus
 				changeState(States::StateID::playing);
 				break;
 			case 1:
-				changeState(States::StateID::leaderboard);
-				break;
-			case 2:
 				changeState(States::StateID::mainMenu);
 				break;
 			default:

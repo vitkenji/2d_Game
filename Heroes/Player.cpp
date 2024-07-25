@@ -111,7 +111,6 @@ namespace Entities
 
 		void Player::update(const float dt)
 		{
-			std::cout << points << std::endl;
 			manageTakeHitCooldown(dt);
 	
 			if (isWalking)

@@ -42,7 +42,6 @@ namespace Menus
 
 	void Menu::selectDown()
 	{
-		active = true;
 		if (active && selected < max)
 		{
 			buttons[selected]->select(false);

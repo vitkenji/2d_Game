@@ -78,7 +78,7 @@ namespace States
 
     void Level::resetState()
     {
-
+       
     }
 
     void Level::endLevel()

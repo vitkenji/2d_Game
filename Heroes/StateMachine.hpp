@@ -7,9 +7,9 @@ namespace States
 	class StateMachine
 	{
 	protected:
-		StateID currentStateID;
-		StateID lastStateID;
-		std::map<StateID, State*> statesMap;
+		States::StateID currentStateID;
+		States::StateID lastStateID;
+		std::map<StateID, States::State*> statesMap;
 
 	public:
 		StateMachine();

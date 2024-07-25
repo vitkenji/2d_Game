@@ -73,7 +73,7 @@ namespace Menus
 			case 1:
 				changeState(States::StateID::leaderboard);
 				break;
-			case 3:
+			case 2:
 				pGame->quit();
 				break;
 			default:

@@ -38,6 +38,8 @@ namespace States
 	
 		GraphicalElements::Hud hud;
 
+		bool resume;
+
 	public:
 		Level(StateMachine* pStateMachine);
 		~Level();
@@ -46,6 +48,7 @@ namespace States
 		void render();
 		void endLevel();
 		void restartLevel();
+		void setResume(bool resume);
 	};
 	
 }

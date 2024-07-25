@@ -4,7 +4,7 @@ namespace Menus
 {
 
 	PauseMenu::PauseMenu(States::StateMachine* pStateMachine, States::Level* pLevel) : Menu(), States::State(pStateMachine, States::StateID::pauseMenu),
-		title(Math::CoordinateF(300, 300), "HEROES", FONT2_PATH)
+		title(Math::CoordinateF(300, 300), "HEROES", FONT2_PATH), pLevel(pLevel)
 	{
 
 		Managers::GraphicManager* pGraphicManager = Managers::GraphicManager::getInstance();
@@ -57,9 +57,11 @@ namespace Menus
 			active = false;
 			switch (selected) {
 			case 0:
+				pLevel->setResume(true);
 				changeState(States::StateID::playing);
 				break;
 			case 1:
+				pLevel->setResume(false);
 				changeState(States::StateID::mainMenu);
 				break;
 			default:

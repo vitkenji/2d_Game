@@ -3,7 +3,7 @@
 namespace States
 {
     Level::Level(StateMachine* pStateMachine) : State(pStateMachine, StateID::playing), movingEntitiesList(), staticEntitiesList(),player()
-        , collisionManager(&movingEntitiesList, &staticEntitiesList), pGraphicManager(Managers::GraphicManager::getInstance()), hud(player)
+        , collisionManager(&movingEntitiesList, &staticEntitiesList), pGraphicManager(Managers::GraphicManager::getInstance()), hud(player), resume(false)
     {
         background.initialize(BACKGROUND_PATH, Math::CoordinateF(600, 400), Math::CoordinateF(WIDTH + 300, HEIGHT + 200));
         restartLevel();
@@ -24,7 +24,7 @@ namespace States
     {
         pGraphicManager->centerView(Math::CoordinateF(player->getPosition().x, player->getPosition().y/2 + PLATFORM_HEIGHT));
         background.update(Math::CoordinateF(player->getPosition().x, 370));
-        //std::cout << "movEnt size: " << movingEntitiesList.getSize() << std::endl;
+       
             for (int i = 0; i < movingEntitiesList.getSize(); i++)
             {
                 if (movingEntitiesList[i] == nullptr)
@@ -66,8 +66,10 @@ namespace States
 
     void Level::resetState()
     {
-        if (player->getPosition().x != 50.f)
+        std::cout << resume << std::endl;
+        if (player->getPosition().x != 50.f && !resume)
         {
+            resume = false;
             restartLevel();
         }
     }
@@ -116,6 +118,13 @@ namespace States
     void Level::endLevel()
     {
 
+    }
+
+    void Level::setResume(bool resume)
+    {
+        std::cout << "before: " << this->resume << std::endl;
+        this->resume = resume;
+        std::cout << "after: " << this->resume << std::endl;
     }
 
 }

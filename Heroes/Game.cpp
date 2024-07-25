@@ -6,7 +6,10 @@ namespace States
 	{
 		clock.restart();
         
-        State* states = new Level(this);
+        State* states = new States::Level(this);
+        insertState(states);
+
+        states = static_cast<State*>(new Menus::PauseMenu(this, dynamic_cast<States::Level*>(statesMap[StateID::playing])));
         insertState(states);
 
         states = static_cast<State*>(new Menus::MainMenu(this));
@@ -15,13 +18,10 @@ namespace States
         states = static_cast<State*>(new Menus::LeaderboardMenu(this));
         insertState(states);
 
-        states = static_cast<State*>(new Menus::PauseMenu(this, dynamic_cast<States::Level*>(statesMap[playing])));
+        states = static_cast<State*>(new Menus::GameOverMenu(this, dynamic_cast<States::Level*>(statesMap[StateID::playing])));
         insertState(states);
 
-        states = static_cast<State*>(new Menus::GameOverMenu(this, dynamic_cast<States::Level*>(statesMap[playing])));
-        insertState(states);
-
-        changeCurrentState(StateID::leaderboard);
+        changeCurrentState(StateID::mainMenu);
 
 		execute();
 

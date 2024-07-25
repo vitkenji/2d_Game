@@ -5,6 +5,9 @@ namespace Menus
 	GameOverMenu::GameOverMenu(States::StateMachine* pStateMachine, States::Level* pLevel) : Menu(), States::State(pStateMachine, States::StateID::gameOver),
 		title(Math::CoordinateF(300, 300), "HEROES", FONT2_PATH)
 	{
+
+		Managers::GraphicManager* pGraphicManager = Managers::GraphicManager::getInstance();
+
 		title.setFontSize(120);
 		title.setTextInfo("GAME OVER");
 		title.setTextColor(0, 0, 0);
@@ -49,7 +52,6 @@ namespace Menus
 	void GameOverMenu::update(const float dt)
 	{
 		active = true;
-
 	}
 
 	void GameOverMenu::execute()
@@ -64,7 +66,7 @@ namespace Menus
 				changeState(States::StateID::mainMenu);
 				break;
 			case 2:
-				pGraphicManager->closeWindow();
+				//pGraphicManager->closeWindow();
 				break;
 			default:
 				break;
@@ -74,13 +76,13 @@ namespace Menus
 
 	void GameOverMenu::resetState()
 	{
+		active = false;
 		for (i = buttons.begin(); i != buttons.end(); i++)
 		{
 			(*i)->select(false);
 		}
 		selected = 0;
 		buttons[selected]->select(true);
-		active = true;
 	}
 
 }

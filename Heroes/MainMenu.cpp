@@ -7,6 +7,7 @@ namespace Menus
 	MainMenu::MainMenu(States::Game* pGame) : Menu(), States::State(static_cast<States::StateMachine*>(pGame), States::StateID::mainMenu), pGame(pGame),
 		title(Math::CoordinateF(300, 300), "HEROES", FONT2_PATH)
 	{
+		Managers::GraphicManager* pGraphicManager = Managers::GraphicManager::getInstance();
 
 		GraphicalElements::Button* button = nullptr;
 		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 ), "PLAY");
@@ -44,7 +45,7 @@ namespace Menus
 	void MainMenu::update(const float dt)
 	{
 		active = true;
-		title.setPosition(Math::CoordinateF(title.getPosition().x, title.getPosition().y));
+		//title.setPosition(Math::CoordinateF(title.getPosition().x, title.getPosition().y));
 
 	}
 	void MainMenu::render()
@@ -63,6 +64,7 @@ namespace Menus
 		buttons[selected]->select(false);
 		selected = 0;
 		buttons[selected]->select(true);
+		title.setPosition(Math::CoordinateF(Managers::GraphicManager::getInstance()->getWindowSize().x / 2.0f, Managers::GraphicManager::getInstance()->getWindowSize().y / 2 - 200));
 		
 	}
 	void MainMenu::execute()

@@ -2,10 +2,11 @@
 
 namespace Menus
 {
-	Menu::Menu() : selected(0), min(0), max(2), menuControl(this), active(false), pGraphicManager(Managers::GraphicManager::getInstance())
+	Menu::Menu() : selected(0), min(0), max(2), menuControl(this), active(false)
 	{
-		Managers::GraphicManager* pG = Managers::GraphicManager::getInstance();
-		back.initialize(MAINMENUBACKGROUND_PATH, Math::CoordinateF(pG->getWindowSize().x / 2, pG->getWindowSize().y / 2), Math::CoordinateF(pG->getWindowSize().x, pG->getWindowSize().y));
+
+		Managers::GraphicManager* pGraphicManager = Managers::GraphicManager::getInstance();
+		back.initialize(MAINMENUBACKGROUND_PATH, Math::CoordinateF(pGraphicManager->getWindowSize().x / 2, pGraphicManager->getWindowSize().y / 2), Math::CoordinateF(pGraphicManager->getWindowSize().x, pGraphicManager->getWindowSize().y));
 		menuControl = Control::MenuControl(this);
 	}
 

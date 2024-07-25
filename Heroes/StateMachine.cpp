@@ -4,22 +4,21 @@ namespace States
 {
 	StateMachine::StateMachine() : statesMap()
 	{
-		currentStateID = unknown;
-		lastStateID = unknown;
+		currentStateID = States::unknown;
+		lastStateID = States::unknown;
 	}
 
 	StateMachine::~StateMachine()
 	{
-		std::map<StateID, State*>::iterator i;
+		std::map<States::StateID, State*>::iterator i;
 		for (i = statesMap.begin(); i != statesMap.end(); i++)
 		{
 			delete(i->second);
 		}
 	}
 
-	void StateMachine::changeCurrentState(StateID id)
+	void StateMachine::changeCurrentState(States::StateID id)
 	{
-		std::cout << "changed to" << id  << std::endl;
 		lastStateID = currentStateID;
 		currentStateID = id;
 		statesMap[currentStateID]->resetState();
@@ -36,22 +35,22 @@ namespace States
 
 	}
 
-	void StateMachine::insertState(State* pState)
+	void StateMachine::insertState(States::State* pState)
 	{
 		if (pState == nullptr)
 		{
 			std::cout << "error pointer to State NULL on StateMachine::insertState()" << std::endl;
 			exit(1);
 		}
-		statesMap.insert(std::pair<StateID, State*>(pState->getStateID(), pState));
+		statesMap.insert(std::pair<StateID, States::State*>(pState->getStateID(), pState));
 	}
 
-	StateID StateMachine::getCurrentStateID()
+	States::StateID StateMachine::getCurrentStateID()
 	{
 		return currentStateID;
 	}
 	
-	StateID StateMachine::geLastStateID()
+	States::StateID StateMachine::geLastStateID()
 	{
 		return lastStateID;
 	}

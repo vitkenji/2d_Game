@@ -12,6 +12,7 @@ namespace Menus
 	private:
 		std::vector<GraphicalElements::Text*> ranking;
 		std::vector<GraphicalElements::Text*>::iterator it;
+		GraphicalElements::Text title;
 
 	public:
 		LeaderboardMenu(States::StateMachine* pStateMachine);

@@ -2,12 +2,25 @@
 
 namespace Menus
 {
-	LeaderboardMenu::LeaderboardMenu(States::StateMachine* pStateMachine) : Menu(), States::State(pStateMachine, States::leaderboard)
+	float cooldown = 0;
+	LeaderboardMenu::LeaderboardMenu(States::StateMachine* pStateMachine) : Menu(), States::State(pStateMachine, States::StateID::leaderboard), 
+		title(Math::CoordinateF(300, 300), "HEROES", FONT2_PATH)
 	{
+		active = false;
+		Managers::GraphicManager* pGraphicManager = Managers::GraphicManager::getInstance();
+
+		active = false;
 		GraphicalElements::Button* button = new GraphicalElements::Button(Math::CoordinateF((pGraphicManager->getWindowSize().x / 2) - 430, pGraphicManager->getWindowSize().y - 900), "RETURN");
 		button->select(true);
 		buttons.push_back(button);
 		max = 0;
+
+		title.setFontSize(90);
+		title.setTextInfo("HIGH SCORES");
+		title.setTextColor(0, 0, 0);
+		title.setTextAlignment(GraphicalElements::TextAlignment::center);
+		title.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 - 250));
+
 	}
 
 	LeaderboardMenu::~LeaderboardMenu()
@@ -24,6 +37,7 @@ namespace Menus
 	{
 		updateView();
 		back.render();
+		title.render();
 		for (i = buttons.begin(); i != buttons.end(); i++)
 		{
 			(*i)->render();
@@ -39,13 +53,20 @@ namespace Menus
 		if (active)
 		{
 			active = false;
-			changeState(States::mainMenu);
+			switch (selected) {
+			case 0:
+				changeState(States::StateID::mainMenu);
+				break;
+			default:
+				break;
+			}
 		}
 
 	}
 
 	void LeaderboardMenu::resetState()
 	{
+		active = false;
 		buttons[0]->select(true);
 		for (it = ranking.begin(); it != ranking.end(); it++)
 		{
@@ -114,8 +135,8 @@ namespace Menus
 				textString += ".";
 			}
 
-			text = new GraphicalElements::Text(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, 400 + 40 * i), textString + pointsString, FONT2_PATH);
-			text->setFontSize(48);
+			text = new GraphicalElements::Text(Math::CoordinateF(Managers::GraphicManager::getInstance()->getWindowSize().x / 2.0f, 400 + 40 * i), textString + pointsString, FONT1_PATH);
+			text->setFontSize(20);
 			text->setTextAlignment(GraphicalElements::center);
 			text->setTextColor(77.6, 68.2, 44.3);
 			ranking.push_back(text);

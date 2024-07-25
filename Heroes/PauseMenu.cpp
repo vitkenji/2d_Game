@@ -6,6 +6,9 @@ namespace Menus
 	PauseMenu::PauseMenu(States::StateMachine* pStateMachine, States::Level* pLevel) : Menu(), States::State(pStateMachine, States::StateID::pauseMenu),
 		title(Math::CoordinateF(300, 300), "HEROES", FONT2_PATH)
 	{
+
+		Managers::GraphicManager* pGraphicManager = Managers::GraphicManager::getInstance();
+
 		title.setFontSize(120);
 		title.setTextInfo("GAME PAUSED");
 		title.setTextColor(0, 0, 0);
@@ -49,7 +52,6 @@ namespace Menus
 	void PauseMenu::update(const float dt)
 	{
 		active = true;
-
 	}
 
 	void PauseMenu::execute()
@@ -64,7 +66,7 @@ namespace Menus
 				changeState(States::StateID::leaderboard);
 				break;
 			case 2:
-				pGraphicManager->closeWindow();
+				changeState(States::StateID::mainMenu);
 				break;
 			default:
 				break;
@@ -74,7 +76,7 @@ namespace Menus
 
 	void PauseMenu::resetState()
 	{
-
+		active = false;
 	}
 
 	void PauseMenu::triggerPauseMenu()

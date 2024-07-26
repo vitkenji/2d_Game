@@ -22,6 +22,13 @@
 #define FIRE_WIDTH 10
 #define FIRE_HEIGHT 70
 
+//WATER
+#define WATER_WIDTH 240
+#define WATER_HEIGHT 48
+
+#define MUD_WIDTH 240
+#define MUD_HEIGHT 48
+
 //BOX
 #define BOX_WIDTH 35
 #define BOX_HEIGHT 38

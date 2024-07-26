@@ -60,6 +60,7 @@ namespace Menus
 			active = false;
 			switch (selected) {
 			case 0:
+				pLevel->setResume(false);
 				changeState(States::StateID::playing);
 				break;
 			case 1:

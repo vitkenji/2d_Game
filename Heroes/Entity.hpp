@@ -14,6 +14,8 @@ namespace Entities
 		boss,
 		bomb,
 		fire,
+		water,
+		mud,
 		box
 	};
 

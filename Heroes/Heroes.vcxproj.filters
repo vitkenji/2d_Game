@@ -210,6 +210,12 @@
     <ClCompile Include="LeaderboardMenu.cpp">
       <Filter>Arquivos de Origem\Menus</Filter>
     </ClCompile>
+    <ClCompile Include="Water.cpp">
+      <Filter>Arquivos de Origem\Entities\Obstacles</Filter>
+    </ClCompile>
+    <ClCompile Include="Mud.cpp">
+      <Filter>Arquivos de Origem\Entities\Obstacles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicManager.hpp">
@@ -349,6 +355,15 @@
     </ClInclude>
     <ClInclude Include="LeaderboardMenu.hpp">
       <Filter>Arquivos de Cabeçalho\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="WinMenu.hpp">
+      <Filter>Arquivos de Cabeçalho\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="Water.hpp">
+      <Filter>Arquivos de Cabeçalho\Entities\Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="Mud.hpp">
+      <Filter>Arquivos de Cabeçalho\Entities\Obstacles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

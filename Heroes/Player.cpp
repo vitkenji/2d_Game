@@ -114,7 +114,7 @@ namespace Entities
 
 		void Player::update(const float dt)
 		{
-			std::cout << acceleration.x << std::endl;
+			std::cout << dt << std::endl;
 			manageTakeHitCooldown(dt);
 	
 			if (isWalking && canWalk)
@@ -123,7 +123,7 @@ namespace Entities
 			}
 			else if (!canWalk)
 			{
-				position.x +=  velocity.x + acceleration.x * dt * dt / 2.f;
+				position.x +=  velocity.x*dt + acceleration.x * dt * dt / 2.f;
 			}
 
 			limitSprint();
@@ -206,8 +206,9 @@ namespace Entities
 			}
 			if (other->getID() == water)
 			{
-				velocity.x *= 1.2; 
-				acceleration.x = velocity.x * -2;
+				velocity.x = PLAYER_VELOCITY_X * 1.4;
+				if (!facingRight) { velocity.x *= -1; }
+				acceleration.x = (velocity.x) * -100 ;
 				
 			}
 

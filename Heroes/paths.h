@@ -56,6 +56,12 @@
 //FIRE
 #define FIRE_PATH "assets/obstacles/Fire.png"
 
+//WATER
+#define WATER_PATH "assets/obstacles/Water.png"
+
+//MUD
+#define MUD_PATH "assets/obstacles/Mud.png"
+
 //BOX
 #define BOX_PATH "assets/obstacles/Box.png"
 

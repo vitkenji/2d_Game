@@ -13,6 +13,8 @@
 #include "Fire.hpp"
 #include "Box.hpp"
 #include "Hud.hpp"
+#include "Water.hpp"
+#include "Mud.hpp"
 
 namespace States
 {
@@ -32,7 +34,10 @@ namespace States
 		GraphicalElements::SingleFrameAnimation background;
 
 		Entities::Obstacles::Fire* fire;
+		Entities::Obstacles::Water* water;
 		Entities::Obstacles::Box* box;
+		Entities::Obstacles::Mud* mud;
+
 		List::EntityList staticEntitiesList;
 		List::EntityList movingEntitiesList;
 	

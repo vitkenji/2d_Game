@@ -12,7 +12,12 @@ namespace States
         {
             Entities::Obstacles::Platform* platform = new Entities::Obstacles::Platform(Math::CoordinateF(-500 + 192 * i, 800));
             staticEntitiesList.addEntity(platform);
-        } 
+        }
+        mud = new Entities::Obstacles::Mud(Math::CoordinateF(900, 800));
+        water = new Entities::Obstacles::Water(Math::CoordinateF(600, 800));
+        staticEntitiesList.addEntity(water);
+        staticEntitiesList.addEntity(mud);
+
 	}
 
     Level::~Level()
@@ -22,6 +27,7 @@ namespace States
 
     void Level::update(const float dt)
     {
+       
         pGraphicManager->centerView(Math::CoordinateF(player->getPosition().x, player->getPosition().y/2 + PLATFORM_HEIGHT));
         background.update(Math::CoordinateF(player->getPosition().x, 370));
        
@@ -87,6 +93,7 @@ namespace States
         mushroom = new Entities::Characters::Enemies::Mushroom(Math::CoordinateF(900, 600));
         box = new Entities::Obstacles::Box(Math::CoordinateF(200, 500));
         fire = new Entities::Obstacles::Fire(Math::CoordinateF(300, 700));
+
         Entities::Projectiles::Bomb* bomb = goblin->bomb;
 
         skeleton->setPlayer(player);
@@ -105,9 +112,9 @@ namespace States
         flyingEye->setPosition(Math::CoordinateF(1400, 600));
 
         movingEntitiesList.addEntity(player);
-        movingEntitiesList.addEntity(skeleton);
+        //movingEntitiesList.addEntity(skeleton);
         movingEntitiesList.addEntity(goblin);
-        movingEntitiesList.addEntity(mushroom);
+        //movingEntitiesList.addEntity(mushroom);
         movingEntitiesList.addEntity(flyingEye);
         movingEntitiesList.addEntity(fire);
         movingEntitiesList.addEntity(box);

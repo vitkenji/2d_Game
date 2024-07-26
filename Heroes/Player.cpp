@@ -6,13 +6,14 @@ namespace Entities
 	namespace Characters
 	{
 		Player::Player() : Character(Math::CoordinateF(50, 600), Math::CoordinateF(PLAYER_SIZE_X, PLAYER_SIZE_Y), ID::player),
-		 isJumping(false), canJump(false), points(0)
+		 isJumping(false), canWalk(true), canJump(false), points(0)
 		{
 			swordDistance = 10;
 			life = 60000;
 			damage = 16;
 			addAnimations();
 			setFacingRight(true);
+			
 		}
 
 		Player::~Player()
@@ -37,12 +38,14 @@ namespace Entities
 
 		void Player::walk(bool right)
 		{
-			if (right) { velocity.x = PLAYER_VELOCITY_X; }
-			else { velocity.x = -PLAYER_VELOCITY_X; }
-			setFacingRight(right);
-			isWalking = true;
-			isAttacking = false;
-			
+			if (canWalk)
+			{
+				if (right) { velocity.x = PLAYER_VELOCITY_X; }
+				else { velocity.x = -PLAYER_VELOCITY_X; }
+				setFacingRight(right);
+				isWalking = true;
+				isAttacking = false;
+			}
 		}
 
 		void Player::sprint()
@@ -111,11 +114,16 @@ namespace Entities
 
 		void Player::update(const float dt)
 		{
+			std::cout << acceleration.x << std::endl;
 			manageTakeHitCooldown(dt);
 	
-			if (isWalking)
+			if (isWalking && canWalk)
 			{
 				position.x += velocity.x * dt;
+			}
+			else if (!canWalk)
+			{
+				position.x +=  velocity.x + acceleration.x * dt * dt / 2.f;
 			}
 
 			limitSprint();
@@ -148,11 +156,19 @@ namespace Entities
 
 		void Player::collide(Entity* other, Math::CoordinateF intersection)
 		{
+			canWalk = true;
 			checkCollision(other, intersection);
 			if (other->getID() == platform || other->getID() == box)
 			{
 				canJump = true;
 				isJumping = false;
+			}
+
+			if (other->getID() == water)
+			{
+				canJump = false;
+				isJumping = false;
+				canWalk = false;
 			}
 
 			if (other->getID() == fire)
@@ -188,6 +204,18 @@ namespace Entities
 				velocity.y = 0;	
 				
 			}
+			if (other->getID() == water)
+			{
+				velocity.x *= 1.2; 
+				acceleration.x = velocity.x * -2;
+				
+			}
+
+			if (other->getID() == mud)
+			{
+				velocity.x *= 0.7;
+			}
+
 			if (other->getID() == box)
 			{
 				if (intersection.y < 0.f)

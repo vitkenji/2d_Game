@@ -11,6 +11,7 @@ namespace Entities
 		protected:
 			bool isJumping;
 			bool canJump;
+			bool canWalk;
 			int points;
 			
 		public:

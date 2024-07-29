@@ -46,7 +46,7 @@ namespace States
             {
                 changeState(gameOver);
             }
-            else if (player->getPosition().x >= 500)
+            else if (player->getPosition().x >= 2000)
             {
                 changeState(win);
             }
@@ -115,12 +115,12 @@ namespace States
         flyingEye->setPosition(Math::CoordinateF(1400, 600));
 
         movingEntitiesList.addEntity(player);
-        //movingEntitiesList.addEntity(skeleton);
+        movingEntitiesList.addEntity(skeleton);
         movingEntitiesList.addEntity(goblin);
-        //movingEntitiesList.addEntity(mushroom);
+        movingEntitiesList.addEntity(mushroom);
         movingEntitiesList.addEntity(flyingEye);
         movingEntitiesList.addEntity(fire);
-        movingEntitiesList.addEntity(box);
+        //movingEntitiesList.addEntity(box);
         movingEntitiesList.addEntity(bomb);
 
     }

@@ -7,30 +7,30 @@ namespace Menus
 		name(Math::CoordinateF(0,0), "", FONT1_PATH), pointsToIncrement(0)
 	{	
 		GraphicalElements::Button* button = nullptr;
-		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f - 200, pGraphicManager->getWindowSize().y - 300), "PLAY AGAIN");
+		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y - 400), "PLAY AGAIN");
 		button->select(true);
 		buttons.push_back(button);
 
-		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f + 200, pGraphicManager->getWindowSize().y - 200), "MAIN MENU");
+		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f , pGraphicManager->getWindowSize().y - 300), "MAIN MENU");
 		buttons.push_back(button);
 		
-		title.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2, pGraphicManager->getWindowSize().y - 840));
+		title.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2, pGraphicManager->getWindowSize().y - 800));
 		title.setFontSize(100);
 		title.setTextAlignment(GraphicalElements::center);
 		title.setTextColor(0,0,0);
 
-		points.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2 - 100, pGraphicManager->getWindowSize().y - 700));
-		points.setFontSize(40);
+		points.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2 - 400, pGraphicManager->getWindowSize().y - 700));
+		points.setFontSize(35);
 		points.setTextColor(0,0,0);
 		points.setTextAlignment(GraphicalElements::center);
 
-		nameLabel.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2 - 200, pGraphicManager->getWindowSize().y - 600));
-		nameLabel.setFontSize(40);
+		nameLabel.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2 - 300, pGraphicManager->getWindowSize().y - 600));
+		nameLabel.setFontSize(35);
 		nameLabel.setTextColor(0,0,0);
 		nameLabel.setTextAlignment(GraphicalElements::center);
 
-		name.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2 - 300, pGraphicManager->getWindowSize().y - 400));
-		name.setFontSize(40);
+		name.setPosition(Math::CoordinateF(nameLabel.getPosition().x + 100, nameLabel.getPosition().y - 30));
+		name.setFontSize(35);
 		name.setTextColor(0,0,0);
 		name.setTextAlignment(GraphicalElements::center);
 
@@ -75,14 +75,15 @@ namespace Menus
 		
 		buttons[selected]->select(false);
 		selected = 0;
-		buttons[selected]->select(false);
+		buttons[selected]->select(true);
+
 		textControl.reset();
 		
 	}
 
 	void WinMenu::saveInLeaderboard()
 	{
-		unsigned int playerPoints = 0;
+		unsigned int playerPoints = pLevel->getPlayerPoints();
 
 		std::ifstream readFile;
 		readFile.open(LEADERBOARD_PATH, std::ios::in);
@@ -145,14 +146,17 @@ namespace Menus
 			switch (selected)
 			{
 			case 0:
+				changeState(States::playing);
 				break;
 			case 1:
+				changeState(States::mainMenu);
 				break;
 			default:
 				break;
 			}
+			saveInLeaderboard();
 		}
-		saveInLeaderboard();
+		
 	}
 
 }

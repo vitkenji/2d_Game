@@ -44,8 +44,11 @@ namespace States
             hud.update(dt);
             if (player->getLife() <= 0)
             {
-                endLevel();
                 changeState(gameOver);
+            }
+            else if (player->getPosition().x >= 500)
+            {
+                changeState(win);
             }
 
     }
@@ -122,16 +125,17 @@ namespace States
 
     }
 
-    void Level::endLevel()
-    {
-
-    }
-
     void Level::setResume(bool resume)
     {
         std::cout << "before: " << this->resume << std::endl;
         this->resume = resume;
         std::cout << "after: " << this->resume << std::endl;
     }
+
+    int Level::getPlayerPoints()
+    {
+        return player->getPoints();
+    }
+
 
 }

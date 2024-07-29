@@ -54,6 +54,7 @@ namespace States
 		void endLevel();
 		void restartLevel();
 		void setResume(bool resume);
+		int getPlayerPoints();
 	};
 	
 }

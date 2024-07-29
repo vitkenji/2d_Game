@@ -6,8 +6,8 @@
 #define GRAVITY 9.81
 
 //PLAYER
-#define PLAYER_SIZE_X 50
-#define PLAYER_SIZE_Y 50
+#define PLAYER_SIZE_X 40
+#define PLAYER_SIZE_Y 40
 #define PLAYER_VELOCITY_X 200
 #define PLAYER_JUMP_HEIGHT 1.3
 
@@ -30,8 +30,8 @@
 #define MUD_HEIGHT 48
 
 //BOX
-#define BOX_WIDTH 35
-#define BOX_HEIGHT 38
+#define BOX_WIDTH 28
+#define BOX_HEIGHT 40
 
 /*----------------------------------------------------------------*/
 

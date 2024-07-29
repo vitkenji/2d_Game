@@ -7,31 +7,31 @@ namespace Menus
 		name(Math::CoordinateF(0,0), "", FONT1_PATH), pointsToIncrement(0)
 	{	
 		GraphicalElements::Button* button = nullptr;
-		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f - 200, pGraphicManager->getWindowSize().y - 100), "PLAY AGAIN");
+		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f - 200, pGraphicManager->getWindowSize().y - 300), "PLAY AGAIN");
 		button->select(true);
 		buttons.push_back(button);
 
-		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f + 200, pGraphicManager->getWindowSize().y - 100), "MAIN MENU");
+		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f + 200, pGraphicManager->getWindowSize().y - 200), "MAIN MENU");
 		buttons.push_back(button);
 		
-		title.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2, pGraphicManager->getWindowSize().y - 200));
+		title.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2, pGraphicManager->getWindowSize().y - 840));
 		title.setFontSize(100);
 		title.setTextAlignment(GraphicalElements::center);
-		title.setTextColor(77.6, 68.2, 44.3);
+		title.setTextColor(0,0,0);
 
-		points.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2 - 100, pGraphicManager->getWindowSize().y));
+		points.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2 - 100, pGraphicManager->getWindowSize().y - 700));
 		points.setFontSize(40);
-		points.setTextColor(77.6, 68.2, 44.3);
+		points.setTextColor(0,0,0);
 		points.setTextAlignment(GraphicalElements::center);
 
-		nameLabel.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2 - 200, pGraphicManager->getWindowSize().y + 100));
+		nameLabel.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2 - 200, pGraphicManager->getWindowSize().y - 600));
 		nameLabel.setFontSize(40);
-		nameLabel.setTextColor(77.6, 68.2, 44.3);
+		nameLabel.setTextColor(0,0,0);
 		nameLabel.setTextAlignment(GraphicalElements::center);
 
-		name.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2 - 300, pGraphicManager->getWindowSize().y + 200));
+		name.setPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2 - 300, pGraphicManager->getWindowSize().y - 400));
 		name.setFontSize(40);
-		name.setTextColor(77.6, 68.2, 44.3);
+		name.setTextColor(0,0,0);
 		name.setTextAlignment(GraphicalElements::center);
 
 		selected = 0;
@@ -46,6 +46,10 @@ namespace Menus
 	void WinMenu::update(const float dt)
 	{
 		active = true;
+		name.setTextInfo(textControl.getString());
+		if (pointsToIncrement < pLevel->getPlayerPoints())
+			pointsToIncrement += 10;
+		points.setTextInfo("Points: " + std::to_string(pLevel->getPlayerPoints()));
 	}
 
 	void WinMenu::render()
@@ -72,12 +76,13 @@ namespace Menus
 		buttons[selected]->select(false);
 		selected = 0;
 		buttons[selected]->select(false);
+		textControl.reset();
 		
 	}
 
 	void WinMenu::saveInLeaderboard()
 	{
-		unsigned int playerPoints;
+		unsigned int playerPoints = 0;
 
 		std::ifstream readFile;
 		readFile.open(LEADERBOARD_PATH, std::ios::in);
@@ -122,7 +127,7 @@ namespace Menus
 			rankingMap.erase(rankingMap.begin());
 		}
 
-		for (auto it = rankingMap.begin(); it != rankingMap.end(); it++)
+		for (auto it = rankingMap.rbegin(); it != rankingMap.rend(); it++)
 		{
 			writeFile << (*it).first << std::endl;
 			writeFile << (*it).second << std::endl;
@@ -134,7 +139,20 @@ namespace Menus
 
 	void WinMenu::execute()
 	{
-
+		if (active)
+		{
+			active = false;
+			switch (selected)
+			{
+			case 0:
+				break;
+			case 1:
+				break;
+			default:
+				break;
+			}
+		}
+		saveInLeaderboard();
 	}
 
 }

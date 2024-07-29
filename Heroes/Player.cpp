@@ -114,7 +114,7 @@ namespace Entities
 
 		void Player::update(const float dt)
 		{
-			std::cout << dt << std::endl;
+			std::cout << position.x << std::endl;
 			manageTakeHitCooldown(dt);
 	
 			if (isWalking && canWalk)
@@ -228,8 +228,6 @@ namespace Entities
 
 			if (other->getID() == box)
 			{
-				std::cout << "X: " << intersection.x << std::endl;
-				std::cout << "Y: " << intersection.y << std::endl;
 				if (intersection.y < 0.f)
 				{
 					velocity.y = 0;
@@ -247,8 +245,6 @@ namespace Entities
 						velocity.x *= 5;
 					}
 				}
-				
-				
 			}
 		}
 	}

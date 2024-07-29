@@ -19,6 +19,6 @@ namespace GraphicalElements
 		void render();
 		void lowerTextPosition();
 		void raiseTextPosition();
-
+		void setTextPosition(Math::CoordinateF position);
 	};
 }

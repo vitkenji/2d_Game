@@ -7,8 +7,6 @@ namespace Menus
 		title(Math::CoordinateF(300, 300), "HEROES", FONT2_PATH), pLevel(pLevel)
 	{
 
-		Managers::GraphicManager* pGraphicManager = Managers::GraphicManager::getInstance();
-
 		title.setFontSize(120);
 		title.setTextInfo("GAME PAUSED");
 		title.setTextColor(0, 0, 0);
@@ -79,5 +77,7 @@ namespace Menus
 	{
 		pStateMachine->changeCurrentState(States::pauseMenu);
 	}
+
+	
 
 }

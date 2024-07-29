@@ -8,6 +8,7 @@
 #include "PauseMenu.hpp"
 #include "GameOverMenu.hpp"
 #include "LeaderboardMenu.hpp"
+#include "WinMenu.hpp"
 
 namespace States
 {

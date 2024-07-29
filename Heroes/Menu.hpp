@@ -18,6 +18,7 @@ namespace Menus
 		Control::MenuControl menuControl;
 		bool active;
 		GraphicalElements::SingleFrameAnimation back;
+		Managers::GraphicManager* pGraphicManager;
 
 	public:
 		Menu();

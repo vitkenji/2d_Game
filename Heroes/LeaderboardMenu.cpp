@@ -7,9 +7,6 @@ namespace Menus
 		title(Math::CoordinateF(300, 300), "HEROES", FONT2_PATH)
 	{
 		active = false;
-		Managers::GraphicManager* pGraphicManager = Managers::GraphicManager::getInstance();
-
-		active = false;
 		GraphicalElements::Button* button = new GraphicalElements::Button(Math::CoordinateF((pGraphicManager->getWindowSize().x / 2) - 430, pGraphicManager->getWindowSize().y - 900), "RETURN");
 		button->select(true);
 		buttons.push_back(button);

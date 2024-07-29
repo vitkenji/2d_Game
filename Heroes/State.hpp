@@ -13,7 +13,8 @@ namespace States
 		pauseMenu,
 		settings,
 		leaderboard,
-		gameOver
+		gameOver,
+		win
 	};
 
 	class State

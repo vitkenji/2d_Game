@@ -216,6 +216,12 @@
     <ClCompile Include="Mud.cpp">
       <Filter>Arquivos de Origem\Entities\Obstacles</Filter>
     </ClCompile>
+    <ClCompile Include="TextControl.cpp">
+      <Filter>Arquivos de Origem\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMenu.cpp">
+      <Filter>Arquivos de Origem\Menus</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicManager.hpp">
@@ -364,6 +370,12 @@
     </ClInclude>
     <ClInclude Include="Mud.hpp">
       <Filter>Arquivos de Cabeçalho\Entities\Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioManager.hpp">
+      <Filter>Arquivos de Cabeçalho\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="TextControl.hpp">
+      <Filter>Arquivos de Cabeçalho\Control</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

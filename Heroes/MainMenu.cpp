@@ -56,9 +56,17 @@ namespace Menus
 	}
 	void MainMenu::resetState()
 	{
+		active = false;
 		buttons[selected]->select(false);
 		selected = 0;
 		buttons[selected]->select(true);
+		int aux = 0;
+		for (i = buttons.begin(); i != buttons.end(); i++)
+		{
+			(*i)->setTextPosition(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 + 100 * aux));
+			aux++;
+		}
+
 		title.setPosition(Math::CoordinateF(Managers::GraphicManager::getInstance()->getWindowSize().x / 2.0f, Managers::GraphicManager::getInstance()->getWindowSize().y / 2 - 200));
 		
 	}

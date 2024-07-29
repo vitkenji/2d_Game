@@ -123,7 +123,7 @@ namespace Entities
 			}
 			else if (!canWalk)
 			{
-				position.x +=  velocity.x*dt + acceleration.x * dt * dt / 2.f;
+				position.x +=  velocity.x* dt + (acceleration.x / 2) * dt * dt;
 			}
 
 			limitSprint();
@@ -164,11 +164,17 @@ namespace Entities
 				isJumping = false;
 			}
 
+			if (other->getID() == mud)
+			{
+				canJump = false;
+			}
+
 			if (other->getID() == water)
 			{
 				canJump = false;
 				isJumping = false;
 				canWalk = false;
+			
 			}
 
 			if (other->getID() == fire)
@@ -206,15 +212,18 @@ namespace Entities
 			}
 			if (other->getID() == water)
 			{
-				velocity.x = PLAYER_VELOCITY_X * 1.4;
+				velocity.x = PLAYER_VELOCITY_X * 1.2;
 				if (!facingRight) { velocity.x *= -1; }
-				acceleration.x = (velocity.x) * -100 ;
-				
+				//acceleration.x = velocity.x * -20;
 			}
 
 			if (other->getID() == mud)
 			{
-				velocity.x *= 0.7;
+				velocity.x = PLAYER_VELOCITY_X / 3;
+				if (!facingRight)
+				{
+					velocity.x *= -1;
+				}
 			}
 
 			if (other->getID() == box)

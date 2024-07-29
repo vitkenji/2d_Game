@@ -21,6 +21,9 @@ namespace States
         states = static_cast<State*>(new Menus::GameOverMenu(this, dynamic_cast<States::Level*>(statesMap[StateID::playing])));
         insertState(states);
 
+        states = static_cast<State*>(new Menus::WinMenu(this, dynamic_cast<States::Level*>(statesMap[StateID::playing])));
+        insertState(states);
+
         changeCurrentState(StateID::mainMenu);
 
 		execute();

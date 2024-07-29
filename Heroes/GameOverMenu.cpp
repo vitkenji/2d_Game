@@ -6,8 +6,6 @@ namespace Menus
 		title(Math::CoordinateF(300, 300), "HEROES", FONT2_PATH)
 	{
 
-		Managers::GraphicManager* pGraphicManager = Managers::GraphicManager::getInstance();
-
 		title.setFontSize(120);
 		title.setTextInfo("GAME OVER");
 		title.setTextColor(0, 0, 0);

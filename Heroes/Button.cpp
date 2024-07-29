@@ -54,4 +54,10 @@ namespace GraphicalElements
 	{
 		textInfo.setPosition(Math::CoordinateF(textInfo.getPosition().x, textInfo.getPosition().y - 8));
 	}
+
+	void Button::setTextPosition(Math::CoordinateF position)
+	{
+		textInfo.setPosition(position);
+	}
+
 }

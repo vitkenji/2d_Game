@@ -214,7 +214,7 @@ namespace Entities
 			{
 				velocity.x = PLAYER_VELOCITY_X * 1.2;
 				if (!facingRight) { velocity.x *= -1; }
-				//acceleration.x = velocity.x * -20;
+				acceleration.x = velocity.x * -20;
 			}
 
 			if (other->getID() == mud)
@@ -228,9 +228,12 @@ namespace Entities
 
 			if (other->getID() == box)
 			{
+				std::cout << "X: " << intersection.x << std::endl;
+				std::cout << "Y: " << intersection.y << std::endl;
 				if (intersection.y < 0.f)
 				{
 					velocity.y = 0;
+
 				}
 				if (intersection.x < 0.f)
 				{
@@ -239,7 +242,13 @@ namespace Entities
 					{
 						velocity.x *= -1;
 					}
+					if (intersection.x < -10)
+					{
+						velocity.x *= 5;
+					}
 				}
+				
+				
 			}
 		}
 	}

@@ -34,7 +34,6 @@ namespace Menus
 		name.setTextColor(77.6, 68.2, 44.3);
 		name.setTextAlignment(GraphicalElements::center);
 
-
 		selected = 0;
 		max = 1;
 	}

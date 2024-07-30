@@ -13,7 +13,10 @@ namespace Entities
 			bool canJump;
 			bool canWalk;
 			int points;
-			
+
+			sf::Sound swordSound;
+			sf::SoundBuffer swordSoundBuffer;
+
 		public:
 			Player();
 			virtual ~Player();

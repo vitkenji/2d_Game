@@ -19,6 +19,9 @@ namespace Menus
 		bool active;
 		GraphicalElements::SingleFrameAnimation back;
 		Managers::GraphicManager* pGraphicManager;
+		
+		sf::Sound buttonSound;
+		sf::SoundBuffer buttonBuffer;
 
 	public:
 		Menu();

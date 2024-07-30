@@ -13,7 +13,14 @@ namespace Entities
 			damage = 16;
 			addAnimations();
 			setFacingRight(true);
-			
+
+			if (!swordSoundBuffer.loadFromFile(SWORD_SOUND_PATH))
+			{
+				std::cout << "error loading button sound" << std::endl;
+				exit(1);
+			}
+			swordSound.setBuffer(swordSoundBuffer);
+			swordSound.setVolume(20);
 		}
 
 		Player::~Player()
@@ -34,6 +41,7 @@ namespace Entities
 		{
 			isWalking = false;
 			isAttacking = true;
+			swordSound.play();
 		}
 
 		void Player::walk(bool right)

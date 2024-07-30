@@ -75,7 +75,6 @@ namespace States
 
     void Level::resetState()
     {
-        std::cout << resume << std::endl;
         if (player->getPosition().x != 50.f && !resume)
         {
             resume = false;
@@ -120,16 +119,16 @@ namespace States
         movingEntitiesList.addEntity(mushroom);
         movingEntitiesList.addEntity(flyingEye);
         movingEntitiesList.addEntity(fire);
-        //movingEntitiesList.addEntity(box);
+        movingEntitiesList.addEntity(box);
         movingEntitiesList.addEntity(bomb);
 
     }
 
     void Level::setResume(bool resume)
     {
-        std::cout << "before: " << this->resume << std::endl;
+
         this->resume = resume;
-        std::cout << "after: " << this->resume << std::endl;
+
     }
 
     int Level::getPlayerPoints()

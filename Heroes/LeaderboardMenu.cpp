@@ -135,13 +135,12 @@ namespace Menus
 			text = new GraphicalElements::Text(Math::CoordinateF(Managers::GraphicManager::getInstance()->getWindowSize().x / 2.0f, 400 + 40 * i), textString + pointsString, FONT1_PATH);
 			text->setFontSize(20);
 			text->setTextAlignment(GraphicalElements::center);
-			text->setTextColor(77.6, 68.2, 44.3);
+			text->setTextColor(0,0,0);
 			ranking.push_back(text);
 
-			file.close();
 
 		}
-
+		file.close();
 	}
 
 }

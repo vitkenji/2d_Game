@@ -91,3 +91,10 @@
 #define MAINMENUBACKGROUND_PATH "assets/backgrounds/MainMenu.png"
 #define PAUSEMENUBACKGROUND_PATH "assets/backgrounds/PauseMenu.png"
 #define GAMEOVERMENUBACKGROUND_PATH "assets/backgrounds/GameOverMenu.png"
+
+/*----------------------------------------------------------------*/
+
+//SOUND
+
+#define BUTTON_SOUND_PATH "audio/menu_selection.wav"
+#define SWORD_SOUND_PATH "audio/player_sword_sound.wav"

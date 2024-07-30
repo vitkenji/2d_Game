@@ -18,7 +18,11 @@ namespace Menus
 		button->select(false);
 		buttons.push_back(button);
 
-		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 + 200), "QUIT");
+		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 + 200), "HOW TO PLAY");
+		button->select(false);
+		buttons.push_back(button);
+
+		button = new GraphicalElements::Button(Math::CoordinateF(pGraphicManager->getWindowSize().x / 2.0f, pGraphicManager->getWindowSize().y / 2 + 300), "QUIT");
 		button->select(false);
 		buttons.push_back(button);
 
@@ -82,6 +86,9 @@ namespace Menus
 				changeState(States::StateID::leaderboard);
 				break;
 			case 2:
+				break;
+			
+			case 3:
 				pGame->quit();
 				break;
 			default:

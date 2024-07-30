@@ -83,6 +83,7 @@ namespace Menus
 
 	void WinMenu::saveInLeaderboard()
 	{
+		std::cout << "called save" << std::endl;
 		unsigned int playerPoints = pLevel->getPlayerPoints();
 
 		std::ifstream readFile;
@@ -142,6 +143,7 @@ namespace Menus
 	{
 		if (active)
 		{
+			saveInLeaderboard();
 			active = false;
 			switch (selected)
 			{
@@ -154,7 +156,7 @@ namespace Menus
 			default:
 				break;
 			}
-			saveInLeaderboard();
+
 		}
 		
 	}

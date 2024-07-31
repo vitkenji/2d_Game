@@ -11,7 +11,6 @@ namespace Entities
 				bomb = new Projectiles::Bomb(position);
 				bombCooldown = 0;
 				attackAnimationTime = 0;
-				swordDistance = 5;
 				addAnimations();
 				canShoot = true;
 

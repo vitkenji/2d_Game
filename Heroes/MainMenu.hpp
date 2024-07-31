@@ -13,6 +13,7 @@ namespace Menus
 	private:
 		States::Game* pGame;
 		GraphicalElements::Text title;
+		sf::Music music;
 
 	public:
 		MainMenu(States::Game* pGame);

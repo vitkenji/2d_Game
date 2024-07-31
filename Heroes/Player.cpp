@@ -8,7 +8,6 @@ namespace Entities
 		Player::Player() : Character(Math::CoordinateF(50, 600), Math::CoordinateF(PLAYER_SIZE_X, PLAYER_SIZE_Y), ID::player),
 		 isJumping(false), canWalk(true), canJump(false), points(0)
 		{
-			swordDistance = 10;
 			life = 60000;
 			damage = 16;
 			addAnimations();

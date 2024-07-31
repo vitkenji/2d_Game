@@ -16,6 +16,7 @@ namespace Control
 	public:
 		MenuControl(Menus::Menu* pMenu);
 		~MenuControl();
+
 		void notifyPressed(std::string key);
 		void notifyReleased(std::string key);
 		void setMenu(Menus::Menu* pMenu);

@@ -35,6 +35,7 @@ namespace Menus
 		min = 0;
 		max = 3;
 
+		pAudioManager->loadMusic(MAIN_MENU_MUSIC_PATH, &music);
 	}
 
 	MainMenu::~MainMenu()
@@ -71,12 +72,15 @@ namespace Menus
 			aux++;
 		}
 
+		music.play();
+
 		title.setPosition(Math::CoordinateF(Managers::GraphicManager::getInstance()->getWindowSize().x / 2.0f, Managers::GraphicManager::getInstance()->getWindowSize().y / 2 - 200));
 		
 	}
 	void MainMenu::execute()
 	{
 		if (active) {
+			music.stop();
 			active = false;
 			switch (selected) {
 			case 0:

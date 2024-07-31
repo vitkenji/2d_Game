@@ -42,6 +42,7 @@ namespace States
 		List::EntityList movingEntitiesList;
 	
 		GraphicalElements::Hud hud;
+		sf::Music backgroundMusic;
 
 		bool resume;
 

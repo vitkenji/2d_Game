@@ -24,7 +24,6 @@ namespace Entities
 	protected:
 		ID id;
 		bool active;
-		float swordDistance;
 
 	public:
 		Entity(Math::CoordinateF position, Math::CoordinateF size, ID id);
@@ -32,11 +31,8 @@ namespace Entities
 
 		void setID(ID id);
 		ID getID() const;
-
 		void setActive(bool active);
 		bool isActive();
-		float getSwordDistance();
-
 		virtual void render() = 0;
 		virtual void update(const float dt) = 0;
 		virtual void collide(Entity* other, Math::CoordinateF intersection) = 0;

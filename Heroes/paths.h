@@ -98,3 +98,7 @@
 
 #define BUTTON_SOUND_PATH "audio/menu_selection.wav"
 #define SWORD_SOUND_PATH "audio/player_sword_sound.wav"
+
+
+//MUSIC
+#define MAIN_MENU_MUSIC_PATH "audio/main_menu_music.wav"

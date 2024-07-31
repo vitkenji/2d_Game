@@ -2,19 +2,14 @@
 
 namespace Menus
 {
-	Menu::Menu() : selected(0), min(0), max(2), menuControl(this), active(false), pGraphicManager(Managers::GraphicManager::getInstance())
+	Menu::Menu() : selected(0), min(0), max(2), menuControl(this), active(false), pGraphicManager(Managers::GraphicManager::getInstance()), pAudioManager(Managers::AudioManager::getInstance())
 	{
 		Managers::GraphicManager* pGraphicManager = Managers::GraphicManager::getInstance();
 		back.initialize(MAINMENUBACKGROUND_PATH, Math::CoordinateF(pGraphicManager->getWindowSize().x / 2, pGraphicManager->getWindowSize().y / 2), Math::CoordinateF(pGraphicManager->getWindowSize().x, pGraphicManager->getWindowSize().y));
 		menuControl = Control::MenuControl(this);
 
-		if (!buttonBuffer.loadFromFile(BUTTON_SOUND_PATH))
-		{
-			std::cout << "error loading button sound" << std::endl;
-			exit(1);
-		}
-		buttonSound.setBuffer(buttonBuffer);
-
+		pAudioManager->loadSound(BUTTON_SOUND_PATH, &buttonBuffer, &buttonSound);
+		buttonSound.setVolume(40);
 	}
 
 	Menu::~Menu()

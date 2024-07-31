@@ -10,7 +10,6 @@ namespace Entities
 			Skeleton::Skeleton(Math::CoordinateF position) : Enemy(position, Math::CoordinateF(SKELETON_SIZE_X, SKELETON_SIZE_Y), skeleton)
 			{
 				damage = 8;
-				swordDistance = 8;
 				addAnimations();
 			}
 

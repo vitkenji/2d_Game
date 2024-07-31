@@ -4,6 +4,7 @@
 #include "MenuControl.hpp"
 #include "SingleFrameAnimation.hpp"
 #include "GraphicManager.hpp"
+#include "AudioManager.hpp"
 
 namespace Menus
 {
@@ -19,7 +20,7 @@ namespace Menus
 		bool active;
 		GraphicalElements::SingleFrameAnimation back;
 		Managers::GraphicManager* pGraphicManager;
-		
+		Managers::AudioManager* pAudioManager;
 		sf::Sound buttonSound;
 		sf::SoundBuffer buttonBuffer;
 

@@ -3,11 +3,12 @@
 namespace States
 {
     Level::Level(StateMachine* pStateMachine) : State(pStateMachine, StateID::playing), movingEntitiesList(), staticEntitiesList(),player()
-        , collisionManager(&movingEntitiesList, &staticEntitiesList), pGraphicManager(Managers::GraphicManager::getInstance()), hud(player), resume(false)
+        , collisionManager(&movingEntitiesList, &staticEntitiesList), pGraphicManager(Managers::GraphicManager::getInstance())
+        , pAudioManager(Managers::AudioManager::getInstance()), hud(player), resume(false)
     {
         background.initialize(BACKGROUND_PATH, Math::CoordinateF(600, 400), Math::CoordinateF(WIDTH + 300, HEIGHT + 200));
-        restartLevel();
 
+        restartLevel();
         for (int i = 0; i < 20; i++)
         {
             Entities::Obstacles::Platform* platform = new Entities::Obstacles::Platform(Math::CoordinateF(-500 + 192 * i, 800));
@@ -17,6 +18,10 @@ namespace States
         water = new Entities::Obstacles::Water(Math::CoordinateF(600, 800));
         staticEntitiesList.addEntity(water);
         staticEntitiesList.addEntity(mud);
+
+        pAudioManager->loadMusic(LEVEL1_MUSIC_PATH, &music);
+        music.setVolume(25);
+        music.setLoop(true);
 
 	}
 
@@ -79,12 +84,13 @@ namespace States
         {
             resume = false;
             restartLevel();
+            music.play();
         }
     }
 
     void Level::restartLevel()
     {
-
+        music.stop();
         movingEntitiesList.clearList();
 
         player = new Entities::Characters::Player();

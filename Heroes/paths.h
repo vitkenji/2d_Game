@@ -102,3 +102,5 @@
 
 //MUSIC
 #define MAIN_MENU_MUSIC_PATH "audio/main_menu_music.wav"
+#define WIN_MENU_MUSIC_PATH "audio/victory.wav"
+#define LEVEL1_MUSIC_PATH "audio/level1.wav"

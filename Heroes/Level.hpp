@@ -15,6 +15,7 @@
 #include "Hud.hpp"
 #include "Water.hpp"
 #include "Mud.hpp"
+#include "AudioManager.hpp"
 
 namespace States
 {
@@ -24,6 +25,7 @@ namespace States
 	private:
 		Managers::CollisionManager collisionManager;
 		Managers::GraphicManager* pGraphicManager;
+		Managers::AudioManager* pAudioManager;
 
 		Entities::Characters::Player* player;
 		Entities::Characters::Enemies::Skeleton* skeleton;
@@ -42,7 +44,7 @@ namespace States
 		List::EntityList movingEntitiesList;
 	
 		GraphicalElements::Hud hud;
-		sf::Music backgroundMusic;
+		sf::Music music;
 
 		bool resume;
 

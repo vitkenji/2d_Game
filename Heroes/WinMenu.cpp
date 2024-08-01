@@ -36,6 +36,10 @@ namespace Menus
 
 		selected = 0;
 		max = 1;
+
+		pAudioManager->loadMusic(WIN_MENU_MUSIC_PATH, &music);
+		music.setVolume(40);
+
 	}
 
 	WinMenu::~WinMenu()
@@ -72,6 +76,8 @@ namespace Menus
 	void WinMenu::resetState()
 	{
 		active = false;
+
+		music.play();
 		
 		buttons[selected]->select(false);
 		selected = 0;
@@ -143,6 +149,7 @@ namespace Menus
 	{
 		if (active)
 		{
+			music.stop();
 			saveInLeaderboard();
 			active = false;
 			switch (selected)

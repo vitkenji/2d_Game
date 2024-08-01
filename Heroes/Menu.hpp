@@ -24,6 +24,8 @@ namespace Menus
 		sf::Sound buttonSound;
 		sf::SoundBuffer buttonBuffer;
 
+		sf::Music music;
+
 	public:
 		Menu();
 		virtual ~Menu();

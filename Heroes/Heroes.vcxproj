@@ -147,6 +147,7 @@
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="Fire.cpp" />
     <ClCompile Include="FlyingEye.cpp" />
+    <ClCompile Include="FlyingEyeProjectile.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameOverMenu.cpp" />
     <ClCompile Include="Goblin.cpp" />
@@ -197,6 +198,7 @@
     <ClInclude Include="EventManager.hpp" />
     <ClInclude Include="Fire.hpp" />
     <ClInclude Include="FlyingEye.hpp" />
+    <ClInclude Include="FlyingEyeProjectile.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="GameOverMenu.hpp" />
     <ClInclude Include="Goblin.hpp" />

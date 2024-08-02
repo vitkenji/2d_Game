@@ -47,6 +47,17 @@ namespace Managers
 		}
 	}
 
+	void AudioManager::playAudio(sf::Sound sound)
+	{
 
+	}
+	void AudioManager::stopAudio(sf::Sound sound)
+	{
+
+	}
+	void AudioManager::setVolume(float volume)
+	{
+
+	}
 
 }

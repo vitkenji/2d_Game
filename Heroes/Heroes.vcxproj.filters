@@ -225,6 +225,9 @@
     <ClCompile Include="AudioManager.cpp">
       <Filter>Arquivos de Origem\Managers</Filter>
     </ClCompile>
+    <ClCompile Include="FlyingEyeProjectile.cpp">
+      <Filter>Arquivos de Origem\Entities\Projectiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicManager.hpp">
@@ -379,6 +382,9 @@
     </ClInclude>
     <ClInclude Include="TextControl.hpp">
       <Filter>Arquivos de Cabeçalho\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="FlyingEyeProjectile.hpp">
+      <Filter>Arquivos de Cabeçalho\Entities\Projectiles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
